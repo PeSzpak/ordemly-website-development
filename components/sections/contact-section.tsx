@@ -1,0 +1,216 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Phone, Mail, MapPin, Send, CheckCircle2 } from "lucide-react"
+import { useLanguage } from "@/lib/i18n/language-context"
+
+export function ContactSection() {
+  const { t } = useLanguage()
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log("Contact form:", formData)
+    setSubmitted(true)
+    setTimeout(() => {
+      setSubmitted(false)
+      setFormData({ name: "", email: "", subject: "", message: "" })
+    }, 3000)
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
+  return (
+    <section id="contato" className="py-20 md:py-32 bg-secondary/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
+            {t.contactSection.sectionTitle}{" "}
+            <span className="text-primary">{t.contactSection.sectionTitleHighlight}</span>
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
+            {t.contactSection.sectionSubtitle}
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Left Column - Contact Info */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-foreground">{t.contactSection.leftTitle}</h3>
+              <p className="text-muted-foreground leading-relaxed">{t.contactSection.leftSubtitle}</p>
+            </div>
+
+            <div className="space-y-6">
+              <ContactInfo
+                icon={Phone}
+                title={t.contactSection.phoneTitle}
+                content={t.contactSection.phoneValue}
+                href="tel:+5541996062151"
+              />
+              <ContactInfo
+                icon={Mail}
+                title={t.contactSection.emailTitle}
+                content={t.contactSection.emailValue}
+                href="mailto:contato@mmti.io"
+              />
+              <ContactInfo
+                icon={MapPin}
+                title={t.contactSection.locationTitle}
+                content={t.contactSection.locationValue}
+                href="#"
+              />
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-6 space-y-4">
+              <h4 className="font-semibold text-foreground">{t.contactSection.hoursTitle}</h4>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="flex justify-between">
+                  <span>{t.contactSection.hoursMonFri}</span>
+                  <span className="font-medium text-foreground">{t.contactSection.hoursMonFriValue}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>{t.contactSection.hoursSat}</span>
+                  <span className="font-medium text-foreground">{t.contactSection.hoursSatValue}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>{t.contactSection.hoursSun}</span>
+                  <span className="font-medium text-foreground">{t.contactSection.hoursSunValue}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-xl p-6">
+              <h4 className="font-semibold text-foreground mb-2">{t.contactSection.supportTitle}</h4>
+              <p className="text-sm text-muted-foreground mb-4">{t.contactSection.supportDesc}</p>
+              <Button variant="outline" size="sm">
+                {t.contactSection.supportButton}
+              </Button>
+            </div>
+          </div>
+
+          {/* Right Column - Contact Form */}
+          <div className="relative">
+            <div className="bg-card border border-border rounded-2xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-foreground mb-6">{t.contactSection.formTitle}</h3>
+
+              {submitted ? (
+                <div className="py-12 text-center space-y-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-8 h-8" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-foreground">{t.contactSection.successTitle}</h4>
+                  <p className="text-muted-foreground">{t.contactSection.successMessage}</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-name">{t.contactSection.nameLabel}</Label>
+                      <Input
+                        id="contact-name"
+                        name="name"
+                        type="text"
+                        placeholder={t.contactSection.namePlaceholder}
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-email">{t.contactSection.emailLabel}</Label>
+                      <Input
+                        id="contact-email"
+                        name="email"
+                        type="email"
+                        placeholder={t.contactSection.emailPlaceholder}
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">{t.contactSection.subjectLabel}</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      placeholder={t.contactSection.subjectPlaceholder}
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">{t.contactSection.messageLabel}</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder={t.contactSection.messagePlaceholder}
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={6}
+                      className="resize-none"
+                    />
+                  </div>
+
+                  <Button type="submit" size="lg" className="w-full">
+                    <Send className="mr-2 w-5 h-5" />
+                    {t.contactSection.submitButton}
+                  </Button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ContactInfo({
+  icon: Icon,
+  title,
+  content,
+  href,
+}: {
+  icon: React.ElementType
+  title: string
+  content: string
+  href: string
+}) {
+  return (
+    <a href={href} className="flex items-start gap-4 group hover:translate-x-1 transition-transform duration-200">
+      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+        <Icon className="w-6 h-6" />
+      </div>
+      <div>
+        <div className="font-semibold text-foreground mb-1">{title}</div>
+        <div className="text-muted-foreground group-hover:text-primary transition-colors">{content}</div>
+      </div>
+    </a>
+  )
+}
