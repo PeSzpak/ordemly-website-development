@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   description:
     "Gerencie ordens de serviço com inteligência. Dashboard completo, Kanban, rastreamento de equipamentos e muito mais.",
   generator: "v0.app",
+  icons: {
+    icon: "/logo.jpeg",
+    shortcut: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
 }
 
 export default function RootLayout({

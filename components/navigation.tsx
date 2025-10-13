@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { LanguageSelector } from "@/components/language-selector"
 import { useLanguage } from "@/lib/i18n/language-context"
+import Image from "next/image"
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -15,11 +16,8 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">O</span>
-            </div>
+            <Image src="/logo.jpeg" alt="Ordemly Logo" width={32} height={32} className="rounded-lg" />
             <span className="font-bold text-xl text-foreground">Ordemly</span>
           </Link>
 

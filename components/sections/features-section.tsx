@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   AlertCircle,
   TrendingUp,
+  Printer,
 } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/language-context"
 
@@ -307,6 +308,11 @@ export function FeaturesSection() {
                     icon={Package}
                     title={t.featuresSection.orders.feature3Title}
                     description={t.featuresSection.orders.feature3Desc}
+                  />
+                  <FeatureItem
+                    icon={Printer}
+                    title={t.featuresSection.orders.feature4Title}
+                    description={t.featuresSection.orders.feature4Desc}
                   />
                 </div>
               </div>
