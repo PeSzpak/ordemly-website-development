@@ -51,12 +51,8 @@ export function HeroSection() {
           {/* Right Column - Visual */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 via-background to-accent/20 flex items-center justify-center">
-                <img
-                  src="/modern-dashboard-interface-with-kanban-boards-and-.jpg"
-                  alt="Ordemly Dashboard Interface"
-                  className="w-full h-full object-cover"
-                />
+              <div className="bg-background">
+                <img src="/images/dashboard-admin.png" alt="Ordemly Dashboard Interface" className="w-full h-auto" />
               </div>
             </div>
 

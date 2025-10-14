@@ -95,8 +95,8 @@ export function FeaturesSection() {
               </div>
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-                  <div className="aspect-[4/3] bg-background">
-                    <img src="/images/dashboard-admin.png" alt="Dashboard" className="w-full h-full object-cover" />
+                  <div className="bg-background">
+                    <img src="/images/dashboard-admin.png" alt="Dashboard" className="w-full h-auto" />
                   </div>
                 </div>
               </div>
@@ -109,8 +109,8 @@ export function FeaturesSection() {
               <div className="space-y-6 order-2 lg:order-1">
                 <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-                    <div className="aspect-[4/3] bg-background">
-                      <img src="/images/orders-kanban.png" alt="Kanban Board" className="w-full h-full object-cover" />
+                    <div className="bg-background">
+                      <img src="/images/orders-kanban.png" alt="Kanban Board" className="w-full h-auto" />
                     </div>
                   </div>
                 </div>
@@ -167,8 +167,8 @@ export function FeaturesSection() {
               </div>
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-                  <div className="aspect-[4/3] bg-background">
-                    <img src="/images/equipment-list.png" alt="Equipment List" className="w-full h-full object-cover" />
+                  <div className="bg-background">
+                    <img src="/images/equipment-list.png" alt="Equipment List" className="w-full h-auto" />
                   </div>
                 </div>
               </div>
@@ -181,12 +181,8 @@ export function FeaturesSection() {
               <div className="space-y-6 order-2 lg:order-1">
                 <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-                    <div className="aspect-[4/3] bg-background">
-                      <img
-                        src="/images/kanban-professional.png"
-                        alt="Order Details"
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="bg-background">
+                      <img src="/images/kanban-professional.png" alt="Order Details" className="w-full h-auto" />
                     </div>
                   </div>
                 </div>
