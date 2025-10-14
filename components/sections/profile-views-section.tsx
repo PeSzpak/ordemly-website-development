@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Shield, Wrench, User, ChevronRight, LayoutDashboard, Kanban, Settings, ClipboardList } from "lucide-react"
+import { Shield, Wrench, User, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n/language-context"
 
@@ -161,49 +161,18 @@ export function ProfileViewsSection() {
           {/* Right - Visual Mockup */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 via-background to-accent/10 p-6">
-                {/* Mock Interface */}
-                <div className="h-full bg-background rounded-lg border border-border p-4 space-y-4">
-                  {/* Header */}
-                  <div className="flex items-center justify-between pb-4 border-b border-border">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-foreground text-sm">{currentProfile.title}</div>
-                        <div className="text-xs text-muted-foreground">{t.profileViews.mainDashboard}</div>
-                      </div>
-                    </div>
-                    <Settings className="w-5 h-5 text-muted-foreground" />
-                  </div>
-
-                  {/* Content Grid */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-primary/5 rounded-lg p-3 border border-primary/20">
-                      <LayoutDashboard className="w-5 h-5 text-primary mb-2" />
-                      <div className="text-xs text-muted-foreground">Dashboard</div>
-                      <div className="text-lg font-bold text-foreground">24</div>
-                    </div>
-                    <div className="bg-accent/5 rounded-lg p-3 border border-accent/20">
-                      <Kanban className="w-5 h-5 text-accent mb-2" />
-                      <div className="text-xs text-muted-foreground">Kanban</div>
-                      <div className="text-lg font-bold text-foreground">12</div>
-                    </div>
-                    <div className="col-span-2 bg-muted/50 rounded-lg p-3 border border-border">
-                      <ClipboardList className="w-5 h-5 text-muted-foreground mb-2" />
-                      <div className="text-xs text-muted-foreground mb-2">Ordens Recentes</div>
-                      <div className="space-y-2">
-                        {[1, 2, 3].map((i) => (
-                          <div key={i} className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-primary" />
-                            <div className="flex-1 h-2 bg-border rounded" />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="aspect-[4/3] bg-background">
+                <img
+                  src={
+                    activeProfile === "administrator"
+                      ? "/images/dashboard-admin.png"
+                      : activeProfile === "professional"
+                        ? "/images/dashboard-professional.png"
+                        : "/images/support-page.png"
+                  }
+                  alt={currentProfile.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 

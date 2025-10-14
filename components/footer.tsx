@@ -14,9 +14,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">O</span>
-              </div>
+              <img src="/logo.jpeg" alt="Ordemly" className="w-8 h-8 rounded-lg" />
               <span className="font-bold text-xl text-foreground">Ordemly</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">{t.footerSection.tagline}</p>

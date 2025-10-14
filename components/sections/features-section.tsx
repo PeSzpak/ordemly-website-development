@@ -95,35 +95,8 @@ export function FeaturesSection() {
               </div>
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 via-background to-accent/10 p-6">
-                    <div className="h-full bg-background rounded-lg border border-border p-4 space-y-3">
-                      <div className="flex items-center justify-between pb-3 border-b border-border">
-                        <div className="font-semibold text-foreground">Dashboard</div>
-                        <LayoutDashboard className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="grid grid-cols-3 gap-2">
-                        {[
-                          { label: t.featuresSection.dashboard.mockActive, value: "24", color: "primary" },
-                          { label: t.featuresSection.dashboard.mockCompleted, value: "156", color: "chart-3" },
-                          { label: t.featuresSection.dashboard.mockPending, value: "8", color: "accent" },
-                        ].map((stat, i) => (
-                          <div key={i} className="bg-muted/50 rounded-lg p-2 border border-border">
-                            <div className="text-xs text-muted-foreground">{stat.label}</div>
-                            <div className="text-xl font-bold text-foreground">{stat.value}</div>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="bg-muted/50 rounded-lg p-3 border border-border">
-                        <div className="text-xs text-muted-foreground mb-2">
-                          {t.featuresSection.dashboard.mockPerformance}
-                        </div>
-                        <div className="flex items-end gap-1 h-20">
-                          {[40, 65, 45, 80, 60, 90, 75].map((height, i) => (
-                            <div key={i} className="flex-1 bg-primary/20 rounded-t" style={{ height: `${height}%` }} />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
+                  <div className="aspect-[4/3] bg-background">
+                    <img src="/images/dashboard-admin.png" alt="Dashboard" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -136,32 +109,8 @@ export function FeaturesSection() {
               <div className="space-y-6 order-2 lg:order-1">
                 <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-                    <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 via-background to-accent/10 p-6">
-                      <div className="h-full bg-background rounded-lg border border-border p-4">
-                        <div className="flex items-center justify-between pb-3 border-b border-border mb-3">
-                          <div className="font-semibold text-foreground">{t.featuresSection.kanban.mockBoard}</div>
-                          <Kanban className="w-5 h-5 text-primary" />
-                        </div>
-                        <div className="grid grid-cols-3 gap-2 h-[calc(100%-3rem)]">
-                          {[
-                            t.featuresSection.kanban.mockPending,
-                            t.featuresSection.kanban.mockInProgress,
-                            t.featuresSection.kanban.mockCompleted,
-                          ].map((status, i) => (
-                            <div key={i} className="bg-muted/30 rounded-lg p-2 border border-border">
-                              <div className="text-xs font-medium text-muted-foreground mb-2">{status}</div>
-                              <div className="space-y-2">
-                                {[1, 2].map((card) => (
-                                  <div key={card} className="bg-card rounded p-2 border border-border shadow-sm">
-                                    <div className="w-full h-2 bg-muted rounded mb-1" />
-                                    <div className="w-2/3 h-1.5 bg-muted/50 rounded" />
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="aspect-[4/3] bg-background">
+                      <img src="/images/orders-kanban.png" alt="Kanban Board" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
@@ -218,26 +167,8 @@ export function FeaturesSection() {
               </div>
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 via-background to-accent/10 p-6">
-                    <div className="h-full bg-background rounded-lg border border-border p-4 space-y-3">
-                      <div className="flex items-center justify-between pb-3 border-b border-border">
-                        <div className="font-semibold text-foreground">{t.featuresSection.equipment.mockTitle}</div>
-                        <Package className="w-5 h-5 text-primary" />
-                      </div>
-                      {[1, 2, 3].map((item) => (
-                        <div key={item} className="bg-muted/50 rounded-lg p-3 border border-border">
-                          <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                              <Package className="w-6 h-6 text-primary" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="h-3 bg-foreground/20 rounded w-3/4 mb-2" />
-                              <div className="h-2 bg-muted-foreground/20 rounded w-1/2" />
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="aspect-[4/3] bg-background">
+                    <img src="/images/equipment-list.png" alt="Equipment List" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -250,42 +181,12 @@ export function FeaturesSection() {
               <div className="space-y-6 order-2 lg:order-1">
                 <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-                    <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 via-background to-accent/10 p-6">
-                      <div className="h-full bg-background rounded-lg border border-border p-4 space-y-3">
-                        <div className="flex items-center justify-between pb-3 border-b border-border">
-                          <div className="font-semibold text-foreground">
-                            {t.featuresSection.orders.mockOrderNumber}
-                          </div>
-                          <FileText className="w-5 h-5 text-primary" />
-                        </div>
-                        <div className="space-y-2">
-                          <div className="flex gap-2">
-                            {[
-                              t.featuresSection.orders.mockTabDetails,
-                              t.featuresSection.orders.mockTabDefect,
-                              t.featuresSection.orders.mockTabService,
-                              t.featuresSection.orders.mockTabAttachments,
-                            ].map((tab, i) => (
-                              <div
-                                key={i}
-                                className={`flex-1 text-xs py-1.5 px-2 rounded ${
-                                  i === 0 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
-                                }`}
-                              >
-                                {tab}
-                              </div>
-                            ))}
-                          </div>
-                          <div className="bg-muted/50 rounded-lg p-3 border border-border space-y-2">
-                            {[1, 2, 3, 4].map((line) => (
-                              <div key={line} className="flex items-center gap-2">
-                                <div className="w-16 h-2 bg-muted-foreground/30 rounded" />
-                                <div className="flex-1 h-2 bg-foreground/20 rounded" />
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+                    <div className="aspect-[4/3] bg-background">
+                      <img
+                        src="/images/kanban-professional.png"
+                        alt="Order Details"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
                 </div>

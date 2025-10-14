@@ -79,32 +79,6 @@ export function ContactSection() {
                 href="#"
               />
             </div>
-
-            <div className="bg-card border border-border rounded-xl p-6 space-y-4">
-              <h4 className="font-semibold text-foreground">{t.contactSection.hoursTitle}</h4>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div className="flex justify-between">
-                  <span>{t.contactSection.hoursMonFri}</span>
-                  <span className="font-medium text-foreground">{t.contactSection.hoursMonFriValue}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>{t.contactSection.hoursSat}</span>
-                  <span className="font-medium text-foreground">{t.contactSection.hoursSatValue}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>{t.contactSection.hoursSun}</span>
-                  <span className="font-medium text-foreground">{t.contactSection.hoursSunValue}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-xl p-6">
-              <h4 className="font-semibold text-foreground mb-2">{t.contactSection.supportTitle}</h4>
-              <p className="text-sm text-muted-foreground mb-4">{t.contactSection.supportDesc}</p>
-              <Button variant="outline" size="sm">
-                {t.contactSection.supportButton}
-              </Button>
-            </div>
           </div>
 
           {/* Right Column - Contact Form */}
