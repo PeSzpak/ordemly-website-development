@@ -20,7 +20,7 @@ export function PricingSection() {
 
   return (
     <>
-      <section id="pricing" className="relative py-24 lg:py-32">
+      <section id="precos" className="relative py-24 lg:py-32">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-blue-950/5 to-background" />
 
