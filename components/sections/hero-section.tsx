@@ -23,10 +23,8 @@ export function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
-              <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
-                {t.hero.title}
-              </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance text-foreground">
+              {t.hero.title}
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">{t.hero.subtitle}</p>

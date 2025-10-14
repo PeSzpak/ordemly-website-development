@@ -7,6 +7,7 @@ import { FeaturesSection } from "@/components/sections/features-section"
 import { CustomizationSection } from "@/components/sections/customization-section"
 import { DemoSection } from "@/components/sections/demo-section"
 import { ContactSection } from "@/components/sections/contact-section"
+import { PricingSection } from "@/components/sections/pricing-section"
 
 export default function HomePage() {
   return (
@@ -19,6 +20,7 @@ export default function HomePage() {
         <FeaturesSection />
         <CustomizationSection />
         <DemoSection />
+        <PricingSection />
         <ContactSection />
       </main>
       <Footer />
