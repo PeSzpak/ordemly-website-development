@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { LanguageSelector } from "@/components/language-selector"
@@ -36,6 +35,12 @@ export function Navigation() {
               {t.nav.features}
             </Link>
             <Link
+              href="#precos"
+              className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              {t.nav.pricing}
+            </Link>
+            <Link
               href="#contato"
               className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
@@ -46,13 +51,6 @@ export function Navigation() {
           {/* CTA Buttons + Language Selector */}
           <div className="hidden md:flex items-center gap-3">
             <LanguageSelector />
-            <Button
-              size="sm"
-              className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 dark:from-blue-500 dark:via-blue-600 dark:to-blue-700 dark:hover:from-blue-600 dark:hover:via-blue-700 dark:hover:to-blue-800 text-white border-0"
-              asChild
-            >
-              <Link href="#demo">{t.nav.scheduleDemo}</Link>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -84,6 +82,13 @@ export function Navigation() {
                 {t.nav.features}
               </Link>
               <Link
+                href="#precos"
+                className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t.nav.pricing}
+              </Link>
+              <Link
                 href="#contato"
                 className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
@@ -92,13 +97,6 @@ export function Navigation() {
               </Link>
               <div className="flex flex-col gap-2 pt-2">
                 <LanguageSelector />
-                <Button
-                  size="sm"
-                  className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 dark:from-blue-500 dark:via-blue-600 dark:to-blue-700 dark:hover:from-blue-600 dark:hover:via-blue-700 dark:hover:to-blue-800 text-white border-0"
-                  asChild
-                >
-                  <Link href="#demo">{t.nav.scheduleDemo}</Link>
-                </Button>
               </div>
             </div>
           </div>
