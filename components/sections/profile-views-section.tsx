@@ -72,7 +72,10 @@ export function ProfileViewsSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            {t.profileViews.sectionTitle} <span className="text-primary">{t.profileViews.sectionTitleHighlight}</span>
+            {t.profileViews.sectionTitle}{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
+              {t.profileViews.sectionTitleHighlight}
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed text-pretty">{t.profileViews.sectionSubtitle}</p>
         </div>
@@ -88,16 +91,18 @@ export function ProfileViewsSection() {
                 className={cn(
                   "flex-1 p-6 rounded-xl border-2 transition-all duration-300 text-left",
                   activeProfile === profile.id
-                    ? "border-primary bg-primary/5 shadow-lg"
-                    : "border-border bg-card hover:border-primary/30 hover:bg-card/80",
+                    ? // Added blue gradient border and blue-tinted background for active state
+                      "border-blue-600 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/30 dark:to-blue-900/20 shadow-lg shadow-blue-500/10"
+                    : "border-border bg-card hover:border-blue-400/30 hover:bg-card/80",
                 )}
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div
                     className={cn(
-                      "w-10 h-10 rounded-lg flex items-center justify-center",
+                      "w-10 h-10 rounded-lg flex items-center justify-center transition-all",
                       activeProfile === profile.id
-                        ? "bg-primary text-primary-foreground"
+                        ? // Blue gradient background for active icon
+                          "bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-500/30"
                         : "bg-muted text-muted-foreground",
                     )}
                   >
@@ -129,7 +134,7 @@ export function ProfileViewsSection() {
           {/* Left - Description and Features */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600/10 via-blue-700/10 to-blue-800/10 border border-blue-600/20 text-blue-700 dark:text-blue-400 text-sm font-medium">
                 <Icon className="w-4 h-4" />
                 {currentProfile.title}
               </div>
@@ -142,7 +147,7 @@ export function ProfileViewsSection() {
             <div className="space-y-3">
               {currentProfile.features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-blue-600/10 to-blue-700/10 border border-blue-600/20 text-blue-700 dark:text-blue-400 flex items-center justify-center mt-0.5">
                     <ChevronRight className="w-4 h-4" />
                   </div>
                   <span className="text-foreground">{feature}</span>
@@ -160,7 +165,7 @@ export function ProfileViewsSection() {
 
           {/* Right - Visual Mockup */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
               <div className="bg-background">
                 <img
                   src={
@@ -176,9 +181,8 @@ export function ProfileViewsSection() {
               </div>
             </div>
 
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-600/20 to-blue-700/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-blue-600/20 rounded-full blur-3xl -z-10" />
           </div>
         </div>
       </div>

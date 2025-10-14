@@ -50,21 +50,25 @@ export function DemoSection() {
 
   return (
     <section id="demo" className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-background to-blue-600/5 -z-10" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left Column - Info */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <Video className="w-4 h-4" />
-                {t.demoSection.badge}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600/20 via-blue-700/20 to-blue-800/20 dark:from-blue-400/20 dark:via-blue-500/20 dark:to-blue-600/20 text-sm font-medium">
+                <Video className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text font-semibold text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
+                  {t.demoSection.badge}
+                </span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-balance">
-                {t.demoSection.title} <span className="text-primary">{t.demoSection.titleHighlight}</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-balance">
+                {t.demoSection.title}{" "}
+                <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
+                  {t.demoSection.titleHighlight}
+                </span>
               </h2>
 
               <p className="text-lg text-muted-foreground leading-relaxed text-pretty">{t.demoSection.subtitle}</p>
@@ -76,9 +80,9 @@ export function DemoSection() {
               <DemoFeature icon={CheckCircle2} title={features[2].title} description={features[2].description} />
             </div>
 
-            <div className="bg-card border border-border rounded-xl p-6">
+            <div className="bg-card border-2 border-blue-600/20 dark:border-blue-500/20 rounded-xl p-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600/20 to-blue-800/20 dark:from-blue-400/20 dark:to-blue-600/20 flex items-center justify-center flex-shrink-0">
                   <span className="text-2xl">💡</span>
                 </div>
                 <div>
@@ -91,13 +95,13 @@ export function DemoSection() {
 
           {/* Right Column - Form */}
           <div className="relative">
-            <div className="bg-card border border-border rounded-2xl p-8 shadow-2xl">
+            <div className="bg-card border-2 border-blue-600/20 dark:border-blue-500/20 rounded-2xl p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-foreground mb-6">{t.demoSection.formTitle}</h3>
 
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600/20 to-blue-800/20 dark:from-blue-400/20 dark:to-blue-600/20 flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                   </div>
                   <h4 className="text-xl font-semibold text-foreground">{t.demoSection.successTitle}</h4>
                   <p className="text-muted-foreground">{t.demoSection.successMessage}</p>
@@ -160,7 +164,11 @@ export function DemoSection() {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full text-base">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full text-base bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 dark:from-blue-500 dark:via-blue-600 dark:to-blue-700 dark:hover:from-blue-600 dark:hover:via-blue-700 dark:hover:to-blue-800 text-white border-0"
+                  >
                     {t.demoSection.submitButton}
                   </Button>
 
@@ -169,9 +177,8 @@ export function DemoSection() {
               )}
             </div>
 
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-600/20 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-700/20 rounded-full blur-3xl -z-10" />
           </div>
         </div>
       </div>
@@ -190,8 +197,8 @@ function DemoFeature({
 }) {
   return (
     <div className="flex items-start gap-4">
-      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-        <Icon className="w-5 h-5" />
+      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600/20 to-blue-800/20 dark:from-blue-400/20 dark:to-blue-600/20 flex items-center justify-center">
+        <Icon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
       </div>
       <div>
         <h4 className="font-semibold text-foreground mb-1">{title}</h4>

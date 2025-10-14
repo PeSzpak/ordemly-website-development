@@ -27,7 +27,9 @@ export function FeaturesSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             {t.featuresSection.sectionTitle}{" "}
-            <span className="text-primary">{t.featuresSection.sectionTitleHighlight}</span>
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
+              {t.featuresSection.sectionTitleHighlight}
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
             {t.featuresSection.sectionSubtitle}
@@ -39,28 +41,28 @@ export function FeaturesSection() {
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 h-auto gap-2 bg-transparent mb-12">
             <TabsTrigger
               value="dashboard"
-              className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-blue-500/30"
             >
               <LayoutDashboard className="w-5 h-5" />
               <span className="text-sm font-medium">{t.featuresSection.dashboard.tab}</span>
             </TabsTrigger>
             <TabsTrigger
               value="kanban"
-              className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-blue-500/30"
             >
               <Kanban className="w-5 h-5" />
               <span className="text-sm font-medium">{t.featuresSection.kanban.tab}</span>
             </TabsTrigger>
             <TabsTrigger
               value="equipment"
-              className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-blue-500/30"
             >
               <Package className="w-5 h-5" />
               <span className="text-sm font-medium">{t.featuresSection.equipment.tab}</span>
             </TabsTrigger>
             <TabsTrigger
               value="orders"
-              className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-blue-500/30"
             >
               <FileText className="w-5 h-5" />
               <span className="text-sm font-medium">{t.featuresSection.orders.tab}</span>
@@ -94,7 +96,7 @@ export function FeaturesSection() {
                 </div>
               </div>
               <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                   <div className="bg-background">
                     <img src="/images/dashboard-admin.png" alt="Dashboard" className="w-full h-auto" />
                   </div>
@@ -108,7 +110,7 @@ export function FeaturesSection() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 order-2 lg:order-1">
                 <div className="relative">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                     <div className="bg-background">
                       <img src="/images/orders-kanban.png" alt="Kanban Board" className="w-full h-auto" />
                     </div>
@@ -166,7 +168,7 @@ export function FeaturesSection() {
                 </div>
               </div>
               <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                   <div className="bg-background">
                     <img src="/images/equipment-list.png" alt="Equipment List" className="w-full h-auto" />
                   </div>
@@ -180,7 +182,7 @@ export function FeaturesSection() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 order-2 lg:order-1">
                 <div className="relative">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                     <div className="bg-background">
                       <img src="/images/kanban-professional.png" alt="Order Details" className="w-full h-auto" />
                     </div>
@@ -232,7 +234,7 @@ function FeatureItem({
 }) {
   return (
     <div className="flex items-start gap-4">
-      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600/10 to-blue-700/10 border border-blue-600/20 text-blue-700 dark:text-blue-400 flex items-center justify-center">
         <Icon className="w-5 h-5" />
       </div>
       <div>

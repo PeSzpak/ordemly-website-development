@@ -44,7 +44,9 @@ export function ContactSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             {t.contactSection.sectionTitle}{" "}
-            <span className="text-primary">{t.contactSection.sectionTitleHighlight}</span>
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
+              {t.contactSection.sectionTitleHighlight}
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
             {t.contactSection.sectionSubtitle}
@@ -83,12 +85,12 @@ export function ContactSection() {
 
           {/* Right Column - Contact Form */}
           <div className="relative">
-            <div className="bg-card border border-border rounded-2xl p-8 shadow-lg">
+            <div className="bg-card border-2 border-blue-600/20 rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-foreground mb-6">{t.contactSection.formTitle}</h3>
 
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600/10 to-blue-700/10 border border-blue-600/20 text-blue-700 dark:text-blue-400 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h4 className="text-xl font-semibold text-foreground">{t.contactSection.successTitle}</h4>
@@ -178,12 +180,14 @@ function ContactInfo({
 }) {
   return (
     <a href={href} className="flex items-start gap-4 group hover:translate-x-1 transition-transform duration-200">
-      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/10 to-blue-700/10 border border-blue-600/20 text-blue-700 dark:text-blue-400 flex items-center justify-center group-hover:from-blue-600 group-hover:to-blue-700 group-hover:text-white group-hover:shadow-md group-hover:shadow-blue-500/30 transition-all">
         <Icon className="w-6 h-6" />
       </div>
       <div>
         <div className="font-semibold text-foreground mb-1">{title}</div>
-        <div className="text-muted-foreground group-hover:text-primary transition-colors">{content}</div>
+        <div className="text-muted-foreground group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
+          {content}
+        </div>
       </div>
     </a>
   )

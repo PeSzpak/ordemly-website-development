@@ -25,14 +25,17 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">{t.footerSection.productTitle}</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#perfis" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#perfis"
+                  className="text-sm text-muted-foreground hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+                >
                   {t.footerSection.productProfiles}
                 </Link>
               </li>
               <li>
                 <Link
                   href="#funcionalidades"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                 >
                   {t.footerSection.productFeatures}
                 </Link>
@@ -40,13 +43,16 @@ export function Footer() {
               <li>
                 <Link
                   href="#personalizacao"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                 >
                   {t.footerSection.productCustomization}
                 </Link>
               </li>
               <li>
-                <Link href="#demo" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#demo"
+                  className="text-sm text-muted-foreground hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+                >
                   {t.footerSection.productDemo}
                 </Link>
               </li>
@@ -73,7 +79,7 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+5541996062151"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   +55 41 9 9606-2151
@@ -82,7 +88,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:contato@mmti.io"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   contato@mmti.io
@@ -102,10 +108,16 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">{t.footerSection.copyright}</p>
             <div className="flex items-center gap-6">
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-sm text-muted-foreground hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+              >
                 {t.footerSection.privacy}
               </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-sm text-muted-foreground hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+              >
                 {t.footerSection.terms}
               </Link>
             </div>

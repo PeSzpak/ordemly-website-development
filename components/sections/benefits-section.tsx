@@ -33,8 +33,10 @@ export function BenefitsSection() {
     <section className="py-20 md:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            {t.benefits.title}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
+              {t.benefits.title}
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed text-pretty">{t.benefits.subtitle}</p>
         </div>
@@ -45,11 +47,11 @@ export function BenefitsSection() {
             return (
               <div
                 key={index}
-                className="group relative p-8 rounded-2xl border border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+                className="group relative p-8 rounded-2xl border border-border bg-card hover:border-blue-600/50 dark:hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/10"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Icon className="w-6 h-6" />
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/20 to-blue-800/20 dark:from-blue-400/20 dark:to-blue-600/20 flex items-center justify-center group-hover:from-blue-600 group-hover:to-blue-800 dark:group-hover:from-blue-500 dark:group-hover:to-blue-700 transition-all">
+                    <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors" />
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-xl font-semibold text-foreground">{benefit.title}</h3>

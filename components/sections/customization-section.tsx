@@ -14,7 +14,9 @@ export function CustomizationSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             {t.customizationSection.sectionTitle}{" "}
-            <span className="text-primary">{t.customizationSection.sectionTitleHighlight}</span>
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
+              {t.customizationSection.sectionTitleHighlight}
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
             {t.customizationSection.sectionSubtitle}
@@ -60,7 +62,7 @@ export function CustomizationSection() {
 
         {/* Theme Preview */}
         <div className="max-w-5xl mx-auto">
-          <div className="bg-card border border-border rounded-2xl p-8 shadow-lg">
+          <div className="bg-card border-2 border-blue-600/20 rounded-2xl p-8 shadow-lg">
             <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
               {t.customizationSection.previewTitle}
             </h3>
@@ -104,8 +106,8 @@ function CustomizationCard({
   features: string[]
 }) {
   return (
-    <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-      <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+    <div className="bg-card border border-border rounded-2xl p-6 hover:border-blue-600/50 hover:bg-gradient-to-br hover:from-blue-50/50 hover:to-transparent dark:hover:from-blue-950/20 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/10 to-blue-700/10 border border-blue-600/20 text-blue-700 dark:text-blue-400 flex items-center justify-center mb-4">
         <Icon className="w-6 h-6" />
       </div>
       <h3 className="text-xl font-semibold text-foreground mb-3">{title}</h3>
@@ -113,7 +115,7 @@ function CustomizationCard({
       <ul className="space-y-2">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+            <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-700" />
             {feature}
           </li>
         ))}
@@ -148,7 +150,7 @@ function ThemePreview({
       </div>
       <div className="text-center">
         <div className="flex items-center justify-center gap-2 mb-1">
-          <Icon className="w-4 h-4 text-primary" />
+          <Icon className="w-4 h-4 text-blue-700 dark:text-blue-400" />
           <div className="font-semibold text-foreground text-sm">{title}</div>
         </div>
         <div className="text-xs text-muted-foreground">{description}</div>

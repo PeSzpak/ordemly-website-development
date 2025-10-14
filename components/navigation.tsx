@@ -25,19 +25,19 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="#perfis"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               {t.nav.profiles}
             </Link>
             <Link
               href="#funcionalidades"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               {t.nav.features}
             </Link>
             <Link
               href="#contato"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               {t.nav.contact}
             </Link>
@@ -46,7 +46,11 @@ export function Navigation() {
           {/* CTA Buttons + Language Selector */}
           <div className="hidden md:flex items-center gap-3">
             <LanguageSelector />
-            <Button size="sm" asChild>
+            <Button
+              size="sm"
+              className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 dark:from-blue-500 dark:via-blue-600 dark:to-blue-700 dark:hover:from-blue-600 dark:hover:via-blue-700 dark:hover:to-blue-800 text-white border-0"
+              asChild
+            >
               <Link href="#demo">{t.nav.scheduleDemo}</Link>
             </Button>
           </div>
@@ -67,28 +71,32 @@ export function Navigation() {
             <div className="flex flex-col gap-4">
               <Link
                 href="#perfis"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t.nav.profiles}
               </Link>
               <Link
                 href="#funcionalidades"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t.nav.features}
               </Link>
               <Link
                 href="#contato"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t.nav.contact}
               </Link>
               <div className="flex flex-col gap-2 pt-2">
                 <LanguageSelector />
-                <Button size="sm" asChild>
+                <Button
+                  size="sm"
+                  className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 dark:from-blue-500 dark:via-blue-600 dark:to-blue-700 dark:hover:from-blue-600 dark:hover:via-blue-700 dark:hover:to-blue-800 text-white border-0"
+                  asChild
+                >
                   <Link href="#demo">{t.nav.scheduleDemo}</Link>
                 </Button>
               </div>
