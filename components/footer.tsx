@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Phone, Mail, MapPin } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
-import Image from "next/image"
+import Link from "next/link";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
+import Image from "next/image";
 
 export function Footer() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-secondary border-t border-border">
@@ -15,24 +15,36 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/logo.jpeg" alt="Ordemly" className="w-8 h-8 rounded-lg" />
+              <img
+                src="/logo.jpeg"
+                alt="Ordemly"
+                className="w-8 h-8 rounded-lg"
+              />
               <span className="font-bold text-xl text-foreground">Ordemly</span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">{t.footerSection.tagline}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {t.footerSection.tagline}
+            </p>
             <div className="pt-4">
-              <Image
-                src="/mm-logo.png"
-                alt="MM Tecnologia de Informação Ltda"
-                width={120}
-                height={40}
-                className="opacity-80 hover:opacity-100 transition-opacity"
-              />
+              <a href="https://mmtec.site/">
+                
+                  <Image
+                    src="/mm_logo_black.svg"
+                    alt="MM Tecnologia de Informação Ltda"
+                    width={140}
+                    height={40}
+                    className="opacity-80 hover:opacity-100 transition-opacity"
+                  />
+              </a>
+             
             </div>
           </div>
 
           {/* Product */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">{t.footerSection.productTitle}</h3>
+            <h3 className="font-semibold text-foreground mb-4">
+              {t.footerSection.productTitle}
+            </h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -71,20 +83,28 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">{t.footerSection.companyTitle}</h3>
+            <h3 className="font-semibold text-foreground mb-4">
+              {t.footerSection.companyTitle}
+            </h3>
             <ul className="space-y-3">
               <li>
-                <span className="text-sm text-muted-foreground">{t.footerSection.companyName}</span>
+                <span className="text-sm text-muted-foreground">
+                  {t.footerSection.companyName}
+                </span>
               </li>
               <li>
-                <span className="text-sm text-muted-foreground">{t.footerSection.companyLocation}</span>
+                <span className="text-sm text-muted-foreground">
+                  {t.footerSection.companyLocation}
+                </span>
               </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">{t.footerSection.contactTitle}</h3>
+            <h3 className="font-semibold text-foreground mb-4">
+              {t.footerSection.contactTitle}
+            </h3>
             <ul className="space-y-3">
               <li>
                 <a
@@ -117,8 +137,12 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-col items-center md:items-start gap-2">
-              <p className="text-xs text-muted-foreground">{t.footerSection.developedBy}</p>
-              <p className="text-sm text-muted-foreground">{t.footerSection.copyright}</p>
+              <p className="text-xs text-muted-foreground">
+                {t.footerSection.developedBy}
+              </p>
+              <p className="text-sm text-muted-foreground">
+                {t.footerSection.copyright}
+              </p>
             </div>
             <div className="flex items-center gap-6">
               <Link
@@ -138,5 +162,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
