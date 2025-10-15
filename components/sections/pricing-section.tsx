@@ -24,7 +24,7 @@ export function PricingSection() {
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-blue-950/5 to-background" />
 
-        <div className="container relative">
+        <div className="relative">
           {/* Section header */}
           <div className="mx-auto max-w-3xl text-center">
             <Badge
