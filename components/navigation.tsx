@@ -66,7 +66,7 @@ export function Navigation() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
+            <div className="flex items-center justify-between mb-4">
               <Link
                 href="#perfis"
                 className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -74,6 +74,10 @@ export function Navigation() {
               >
                 {t.nav.profiles}
               </Link>
+              <LanguageSelector />
+            </div>
+
+            <div className="flex flex-col gap-4">
               <Link
                 href="#funcionalidades"
                 className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -95,8 +99,13 @@ export function Navigation() {
               >
                 {t.nav.contact}
               </Link>
-              <div className="flex flex-col gap-2 pt-2">
-                <LanguageSelector />
+
+              <div className="pt-4 mt-4 border-t border-border">
+                <p className="text-xs text-muted-foreground text-center">
+                  © 2025 MM Tecnologia de Informação Ltda
+                  <br />
+                  Todos os direitos reservados
+                </p>
               </div>
             </div>
           </div>

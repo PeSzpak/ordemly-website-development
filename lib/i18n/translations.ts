@@ -62,7 +62,7 @@ export const translations = {
         feature1: "Visualização de ordens atribuídas",
         feature2: "Atualização de status em tempo real",
         feature3: "Registro de serviços executados",
-        feature4: "Upload de fotos e documentos",
+        feature4: "Upload de imagens e documentos",
         feature5: "Checklist de tarefas",
         feature6: "Histórico de atendimentos",
       },
@@ -255,19 +255,20 @@ export const translations = {
     // Footer
     // Footer - Detailed
     footerSection: {
-      tagline: "Sistema inteligente de gestão de ordens de serviço desenvolvido pela MM Tecnologia.",
+      tagline: "Sistema inteligente de gestão de ordens de serviço desenvolvido pela MM Tecnologia de Informação Ltda.",
       productTitle: "Produto",
       productProfiles: "Perfis de Usuário",
       productFeatures: "Funcionalidades",
       productCustomization: "Personalização",
       productDemo: "Agendar Demo",
       companyTitle: "Empresa",
-      companyName: "MM Tecnologia",
+      companyName: "MM Tecnologia de Informação Ltda",
       companyLocation: "São José dos Pinhais, PR",
       contactTitle: "Contato",
-      copyright: "MM Tecnologia. Todos os direitos reservados.",
+      copyright: "© 2025 MM Tecnologia de Informação Ltda. Todos os direitos reservados.",
       privacy: "Privacidade",
       terms: "Termos",
+      developedBy: "Um produto desenvolvido por MM Tecnologia de Informação Ltda",
     },
     // Order Status
     status: {
@@ -338,6 +339,12 @@ export const translations = {
       messageLabel: "Mensagem",
       messagePlaceholder: "Conte-nos sobre suas necessidades e requisitos específicos...",
       infoNote: "Ao clicar em enviar, seu cliente de email será aberto.",
+      cancelButton: "Cancelar",
+      submitButton: "Enviar Solicitação",
+      greeting: "Olá, gostaria de solicitar um orçamento para o Ordemly.",
+      planLabel: "Plano de Interesse",
+      contactInfo: "Informações de Contato",
+      emailSubject: "Solicitação de Orçamento Ordemly",
     },
   },
   en: {
@@ -402,7 +409,7 @@ export const translations = {
         feature1: "View assigned orders",
         feature2: "Real-time status updates",
         feature3: "Service execution records",
-        feature4: "Photo and document uploads",
+        feature4: "Image and document uploads",
         feature5: "Task checklist",
         feature6: "Service history",
       },
@@ -593,19 +600,20 @@ export const translations = {
     // Footer
     // Footer - Detailed
     footerSection: {
-      tagline: "Smart service order management system developed by MM Tecnologia.",
+      tagline: "Smart service order management system developed by MM Tecnologia de Informação Ltda.",
       productTitle: "Product",
       productProfiles: "User Profiles",
       productFeatures: "Features",
       productCustomization: "Customization",
       productDemo: "Schedule Demo",
       companyTitle: "Company",
-      companyName: "MM Tecnologia",
+      companyName: "MM Tecnologia de Informação Ltda",
       companyLocation: "São José dos Pinhais, PR",
       contactTitle: "Contact",
-      copyright: "MM Tecnologia. All rights reserved.",
+      copyright: "© 2025 MM Tecnologia de Informação Ltda. All rights reserved.",
       privacy: "Privacy",
       terms: "Terms",
+      developedBy: "A product developed by MM Tecnologia de Informação Ltda",
     },
     // Order Status
     status: {
@@ -745,7 +753,7 @@ export const translations = {
         feature1: "Visualización de órdenes asignadas",
         feature2: "Actualización de estado en tiempo real",
         feature3: "Registro de servicios ejecutados",
-        feature4: "Carga de fotos y documentos",
+        feature4: "Carga de imágenes y documentos",
         feature5: "Lista de verificación de tareas",
         feature6: "Historial de atenciones",
       },
@@ -879,7 +887,7 @@ export const translations = {
       feature2Desc: "Tiempo suficiente para conocer todas las principales funcionalidades",
       feature3Title: "Sin Compromiso",
       feature3Desc: "Conozca el sistema sin ninguna obligación de contratación",
-      proposalTitle: "Propuesta Personalizada",
+      proposalTitle: "Proposta Personalizada",
       proposalDesc:
         "Después de la demostración, elaboramos una propuesta ajustada a las necesidades de su empresa, sin valores fijos de tabla.",
       formTitle: "Agendar Demostración",
@@ -938,19 +946,21 @@ export const translations = {
     // Footer
     // Footer - Detailed
     footerSection: {
-      tagline: "Sistema inteligente de gestión de órdenes de servicio desarrollado por MM Tecnologia.",
+      tagline:
+        "Sistema inteligente de gestión de órdenes de servicio desarrollado por MM Tecnologia de Informação Ltda.",
       productTitle: "Producto",
       productProfiles: "Perfiles de Usuario",
       productFeatures: "Funcionalidades",
       productCustomization: "Personalización",
       productDemo: "Agendar Demo",
       companyTitle: "Empresa",
-      companyName: "MM Tecnologia",
+      companyName: "MM Tecnologia de Informação Ltda",
       companyLocation: "São José dos Pinhais, PR",
       contactTitle: "Contacto",
-      copyright: "MM Tecnologia. Todos los derechos reservados.",
+      copyright: "© 2025 MM Tecnologia de Informação Ltda. Todos los derechos reservados.",
       privacy: "Privacidad",
       terms: "Términos",
+      developedBy: "Un producto desarrollado por MM Tecnologia de Informação Ltda",
     },
     // Order Status
     status: {

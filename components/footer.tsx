@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/language-context"
+import Image from "next/image"
 
 export function Footer() {
   const { t } = useLanguage()
@@ -18,6 +19,15 @@ export function Footer() {
               <span className="font-bold text-xl text-foreground">Ordemly</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">{t.footerSection.tagline}</p>
+            <div className="pt-4">
+              <Image
+                src="/mm-logo.png"
+                alt="MM Tecnologia de Informação Ltda"
+                width={120}
+                height={40}
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </div>
           </div>
 
           {/* Product */}
@@ -106,7 +116,10 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">{t.footerSection.copyright}</p>
+            <div className="flex flex-col items-center md:items-start gap-2">
+              <p className="text-xs text-muted-foreground">{t.footerSection.developedBy}</p>
+              <p className="text-sm text-muted-foreground">{t.footerSection.copyright}</p>
+            </div>
             <div className="flex items-center gap-6">
               <Link
                 href="#"
