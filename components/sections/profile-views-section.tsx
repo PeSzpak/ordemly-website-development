@@ -9,7 +9,7 @@ import { useLanguage } from "@/lib/i18n/language-context"
 type ProfileType = "administrator" | "professional" | "enduser"
 
 export function ProfileViewsSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage() // Added language to get current language
   const [activeProfile, setActiveProfile] = useState<ProfileType>("administrator")
 
   const profiles = [
@@ -65,6 +65,18 @@ export function ProfileViewsSection() {
 
   const currentProfile = profiles.find((p) => p.id === activeProfile) || profiles[0]
   const Icon = currentProfile.icon
+
+  const getImagePath = (profile: ProfileType) => {
+    const langSuffix = language === "pt" ? "pt" : language === "en" ? "en" : "es"
+
+    if (profile === "administrator") {
+      return `/images/dashboard-admin-${langSuffix}.png`
+    } else if (profile === "professional") {
+      return "/images/dashboard-professional.png"
+    } else {
+      return "/images/support-page.png"
+    }
+  }
 
   return (
     <section id="perfis" className="py-20 md:py-32 bg-secondary/30">
@@ -168,13 +180,7 @@ export function ProfileViewsSection() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
               <div className="bg-background">
                 <img
-                  src={
-                    activeProfile === "administrator"
-                      ? "/images/dashboard-admin.png"
-                      : activeProfile === "professional"
-                        ? "/images/dashboard-professional.png"
-                        : "/images/support-page.png"
-                  }
+                  src={getImagePath(activeProfile) || "/placeholder.svg"}
                   alt={currentProfile.title}
                   className="w-full h-auto"
                 />

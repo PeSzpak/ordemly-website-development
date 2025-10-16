@@ -5,7 +5,19 @@ import { Palette, Globe, Smartphone, Moon, Sun, Monitor } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/language-context"
 
 export function CustomizationSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage() // Added language to get current language
+
+  const getThemeImage = (theme: "light" | "dark" | "system") => {
+    const langSuffix = language === "pt" ? "pt" : language === "en" ? "en" : "es"
+
+    if (theme === "light") {
+      return `/images/theme-light-${langSuffix}.png`
+    } else if (theme === "system") {
+      return `/images/theme-system-${langSuffix}.png`
+    }
+    // For dark theme, we can use the admin dashboard dark version
+    return `/images/dashboard-admin-${langSuffix}.png`
+  }
 
   return (
     <section id="personalizacao" className="py-20 md:py-32 bg-secondary/30">
@@ -71,20 +83,19 @@ export function CustomizationSection() {
                 icon={Sun}
                 title={t.customizationSection.lightTheme}
                 description={t.customizationSection.lightThemeDesc}
-                gradient="from-white to-gray-50"
+                imageSrc={getThemeImage("light")}
               />
               <ThemePreview
                 icon={Moon}
                 title={t.customizationSection.darkTheme}
                 description={t.customizationSection.darkThemeDesc}
-                gradient="from-gray-900 to-gray-800"
-                dark
+                imageSrc={getThemeImage("dark")}
               />
               <ThemePreview
                 icon={Monitor}
                 title={t.customizationSection.autoTheme}
                 description={t.customizationSection.autoThemeDesc}
-                gradient="from-gray-100 via-gray-200 to-gray-900"
+                imageSrc={getThemeImage("system")}
               />
             </div>
           </div>
@@ -128,25 +139,17 @@ function ThemePreview({
   icon: Icon,
   title,
   description,
-  gradient,
-  dark = false,
+  imageSrc,
 }: {
   icon: React.ElementType
   title: string
   description: string
-  gradient: string
-  dark?: boolean
+  imageSrc: string
 }) {
   return (
     <div className="space-y-3">
-      <div
-        className={`aspect-[4/3] rounded-xl bg-gradient-to-br ${gradient} border border-border p-4 relative overflow-hidden`}
-      >
-        <div className={`absolute inset-0 ${dark ? "bg-black/20" : "bg-white/20"}`} />
-        <div className="relative space-y-2">
-          <div className={`h-2 w-3/4 rounded ${dark ? "bg-white/30" : "bg-black/20"}`} />
-          <div className={`h-2 w-1/2 rounded ${dark ? "bg-white/20" : "bg-black/10"}`} />
-        </div>
+      <div className="aspect-[4/3] rounded-xl border border-border overflow-hidden bg-muted">
+        <img src={imageSrc || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
       </div>
       <div className="text-center">
         <div className="flex items-center justify-center gap-2 mb-1">
