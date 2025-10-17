@@ -12,6 +12,7 @@ export const translations = {
     },
     // Hero Section
     hero: {
+      tag: "Sistema de Gestão Inteligente",
       title: "Gerencie Ordens de Serviço com Eficiência e Organização Total",
       subtitle:
         "Sistema completo para gestão de ordens de serviço, equipamentos e equipes. Controle total do seu negócio em uma única plataforma.",
@@ -360,6 +361,7 @@ export const translations = {
     },
     // Hero Section
     hero: {
+      tag: "Intelligent Management System",
       title: "Manage Service Orders with Efficiency and Total Organization",
       subtitle:
         "Complete system for managing service orders, equipment, and teams. Total control of your business in one platform.",
@@ -703,6 +705,7 @@ export const translations = {
     },
     // Hero Section
     hero: {
+      tag: "Sistema de gestión inteligente",
       title: "Administre Órdenes de Servicio con Eficiencia y Total Organización",
       subtitle:
         "Sistema completo para la gestión de órdenes de servicio, equipos y equipos. Control total de su negocio en una sola plataforma.",

@@ -67,14 +67,14 @@ export function ProfileViewsSection() {
   const Icon = currentProfile.icon
 
   const getImagePath = (profile: ProfileType) => {
-    const langSuffix = language === "pt" ? "pt" : language === "en" ? "en" : "es"
+    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
 
     if (profile === "administrator") {
       return `/images/dashboard-admin-${langSuffix}.png`
     } else if (profile === "professional") {
-      return "/images/dashboard-professional.png"
+      return `images/dashprofe${langSuffix}.png`
     } else {
-      return "/images/support-page.png"
+      return `/images/sup${langSuffix}.png`
     }
   }
 

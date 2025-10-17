@@ -18,7 +18,28 @@ import {
 import { useLanguage } from "@/lib/i18n/language-context"
 
 export function FeaturesSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+
+  // Funções helper para obter imagens baseadas no idioma
+  const getDashboardAdminImage = () => {
+    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
+    return `/images/dashboard-admin-${langSuffix}.png`
+  }
+
+  const getKanbanImage = () => {
+    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
+    return `/images/order${langSuffix}.png`
+  }
+
+  const getEquipmentImage = () => {
+    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
+    return `/images/equip${langSuffix}.png`
+  }
+
+  const getOrdersImage = () => {
+    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
+    return `/images/ordem${langSuffix}.png`
+  }
 
   return (
     <section id="funcionalidades" className="py-20 md:py-32">
@@ -98,7 +119,11 @@ export function FeaturesSection() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                   <div className="bg-background">
-                    <img src="/images/dashboard-admin.png" alt="Dashboard" className="w-full h-auto" />
+                    <img 
+                      src={getDashboardAdminImage()} 
+                      alt="Dashboard" 
+                      className="w-full h-auto" 
+                    />
                   </div>
                 </div>
               </div>
@@ -112,7 +137,11 @@ export function FeaturesSection() {
                 <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                     <div className="bg-background">
-                      <img src="/images/orders-kanban.png" alt="Kanban Board" className="w-full h-auto" />
+                      <img 
+                        src={getKanbanImage()} 
+                        alt="Kanban Board" 
+                        className="w-full h-auto" 
+                      />
                     </div>
                   </div>
                 </div>
@@ -170,7 +199,11 @@ export function FeaturesSection() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                   <div className="bg-background">
-                    <img src="/images/equipment-list.png" alt="Equipment List" className="w-full h-auto" />
+                    <img 
+                      src={getEquipmentImage()} 
+                      alt="Equipment List" 
+                      className="w-full h-auto" 
+                    />
                   </div>
                 </div>
               </div>
@@ -184,7 +217,11 @@ export function FeaturesSection() {
                 <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                     <div className="bg-background">
-                      <img src="/images/kanban-professional.png" alt="Order Details" className="w-full h-auto" />
+                      <img 
+                        src={getOrdersImage()} 
+                        alt="Order Details" 
+                        className="w-full h-auto" 
+                      />
                     </div>
                   </div>
                 </div>

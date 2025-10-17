@@ -78,7 +78,7 @@ export function ContactSection() {
                 icon={MapPin}
                 title={t.contactSection.locationTitle}
                 content={t.contactSection.locationValue}
-                href="#"
+                href="https://www.google.com/maps/place/R.+Veríssimo+Marques,+1096+-+Centro,+São+José+dos+Pinhais+-+PR,+83005-410/@-25.5350747,-49.202365,17z/"
               />
             </div>
           </div>

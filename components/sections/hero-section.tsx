@@ -6,7 +6,11 @@ import Link from "next/link"
 import { useLanguage } from "@/lib/i18n/language-context"
 
 export function HeroSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const getDashboardAdminImage = () => {
+    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
+    return `/images/dashboard-admin-${langSuffix}.png`
+  }
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
@@ -19,7 +23,7 @@ export function HeroSection() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600/20 via-blue-700/20 to-blue-800/20 dark:from-blue-400/20 dark:via-blue-500/20 dark:to-blue-600/20 text-sm font-medium">
               <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full animate-pulse" />
               <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text font-semibold text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
-                Sistema de Gestão Inteligente
+                {t.hero.tag}
               </span>
             </div>
 
@@ -64,7 +68,11 @@ export function HeroSection() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 dark:border-blue-500/20 bg-card">
               <div className="bg-background">
-                <img src="/images/dashboard-admin.png" alt="Ordemly Dashboard Interface" className="w-full h-auto" />
+                <img 
+                  src={getDashboardAdminImage()} 
+                  alt="Ordemly Dashboard Interface" 
+                  className="w-full h-auto" 
+                />
               </div>
             </div>
 
