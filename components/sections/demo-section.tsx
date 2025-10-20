@@ -16,14 +16,31 @@ export function DemoSection() {
     email: "",
     company: "",
     phone: "",
+    type: "demo",
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Demo request:", formData)
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        console.log("Email sent successfully")
+        setSubmitted(true)
+        setTimeout(() => setSubmitted(false), 3000)
+      } else {
+        console.error("Failed to send email")
+      }
+    } catch (error) {
+      console.error("Error sending email:", error)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

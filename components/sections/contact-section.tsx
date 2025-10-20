@@ -1,41 +1,67 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Send, CheckCircle2 } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
+import type React from "react";
+//require("dotenv").config();
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function ContactSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
-  const [submitted, setSubmitted] = useState(false)
+    type: "contact",
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Contact form:", formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: "", email: "", subject: "", message: "" })
-    }, 3000)
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Email sent successfully");
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+            type: "contact",
+          });
+        }, 3000);
+      } else {
+        console.error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
     <section id="contato" className="py-20 md:py-32 bg-secondary/30">
@@ -57,8 +83,12 @@ export function ContactSection() {
           {/* Left Column - Contact Info */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-foreground">{t.contactSection.leftTitle}</h3>
-              <p className="text-muted-foreground leading-relaxed">{t.contactSection.leftSubtitle}</p>
+              <h3 className="text-2xl font-bold text-foreground">
+                {t.contactSection.leftTitle}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {t.contactSection.leftSubtitle}
+              </p>
             </div>
 
             <div className="space-y-6">
@@ -86,21 +116,29 @@ export function ContactSection() {
           {/* Right Column - Contact Form */}
           <div className="relative">
             <div className="bg-card border-2 border-blue-600/20 rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-foreground mb-6">{t.contactSection.formTitle}</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">
+                {t.contactSection.formTitle}
+              </h3>
 
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600/10 to-blue-700/10 border border-blue-600/20 text-blue-700 dark:text-blue-400 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="text-xl font-semibold text-foreground">{t.contactSection.successTitle}</h4>
-                  <p className="text-muted-foreground">{t.contactSection.successMessage}</p>
+                  <h4 className="text-xl font-semibold text-foreground">
+                    {t.contactSection.successTitle}
+                  </h4>
+                  <p className="text-muted-foreground">
+                    {t.contactSection.successMessage}
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="contact-name">{t.contactSection.nameLabel}</Label>
+                      <Label htmlFor="contact-name">
+                        {t.contactSection.nameLabel}
+                      </Label>
                       <Input
                         id="contact-name"
                         name="name"
@@ -113,7 +151,9 @@ export function ContactSection() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="contact-email">{t.contactSection.emailLabel}</Label>
+                      <Label htmlFor="contact-email">
+                        {t.contactSection.emailLabel}
+                      </Label>
                       <Input
                         id="contact-email"
                         name="email"
@@ -127,7 +167,9 @@ export function ContactSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subject">{t.contactSection.subjectLabel}</Label>
+                    <Label htmlFor="subject">
+                      {t.contactSection.subjectLabel}
+                    </Label>
                     <Input
                       id="subject"
                       name="subject"
@@ -140,7 +182,9 @@ export function ContactSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">{t.contactSection.messageLabel}</Label>
+                    <Label htmlFor="message">
+                      {t.contactSection.messageLabel}
+                    </Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -164,7 +208,7 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function ContactInfo({
@@ -173,13 +217,16 @@ function ContactInfo({
   content,
   href,
 }: {
-  icon: React.ElementType
-  title: string
-  content: string
-  href: string
+  icon: React.ElementType;
+  title: string;
+  content: string;
+  href: string;
 }) {
   return (
-    <a href={href} className="flex items-start gap-4 group hover:translate-x-1 transition-transform duration-200">
+    <a
+      href={href}
+      className="flex items-start gap-4 group hover:translate-x-1 transition-transform duration-200"
+    >
       <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/10 to-blue-700/10 border border-blue-600/20 text-blue-700 dark:text-blue-400 flex items-center justify-center group-hover:from-blue-600 group-hover:to-blue-700 group-hover:text-white group-hover:shadow-md group-hover:shadow-blue-500/30 transition-all">
         <Icon className="w-6 h-6" />
       </div>
@@ -190,5 +237,5 @@ function ContactInfo({
         </div>
       </div>
     </a>
-  )
+  );
 }
