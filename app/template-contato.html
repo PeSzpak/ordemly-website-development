@@ -1,259 +1,455 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atendimento Customizado</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitação Recebida - Ordemly</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f4f4f5;
-        }
-        .email-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background-color: #f4f4f5;
+      }
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: linear-gradient(
+          135deg,
+          #2563eb 0%,
+          #1d4ed8 50%,
+          #1e40af 100%
+        );
+        padding: 40px 30px;
+        text-align: center;
+      }
+      .logo-container {
+        margin-bottom: 20px;
+      }
+      .logo-container img {
+        max-width: 50px;
+        height: auto;
+      }
+      .header h1 {
+        color: #ffffff;
+        margin: 0;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .content {
+        padding: 40px 30px;
+      }
+      .greeting {
+        font-size: 18px;
+        color: #18181b;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .message {
+        font-size: 16px;
+        color: #52525b;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .highlight-box {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        border: 2px solid #2563eb;
+        border-radius: 12px;
+        padding: 25px;
+        margin: 30px 0;
+        text-align: center;
+      }
+      .next-steps h2 {
+        text-align: center;
+        background: linear-gradient(to right, #2563eb, #1d4ed8, #1e40af);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0 0 15px 0;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .highlight-box li {
+        color: #18181b;
+        margin: 8px 0;
+        font-size: 15px;
+      }
+      .info-grid {
+        display: table;
+        width: 100%;
+        margin: 25px 0;
+      }
+      .info-row {
+        display: table-row;
+      }
+      .info-label {
+        display: table-cell;
+        padding: 10px 15px 10px 0;
+        font-weight: 600;
+        color: #18181b;
+        font-size: 14px;
+        width: 30%;
+      }
+      .info-value {
+        display: table-cell;
+        padding: 10px 0;
+        color: #52525b;
+        font-size: 14px;
+      }
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #e4e4e7,
+          transparent
+        );
+        margin: 30px 0;
+      }
+      .contact-methods {
+        margin: 30px 0;
+      }
+      .contact-item {
+        background-color: #fafafa;
+        padding: 18px 20px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        border-left: 4px solid #2563eb;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+      .contact-icon {
+        font-size: 22px;
+        margin-right: 15px;
+        min-width: 30px;
+        text-align: center;
+      }
+      .contact-info h3 {
+        margin: 0 0 4px 0;
+        color: #18181b;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .contact-info p {
+        margin: 0;
+        color: #52525b;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .contact-info a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      .button {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          #2563eb 0%,
+          #1d4ed8 50%,
+          #1e40af 100%
+        );
+        color: #ffffff;
+        text-decoration: none;
+        padding: 14px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 20px 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+      }
+      .next-steps {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        padding: 25px;
+        border-radius: 12px;
+        margin: 25px 0;
+        border: 1px solid #e2e8f0;
+      }
+      .next-steps h3 {
+        color: #18181b;
+        margin: 0 0 15px 0;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .next-steps ol {
+        margin: 0;
+        padding-left: 20px;
+        color: #52525b;
+      }
+      .next-steps li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+        font-size: 15px;
+      }
+      .footer {
+        background-color: #fafafa;
+        padding: 30px;
+        text-align: center;
+        border-top: 1px solid #e4e4e7;
+      }
+      .footer-logo {
+        margin-bottom: 15px;
+      }
+      .footer-logo img {
+        max-width: 60px;
+        height: auto;
+        opacity: 0.7;
+      }
+      .footer-text {
+        font-size: 13px;
+        color: #71717a;
+        line-height: 1.6;
+        margin: 5px 0;
+      }
+      .footer-links {
+        margin-top: 15px;
+      }
+      .footer-links a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 500;
+        margin: 0 8px;
+      }
+      .social-icons {
+        margin-top: 15px;
+      }
+      .social-icons a {
+        display: inline-block;
+        margin: 0 8px;
+        font-size: 20px;
+        text-decoration: none;
+      }
+      @media only screen and (max-width: 600px) {
+        .content {
+          padding: 30px 20px;
         }
         .header {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            padding: 40px 30px;
-            text-align: center;
+          padding: 30px 20px;
         }
         .header h1 {
-            color: #ffffff;
-            margin: 0;
-            font-size: 28px;
-            font-weight: 700;
-        }
-        .content {
-            padding: 40px 30px;
-        }
-        .greeting {
-            font-size: 18px;
-            color: #18181b;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        .message {
-            font-size: 16px;
-            color: #52525b;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        .highlight-box {
-            background-color: #ecfdf5;
-            border: 2px solid #10b981;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .highlight-box h2 {
-            color: #059669;
-            margin: 0 0 15px 0;
-            font-size: 20px;
-        }
-        .highlight-box p {
-            color: #18181b;
-            margin: 0;
-            font-size: 16px;
-        }
-        .contact-methods {
-            margin: 30px 0;
+          font-size: 22px;
         }
         .contact-item {
-            background-color: #f4f4f5;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
+          flex-direction: column;
+          text-align: center;
+          border-left: none;
+          border-top: 4px solid #2563eb;
         }
         .contact-icon {
-            font-size: 24px;
-            margin-right: 15px;
+          margin-right: 0;
+          margin-bottom: 10px;
         }
-        .contact-info h3 {
-            margin: 0 0 5px 0;
-            color: #18181b;
-            font-size: 16px;
+        .info-grid {
+          display: block;
         }
-        .contact-info p {
-            margin: 0;
-            color: #52525b;
-            font-size: 14px;
+        .info-row {
+          display: block;
+          margin-bottom: 15px;
         }
-        .contact-info a {
-            color: #10b981;
-            text-decoration: none;
-            font-weight: 600;
+        .info-label,
+        .info-value {
+          display: block;
+          width: 100%;
+          padding: 5px 0;
         }
-        .button {
-            display: inline-block;
-            background-color: #10b981;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 16px;
-            margin: 20px 0;
-        }
-        .features-list {
-            background-color: #fafafa;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 25px 0;
-        }
-        .features-list h3 {
-            color: #18181b;
-            margin: 0 0 15px 0;
-            font-size: 18px;
-        }
-        .features-list ul {
-            margin: 0;
-            padding-left: 20px;
-            color: #52525b;
-        }
-        .features-list li {
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-        .footer {
-            background-color: #fafafa;
-            padding: 30px;
-            text-align: center;
-            border-top: 1px solid #e4e4e7;
-        }
-        .footer-text {
-            font-size: 14px;
-            color: #71717a;
-            line-height: 1.5;
-            margin: 5px 0;
-        }
-        @media only screen and (max-width: 600px) {
-            .content {
-                padding: 30px 20px;
-            }
-            .header {
-                padding: 30px 20px;
-            }
-            .header h1 {
-                font-size: 24px;
-            }
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            .contact-icon {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tr>
-            <td align="center" style="padding: 20px 0;">
-                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
-                    <!-- Header -->
-                    <tr>
-                        <td class="header">
-                            <h1>Estamos Aqui Para Ajudar! 💚</h1>
-                        </td>
-                    </tr>
-                    
-                    <!-- Content -->
-                    <tr>
-                        <td class="content">
-                            <p class="greeting">Olá, [Nome do Cliente]!</p>
-                            
-                            <p class="message">
-                                Recebemos sua solicitação de atendimento customizado e nossa equipe especializada está pronta para oferecer o suporte que você precisa.
-                            </p>
-                            
-                            <div class="highlight-box">
-                                <h2>Sua Solicitação foi Registrada</h2>
-                                <p><strong>Protocolo:</strong> #[NUMERO_PROTOCOLO]</p>
-                                <p><strong>Data:</strong> [DATA_SOLICITACAO]</p>
-                            </div>
-                            
-                            <p class="message">
-                                Entendemos que cada negócio tem necessidades únicas. Nossa equipe irá analisar sua solicitação e entrar em contato em até <strong>24 horas úteis</strong> para oferecer uma solução personalizada.
-                            </p>
-                            
-                            <div class="features-list">
-                                <h3>O que nosso atendimento customizado oferece:</h3>
-                                <ul>
-                                    <li>Análise detalhada das suas necessidades específicas</li>
-                                    <li>Consultoria especializada em gestão de ordens de serviço</li>
-                                    <li>Configurações personalizadas do sistema</li>
-                                    <li>Treinamento dedicado para sua equipe</li>
-                                    <li>Suporte prioritário durante a implementação</li>
-                                </ul>
-                            </div>
-                            
-                            <p class="message">
-                                <strong>Precisa de atendimento urgente?</strong> Entre em contato conosco através dos canais abaixo:
-                            </p>
-                            
-                            <div class="contact-methods">
-                                <div class="contact-item">
-                                    <span class="contact-icon">📞</span>
-                                    <div class="contact-info">
-                                        <h3>Telefone</h3>
-                                        <p><a href="tel:+5500000000000">(00) 0000-0000</a></p>
-                                        <p>Seg a Sex, 8h às 18h</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <span class="contact-icon">💬</span>
-                                    <div class="contact-info">
-                                        <h3>WhatsApp</h3>
-                                        <p><a href="https://wa.me/5500000000000">(00) 00000-0000</a></p>
-                                        <p>Atendimento rápido e direto</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <span class="contact-icon">📧</span>
-                                    <div class="contact-info">
-                                        <h3>Email</h3>
-                                        <p><a href="mailto:suporte@ordemly.com">suporte@empresa.com</a></p>
-                                        <p>Resposta em até 24h</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <center>
-                                <a href="[LINK_PORTAL_CLIENTE]" class="button">Acessar Portal do Cliente</a>
-                            </center>
-                            
-                            <p class="message">
-                                Agradecemos por escolher nosso sistema de gestão de ordens de serviços. Estamos comprometidos em ajudar seu negócio a crescer!
-                            </p>
-                        </td>
-                    </tr>
-                    
-                    <!-- Footer -->
-                    <tr>
-                        <td class="footer">
-                            <p class="footer-text"><strong>[Nome da Empresa]</strong></p>
-                            <p class="footer-text">Sistema de Gestão de Ordens de Serviços</p>
-                            <p class="footer-text">📧 suporte@empresa.com | 📱 (00) 0000-0000</p>
-                            <p class="footer-text" style="margin-top: 15px;">
-                                <a href="[LINK_SITE]" style="color: #10b981; text-decoration: none;">Visite nosso site</a> | 
-                                <a href="[LINK_AJUDA]" style="color: #10b981; text-decoration: none;">Central de Ajuda</a>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
+  </head>
+  <body>
+    <table
+      role="presentation"
+      width="100%"
+      cellspacing="0"
+      cellpadding="0"
+      border="0"
+      style="background-color: #f4f4f5"
+    >
+      <tr>
+        <td align="center" style="padding: 20px 0">
+          <table
+            class="email-container"
+            role="presentation"
+            cellspacing="0"
+            cellpadding="0"
+            border="0"
+            width="600"
+          >
+            <tr>
+              <td class="header">
+                <!-- <div class="logo-container">
+                  <img src="{{logoUrl}}" alt="Ordemly Logo" />
+                </div> -->
+                <h1>Solicitação Recebida com Sucesso!</h1>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="content">
+                <p class="greeting">Olá, [Nome do Cliente]!</p>
+
+                <p class="message">
+                  Aqui é a equipe do Ordemly,<br />
+                  Recebemos sua solicitação e nossa equipe já está analisando
+                  seu motivo de contato. Entraremos em contato em até
+                  <strong>48 horas úteis</strong> para oferecer a melhor solução
+                  para o seu negócio.
+                </p>
+
+                <div class="next-steps">
+                  <h2>Detalhes da Solicitação</h2>
+                  <div class="info-grid">
+                      <div class="info-row">
+                          <div class="info-label">Email:</div>
+                          <div class="info-value">[email do Cliente]</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Mensagem:</div>
+                            <div class="info-value">[subject do Cliente]</div>
+                        </div>
+                    </div>
+                    <p>
+                      <strong>Data:</strong> <span id="data-atual"></span>
+                      <script>
+                        const hoje = new Date();
+  
+                        const dia = hoje.getDate();
+                        const mes = hoje.getMonth() + 1;
+                        const ano = hoje.getFullYear();
+  
+                        const dataFormatada = `${dia}/${mes}/${ano}`;
+  
+                        document.getElementById("data-atual").textContent =
+                          dataFormatada;
+                      </script>
+                    </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="highlight-box">
+                  <h3>Próximos Passos</h3>
+                  <ol>
+                    <li>
+                      Nossa equipe analisará sua solicitação detalhadamente
+                    </li>
+                    <li>
+                      Entraremos em contato para sanar suas duvidas o quanto
+                      antes
+                    </li>
+                  </ol>
+                </div>
+
+                <p class="message">
+                  <strong>Precisa de atendimento urgente?</strong> Entre em
+                  contato conosco:
+                </p>
+
+                <div class="contact-methods">
+                  <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-info">
+                      <h3>Telefone</h3>
+                      <p>
+                        <a href="tel:+5541996062151">+55 (41) 99606-2151</a>
+                      </p>
+                      <p>Seg a Sex, 8h às 18h</p>
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <span class="contact-icon">💬</span>
+                    <div class="contact-info">
+                      <h3>WhatsApp</h3>
+                      <p>
+                        <a href="https://wa.me/5541996062151" target="_blank">
+                          Iniciar Conversa
+                        </a>
+                      </p>
+                      <p>Atendimento rápido e direto</p>
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div class="contact-info">
+                      <h3>Email</h3>
+                      <p>
+                        <a href="mailto:contato@ordemly.com"
+                          >contato@ordemly.com</a
+                        >
+                      </p>
+                      <p>Resposta em até 48h</p>
+                    </div>
+                  </div>
+                </div>
+
+                <center>
+                  <a href="https://ordemly.com" class="button" target="_blank">
+                    Voltar para o site
+                  </a>
+                </center>
+
+                <p
+                  class="message"
+                  style="
+                    margin-top: 30px;
+                    text-align: center;
+                    color: #71717a;
+                    font-size: 14px;
+                  "
+                >
+                  Agradecemos por escolher a
+                  <strong style="color: #2563eb">Ordemly</strong>. Estamos
+                  comprometidos em transformar a gestão do seu negócio!
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td class="footer">
+                <div class="footer-logo">
+                  <img src="{{companyLogoUrl}}" alt="MM Tech Logo" />
+                </div>
+
+                <p class="footer-text">
+                  <strong>Ordemly</strong> - Sistema de Gestão de Ordens de
+                  Serviços
+                </p>
+                <p class="footer-text">
+                  Desenvolvido por <strong>MM Tecnologia de informação</strong>
+                </p>
+
+                <p class="footer-text" style="margin-top: 10px">
+                  📧 contato@ordemly.com | 📱 +55 (41) 99606-2151
+                </p>
+
+                <div class="footer-links">
+                  <a href="https://ordemly.com" target="_blank">Site</a>
+                </div>
+
+                <p
+                  class="footer-text"
+                  style="margin-top: 15px; font-size: 12px; color: #a1a1aa"
+                >
+                  Você está recebendo este email porque solicitou contato
+                  através do nosso website.<br />
+                  © {{currentYear}} Ordemly. Todos os direitos reservados.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
     </table>
-</body>
+  </body>
 </html>

@@ -14,7 +14,6 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("pt")
 
-  // Detect browser language on mount
   useEffect(() => {
     const savedLang = localStorage.getItem("ordemly-language") as Language
     if (savedLang && translations[savedLang]) {
