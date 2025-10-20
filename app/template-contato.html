@@ -31,6 +31,7 @@
         text-align: center;
       }
       .logo-container {
+        text-align: center;
         margin-bottom: 20px;
       }
       .logo-container img {
@@ -81,6 +82,7 @@
         color: #18181b;
         margin: 8px 0;
         font-size: 15px;
+        text-align: left;
       }
       .info-grid {
         display: table;
@@ -287,16 +289,16 @@
           >
             <tr>
               <td class="header">
-                <!-- <div class="logo-container">
-                  <img src="{{logoUrl}}" alt="Ordemly Logo" />
-                </div> -->
                 <h1>Solicitação Recebida com Sucesso!</h1>
               </td>
             </tr>
 
             <tr>
               <td class="content">
-                <p class="greeting">Olá, [Nome do Cliente]!</p>
+                <div class="logo-container">
+                    <img src="{{logoUrl}}" alt="Ordemly Logo" />
+                  </div>
+                <p class="greeting">Olá, [contact-nome]!</p>
 
                 <p class="message">
                   Aqui é a equipe do Ordemly,<br />
@@ -311,28 +313,13 @@
                   <div class="info-grid">
                       <div class="info-row">
                           <div class="info-label">Email:</div>
-                          <div class="info-value">[email do Cliente]</div>
+                          <div class="info-value">[contact-email]</div>
                         </div>
                         <div class="info-row">
                             <div class="info-label">Mensagem:</div>
-                            <div class="info-value">[subject do Cliente]</div>
+                            <div class="info-value">[contact-menssage]</div>
                         </div>
                     </div>
-                    <p>
-                      <strong>Data:</strong> <span id="data-atual"></span>
-                      <script>
-                        const hoje = new Date();
-  
-                        const dia = hoje.getDate();
-                        const mes = hoje.getMonth() + 1;
-                        const ano = hoje.getFullYear();
-  
-                        const dataFormatada = `${dia}/${mes}/${ano}`;
-  
-                        document.getElementById("data-atual").textContent =
-                          dataFormatada;
-                      </script>
-                    </p>
                 </div>
 
                 <div class="divider"></div>

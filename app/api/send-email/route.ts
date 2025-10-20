@@ -1,5 +1,6 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import fs from "fs/promises";
+import { MenuSquare } from "lucide-react";
 import path from "path";
 
 const ses = new SESClient({
@@ -12,6 +13,7 @@ const ses = new SESClient({
 
 let cachedContactTemplate: string | null = null;
 let cachedDemoTemplate: string | null = null;
+let cachedContractTemplate: string | null = null;
 
 async function loadTemplates() {
   if (cachedContactTemplate && cachedDemoTemplate) return;
@@ -22,6 +24,10 @@ async function loadTemplates() {
   );
   cachedDemoTemplate = await fs.readFile(
     path.join(base, "app", "template-demo.html"),
+    "utf8"
+  );
+  cachedContractTemplate = await fs.readFile(
+    path.join(base, "app", "template-contract.html"),
     "utf8"
   );
 }
@@ -65,7 +71,9 @@ export async function POST(req: Request) {
     to = email;
   } else {
     return new Response(
-      JSON.stringify({ error: 'Invalid type. Must be "contact" or "demo"' }),
+      JSON.stringify({
+        error: 'Invalid type. Must be "contact", "demo" or "contract"',
+      }),
       { status: 400 }
     );
   }
@@ -77,21 +85,21 @@ export async function POST(req: Request) {
     );
   }
 
-  let emailHtmlContact = cachedContactTemplate?.replace(
-    "[Nome do Cliente]",
-    name
-  );
-  emailHtmlContact = emailHtmlContact?.replace("[email do Cliente]", email);
-  emailHtmlContact = emailHtmlContact?.replace("[email do Cliente]", message);
-  emailHtmlContact = emailHtmlContact?.replace("[subject do Cliente]", subject);
+  // Corrigido: substituir em cadeia e usar a variável atualizada
+  let emailHtmlContact = cachedContactTemplate?.replace("[contact-nome]", name);
+  emailHtmlContact = emailHtmlContact?.replace("[contact-email]", email);
+  emailHtmlContact = emailHtmlContact?.replace("[contact-menssage]", message);
+  emailHtmlContact = emailHtmlContact?.replace("[contact-subject]", subject);
 
-  let emailHtmlDemo = cachedDemoTemplate?.replace("[Nome do Cliente]", name);
-  emailHtmlDemo = cachedDemoTemplate?.replace("[telefone do Cliente]", phone);
-  emailHtmlDemo = cachedDemoTemplate?.replace("[empresa do Cliente]", company);
+  // Corrigido: substituir em cadeia a partir de cachedDemoTemplate
+  let emailHtmlDemo = cachedDemoTemplate?.replace("[demo-nome]", name);
+  emailHtmlDemo = emailHtmlDemo?.replace("[demo-tel]", phone);
+  emailHtmlDemo = emailHtmlDemo?.replace("[demo-company]", company);
 
   const params = {
     Destination: {
       ToAddresses: [to],
+      c
     },
     Message: {
       Subject: {

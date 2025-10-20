@@ -53,7 +53,7 @@ export function ContactSection() {
       console.error("Error sending email:", error);
     }
   };
-
+ 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
