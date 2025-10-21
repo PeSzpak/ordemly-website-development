@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Calendar, Clock, CheckCircle2, Video } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Calendar, Clock, CheckCircle2, Video } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function DemoSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     phone: "",
     type: "demo",
-  })
-  const [submitted, setSubmitted] = useState(false)
+  });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -29,26 +29,35 @@ export function DemoSection() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
       if (response.ok) {
-        console.log("Email sent successfully")
-        setSubmitted(true)
-        setTimeout(() => setSubmitted(false), 3000)
+        console.log("Email sent successfully");
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            company: "",
+            phone: "",
+            type: "demo",
+          });
+        }, 3000);
       } else {
-        console.error("Failed to send email")
+        console.error("Failed to send email");
       }
     } catch (error) {
-      console.error("Error sending email:", error)
+      console.error("Error sending email:", error);
     }
-  }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   const features = [
     {
@@ -63,7 +72,7 @@ export function DemoSection() {
       title: t.demoSection.feature3Title,
       description: t.demoSection.feature3Desc,
     },
-  ]
+  ];
 
   return (
     <section id="demo" className="py-20 md:py-32 relative overflow-hidden">
@@ -88,13 +97,27 @@ export function DemoSection() {
                 </span>
               </h2>
 
-              <p className="text-lg text-muted-foreground leading-relaxed text-pretty">{t.demoSection.subtitle}</p>
+              <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
+                {t.demoSection.subtitle}
+              </p>
             </div>
 
             <div className="space-y-4">
-              <DemoFeature icon={Calendar} title={features[0].title} description={features[0].description} />
-              <DemoFeature icon={Clock} title={features[1].title} description={features[1].description} />
-              <DemoFeature icon={CheckCircle2} title={features[2].title} description={features[2].description} />
+              <DemoFeature
+                icon={Calendar}
+                title={features[0].title}
+                description={features[0].description}
+              />
+              <DemoFeature
+                icon={Clock}
+                title={features[1].title}
+                description={features[1].description}
+              />
+              <DemoFeature
+                icon={CheckCircle2}
+                title={features[2].title}
+                description={features[2].description}
+              />
             </div>
 
             <div className="bg-card border-2 border-blue-600/20 dark:border-blue-500/20 rounded-xl p-6">
@@ -103,8 +126,12 @@ export function DemoSection() {
                   <span className="text-2xl">💡</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">{t.demoSection.proposalTitle}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{t.demoSection.proposalDesc}</p>
+                  <h4 className="font-semibold text-foreground mb-2">
+                    {t.demoSection.proposalTitle}
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t.demoSection.proposalDesc}
+                  </p>
                 </div>
               </div>
             </div>
@@ -113,15 +140,21 @@ export function DemoSection() {
           {/* Right Column - Form */}
           <div className="relative">
             <div className="bg-card border-2 border-blue-600/20 dark:border-blue-500/20 rounded-2xl p-8 shadow-2xl">
-              <h3 className="text-2xl font-bold text-foreground mb-6">{t.demoSection.formTitle}</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">
+                {t.demoSection.formTitle}
+              </h3>
 
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600/20 to-blue-800/20 dark:from-blue-400/20 dark:to-blue-600/20 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                   </div>
-                  <h4 className="text-xl font-semibold text-foreground">{t.demoSection.successTitle}</h4>
-                  <p className="text-muted-foreground">{t.demoSection.successMessage}</p>
+                  <h4 className="text-xl font-semibold text-foreground">
+                    {t.demoSection.successTitle}
+                  </h4>
+                  <p className="text-muted-foreground">
+                    {t.demoSection.successMessage}
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -154,7 +187,9 @@ export function DemoSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="company">{t.demoSection.companyLabel}</Label>
+                    <Label htmlFor="company">
+                      {t.demoSection.companyLabel}
+                    </Label>
                     <Input
                       id="company"
                       name="company"
@@ -189,7 +224,9 @@ export function DemoSection() {
                     {t.demoSection.submitButton}
                   </Button>
 
-                  <p className="text-xs text-muted-foreground text-center">{t.demoSection.privacyText}</p>
+                  <p className="text-xs text-muted-foreground text-center">
+                    {t.demoSection.privacyText}
+                  </p>
                 </form>
               )}
             </div>
@@ -200,7 +237,7 @@ export function DemoSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function DemoFeature({
@@ -208,9 +245,9 @@ function DemoFeature({
   title,
   description,
 }: {
-  icon: React.ElementType
-  title: string
-  description: string
+  icon: React.ElementType;
+  title: string;
+  description: string;
 }) {
   return (
     <div className="flex items-start gap-4">
@@ -219,8 +256,10 @@ function DemoFeature({
       </div>
       <div>
         <h4 className="font-semibold text-foreground mb-1">{title}</h4>
-        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {description}
+        </p>
       </div>
     </div>
-  )
+  );
 }

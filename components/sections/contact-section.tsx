@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import 'dotenv/config';
+import "dotenv/config";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -53,7 +53,7 @@ export function ContactSection() {
       console.error("Error sending email:", error);
     }
   };
- 
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
