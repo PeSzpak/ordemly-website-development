@@ -3,203 +3,740 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agendamento de Demonstração</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-        background-color: #f4f4f5;
-      }
-      .email-container {
-        max-width: 600px;
-        margin: 0 auto;
-        background-color: #ffffff;
-      }
-      .header {
-        background: linear-gradient(to right, #2563eb, #1d4ed8, #1e40af);
-        padding: 40px 30px;
-        text-align: center;
-        color: white; /* se tiver texto dentro */
-      }
-      .header h1 {
-        color: #ffffff;
-        margin: 0;
-        font-size: 28px;
-        font-weight: 700;
-      }
-      .content {
-        padding: 40px 30px;
-      }
-      .greeting {
-        font-size: 18px;
-        color: #18181b;
-        margin-bottom: 20px;
-        font-weight: 600;
-      }
-      .message {
-        font-size: 16px;
-        color: #52525b;
-        line-height: 1.6;
-        margin-bottom: 30px;
-      }
-      .info-box {
-        background: linear-gradient(to, #2563eb, #1d4ed8, #1e40af);
-        border-left: 4px solid #3b82f6;
-        padding: 20px;
-        margin: 30px 0;
-      }
-      .info-row {
-        display: flex;
-        margin-bottom: 12px;
-      }
-      .info-row:last-child {
-        margin-bottom: 0;
-      }
-      .info-label {
-        font-weight: 600;
-        color: #18181b;
-        min-width: 100px;
-      }
-      .info-value {
-        color: #52525b;
-      }
-      .button {
-        text-align: center;
-        display: inline-block;
-        background: linear-gradient(to right, #2563eb, #1d4ed8, #1e40af);
-        color: white; /* se tiver texto dentro */
-        text-decoration: none;
-        padding: 14px 32px;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 16px;
-        margin: 20px 0;
-      }
-      .footer {
-        background-color: #fafafa;
-        padding: 30px;
-        text-align: center;
-        border-top: 1px solid #e4e4e7;
-      }
-      .footer-text {
-        font-size: 14px;
-        color: #71717a;
-        line-height: 1.5;
-        margin: 5px 0;
-      }
-      @media only screen and (max-width: 600px) {
-        .content {
-          padding: 30px 20px;
-        }
-        .header {
-          padding: 30px 20px;
-        }
-        .header h1 {
-          font-size: 24px;
-        }
-      }
-    </style>
+    <title>Solicitação de Demonstração - Ordemly</title>
   </head>
-  <body>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, sans-serif;
+      background-color: #f4f4f5;
+    "
+  >
     <table
-      role="presentation"
       width="100%"
-      cellspacing="0"
       cellpadding="0"
-      border="0"
+      cellspacing="0"
+      style="background-color: #f4f4f5; padding: 40px 20px"
     >
       <tr>
-        <td align="center" style="padding: 20px 0">
+        <td align="center">
           <table
-            class="email-container"
-            role="presentation"
-            cellspacing="0"
+            width="600"
             cellpadding="0"
-            border="0"
+            cellspacing="0"
+            style="
+              max-width: 600px;
+              background-color: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            "
           >
             <!-- Header -->
             <tr>
-              <td class="header">
-                <h1>Demonstração Agendada! 🎉</h1>
+              <td
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    #2563eb 0%,
+                    #1d4ed8 50%,
+                    #1e40af 100%
+                  );
+                  padding: 48px 40px;
+                  text-align: center;
+                "
+              >
+                <h1
+                  style="
+                    color: #ffffff;
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin: 0;
+                    letter-spacing: -0.5px;
+                  "
+                >
+                  Solicitação de Demonstração
+                </h1>
+                <p
+                  style="
+                    color: rgba(255, 255, 255, 0.9);
+                    font-size: 15px;
+                    margin: 10px 0 0 0;
+                  "
+                >
+                  Confirmação Recebida
+                </p>
               </td>
             </tr>
 
+            <!-- Status Line -->
             <tr>
-              <td class="content">
-                <p class="greeting">Olá, [demo-nome]!</p>
-                
+              <td style="padding: 40px 40px 0 40px">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #dcdbfe 0%,
+                      #bfdbfe 100%
+                    );
+                    border-left: 4px solid #003ec4;
+                    border-radius: 8px;
+                    padding: 16px 20px;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <span
+                        style="
+                          color: #0028aa;
+                          font-weight: 600;
+                          font-size: 14px;
+                        "
+                        >• Solicitação recebida em [demo-date] às
+                        [demo-time]</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
 
-                <p class="message">
-                  Aqui é a equipe do Ordemly,<br />
-                  Ficamos muito felizes em confirmar o agendamento da sua
-                  demonstração personalizada do nosso sistema de gestão de
-                  ordens de serviços.
+            <!-- Content -->
+            <tr>
+              <td style="padding: 32px 40px 0 40px">
+                <p
+                  style="
+                    font-size: 20px;
+                    color: #18181b;
+                    margin: 0 0 24px 0;
+                    font-weight: 600;
+                  "
+                >
+                  Olá, [demo-nome]!
                 </p>
 
-                <div class="info-box">
-                  <div class="info-row">
-                    <span class="info-label">📅 Data:</span>
-                    <span class="info-value">[Data da Demonstração]</span>
-                  </div>
-                  <div class="info-row">
-                    <span class="info-label">🕐 Horário:</span>
-                    <span class="info-value">[Horário]</span>
-                  </div>
-                  <div class="info-row">
-                    <span class="info-label">⏱️ Duração:</span>
-                    <span class="info-value">Aproximadamente 45 minutos</span>
-                  </div>
-                  <div class="info-row">
-                    <span class="info-label">👤 Consultor:</span>
-                    <span class="info-value">[Nome do Consultor]</span>
-                  </div>
-                </div>
-
-                <p class="message">
-                  Durante a demonstração, vamos apresentar como nosso sistema
-                  pode otimizar a gestão das suas ordens de serviço, aumentar a
-                  produtividade da sua equipe e melhorar o atendimento aos seus
-                  clientes.
+                <p
+                  style="
+                    font-size: 15px;
+                    color: #52525b;
+                    line-height: 1.7;
+                    margin: 0 0 28px 0;
+                  "
+                >
+                  Ficamos muito felizes com o seu interesse em conhecer o
+                  <strong>Ordemly</strong>! Recebemos sua solicitação de
+                  demonstração e nossa equipe já foi notificada.
                 </p>
 
-                <center>
-                  <a href="[LINK_REUNIAO]" class="button"
-                    >Acessar Reunião Online</a
-                  >
-                </center>
-
-                <p class="message">
-                  <strong>Prepare-se para a demonstração:</strong><br />
-                  • Tenha em mente os principais desafios da sua operação<br />
-                  • Liste as funcionalidades que são prioridade para você<br />
-                  • Prepare perguntas sobre integrações e personalização
+                <p
+                  style="
+                    font-size: 15px;
+                    color: #52525b;
+                    line-height: 1.7;
+                    margin: 0 0 28px 0;
+                  "
+                >
+                  Em breve, entraremos em contato para
+                  <strong>agendar a melhor data e horário</strong>
+                  para sua demonstração personalizada, onde apresentaremos como
+                  nosso sistema pode transformar a gestão das suas ordens de
+                  serviço.
                 </p>
+              </td>
+            </tr>
 
-                <p class="message">
-                  Caso precise reagendar, basta responder este email ou entrar
-                  em contato conosco.
+            <!-- Info Card -->
+            <tr>
+              <td style="padding: 0 40px">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    background: #fafafa;
+                    border: 1px solid #e4e4e7;
+                    border-radius: 10px;
+                    margin: 32px 0;
+                  "
+                >
+                  <tr>
+                    <td style="padding: 28px">
+                      <h3
+                        style="
+                          font-size: 16px;
+                          font-weight: 700;
+                          color: #18181b;
+                          margin: 0 0 20px 0;
+                          padding-bottom: 12px;
+                          border-bottom: 2px solid #e4e4e7;
+                          text-align: center;
+                        "
+                      >
+                        Informações da Solicitação
+                      </h3>
+
+                      <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr style="border-bottom: 1px solid #f4f4f5">
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #3f3f46;
+                              font-size: 14px;
+                              padding: 14px 0;
+                              width: 130px;
+                            "
+                          >
+                            Nome:
+                          </td>
+                          <td
+                            style="
+                              color: #18181b;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            <strong>[demo-nome]</strong>
+                          </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f4f4f5">
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #3f3f46;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            Email:
+                          </td>
+                          <td
+                            style="
+                              color: #18181b;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            [demo-email]
+                          </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f4f4f5">
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #3f3f46;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            Telefone:
+                          </td>
+                          <td
+                            style="
+                              color: #18181b;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            [demo-phone]
+                          </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f4f4f5">
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #3f3f46;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            Empresa:
+                          </td>
+                          <td
+                            style="
+                              color: #18181b;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            [demo-company]
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #3f3f46;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            Data/Hora:
+                          </td>
+                          <td
+                            style="
+                              color: #18181b;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            [demo-date] - [demo-time]
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Divider -->
+            <tr>
+              <td style="padding: 0 40px">
+                <div
+                  style="
+                    height: 1px;
+                    background: linear-gradient(
+                      to right,
+                      transparent,
+                      #1e1e38,
+                      transparent
+                    );
+                    margin: 32px 0;
+                  "
+                ></div>
+              </td>
+            </tr>
+
+            <!-- Next Steps -->
+            <tr>
+              <td style="padding: 0 40px">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #2563eb 0%,
+                      #1d4ed8 50%,
+                      #1e40af 100%
+                    );
+                    border: 1px solid #141a22;
+                    border-radius: 10px;
+                    margin: 32px 0;
+                  "
+                >
+                  <tr>
+                    <td style="padding: 28px">
+                      <h3
+                        style="
+                          color: #ffffff;
+                          font-size: 16px;
+                          font-weight: 700;
+                          margin: 0 0 16px 0;
+                        "
+                      >
+                        O que esperar da demonstração
+                      </h3>
+                      <ol style="margin: 0; padding-left: 22px; color: #ffffff">
+                        <li
+                          style="
+                            margin: 10px 0;
+                            line-height: 1.6;
+                            font-size: 14px;
+                          "
+                        >
+                          Apresentação completa das funcionalidades do sistema
+                        </li>
+                        <li
+                          style="
+                            margin: 10px 0;
+                            line-height: 1.6;
+                            font-size: 14px;
+                          "
+                        >
+                          Demonstração prática de casos de uso reais
+                        </li>
+                        <li
+                          style="
+                            margin: 10px 0;
+                            line-height: 1.6;
+                            font-size: 14px;
+                          "
+                        >
+                          Discussão sobre como o Ordemly se adapta ao seu
+                          negócio
+                        </li>
+                        <li
+                          style="
+                            margin: 10px 0;
+                            line-height: 1.6;
+                            font-size: 14px;
+                          "
+                        >
+                          Esclarecimento de dúvidas e análise de necessidades
+                        </li>
+                        <li
+                          style="
+                            margin: 10px 0;
+                            line-height: 1.6;
+                            font-size: 14px;
+                          "
+                        >
+                          Proposta personalizada para sua empresa
+                        </li>
+                      </ol>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Preparation Box -->
+            <tr>
+              <td style="padding: 0 40px">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #2563eb 0%,
+                      #1d4ed8 50%,
+                      #1e40af 100%
+                    );
+                    border: 1px solid #2427fb;
+                    border-radius: 10px;
+                    margin: 24px 0;
+                  "
+                >
+                  <tr>
+                    <td style="padding: 20px">
+                      <h4
+                        style="
+                          color: #ffffff;
+                          font-size: 15px;
+                          font-weight: 700;
+                          margin: 0 0 12px 0;
+                        "
+                      >
+                        Prepare-se para aproveitar melhor a demonstração
+                      </h4>
+                      <ul style="margin: 0; padding-left: 20px; color: #ffffff">
+                        <li
+                          style="
+                            margin: 8px 0;
+                            line-height: 1.5;
+                            font-size: 14px;
+                          "
+                        >
+                          Liste os principais desafios na gestão das suas ordens
+                          de serviço
+                        </li>
+                        <li
+                          style="
+                            margin: 8px 0;
+                            line-height: 1.5;
+                            font-size: 14px;
+                          "
+                        >
+                          Identifique as funcionalidades prioritárias para sua
+                          operação
+                        </li>
+                        <li
+                          style="
+                            margin: 8px 0;
+                            line-height: 1.5;
+                            font-size: 14px;
+                          "
+                        >
+                          Prepare perguntas sobre integrações e personalizações
+                        </li>
+                        <li
+                          style="
+                            margin: 8px 0;
+                            line-height: 1.5;
+                            font-size: 14px;
+                          "
+                        >
+                          Tenha em mente o tamanho da sua equipe e volume de
+                          atendimentos
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Contact Section -->
+            <tr>
+              <td style="padding: 0 40px">
+                <h3
+                  style="
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #18181b;
+                    margin: 32px 0 20px 0;
+                  "
+                >
+                  Quer acelerar o processo?
+                </h3>
+
+                <!-- Contact Items -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="margin-bottom: 12px"
+                >
+                  <tr>
+                    <td
+                      style="
+                        background-color: #fafafa;
+                        padding: 20px;
+                        border-radius: 8px;
+                        border: 1px solid #e4e4e7;
+                      "
+                    >
+                      <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #18181b;
+                              font-size: 14px;
+                              width: 90px;
+                            "
+                          >
+                            Telefone
+                          </td>
+                          <td>
+                            <a
+                              href="tel:+5541996062151"
+                              style="
+                                color: #2563eb;
+                                text-decoration: none;
+                                font-weight: 600;
+                                font-size: 14px;
+                                display: block;
+                                margin-bottom: 4px;
+                              "
+                              >+55 (41) 99606-2151</a
+                            >
+                            <p
+                              style="margin: 0; color: #71717a; font-size: 13px"
+                            >
+                              Segunda a Sexta, 8h às 18h
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="margin-bottom: 12px"
+                >
+                  <tr>
+                    <td
+                      style="
+                        background-color: #fafafa;
+                        padding: 20px;
+                        border-radius: 8px;
+                        border: 1px solid #e4e4e7;
+                      "
+                    >
+                      <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #18181b;
+                              font-size: 14px;
+                              width: 90px;
+                            "
+                          >
+                            WhatsApp
+                          </td>
+                          <td>
+                            <a
+                              href="https://wa.me/5541996062151"
+                              style="
+                                color: #2563eb;
+                                text-decoration: none;
+                                font-weight: 600;
+                                font-size: 14px;
+                                display: block;
+                                margin-bottom: 4px;
+                              "
+                              >Iniciar Conversa</a
+                            >
+                            <p
+                              style="margin: 0; color: #71717a; font-size: 13px"
+                            >
+                              Agende sua demo agora mesmo
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <table width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td
+                      style="
+                        background-color: #fafafa;
+                        padding: 20px;
+                        border-radius: 8px;
+                        border: 1px solid #e4e4e7;
+                      "
+                    >
+                      <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #18181b;
+                              font-size: 14px;
+                              width: 90px;
+                            "
+                          >
+                            Email
+                          </td>
+                          <td>
+                            <a
+                              href="mailto:contato@ordemly.com"
+                              style="
+                                color: #2563eb;
+                                text-decoration: none;
+                                font-weight: 600;
+                                font-size: 14px;
+                                display: block;
+                                margin-bottom: 4px;
+                              "
+                              >contato@ordemly.com</a
+                            >
+                            <p
+                              style="margin: 0; color: #71717a; font-size: 13px"
+                            >
+                              Resposta em até 24h
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CTA Button -->
+            <tr>
+              <td align="center" style="padding: 24px 40px">
+                <a
+                  href="https://ordemly.com"
+                  style="
+                    display: inline-block;
+                    background: linear-gradient(
+                      135deg,
+                      #2563eb 0%,
+                      #1d4ed8 100%
+                    );
+                    color: #ffffff;
+                    text-decoration: none;
+                    padding: 14px 32px;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    font-size: 15px;
+                  "
+                  >Conhecer Mais Sobre o Ordemly</a
+                >
+              </td>
+            </tr>
+
+            <!-- Footer Note -->
+            <tr>
+              <td style="padding: 0 40px">
+                <p
+                  style="
+                    text-align: center;
+                    color: #71717a;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin: 32px 0 0 0;
+                    padding-top: 24px;
+                    border-top: 1px solid #f4f4f5;
+                  "
+                >
+                  Obrigado por considerar o
+                  <strong style="color: #3b82f6">Ordemly</strong>.<br />
+                  Estamos ansiosos para mostrar como podemos ajudar seu negócio
+                  a crescer!
                 </p>
               </td>
             </tr>
 
             <!-- Footer -->
             <tr>
-              <td class="footer">
-                <p class="footer-text">
-                  <strong>[MM Tecnologia da Informação]</strong>
+              <td
+                style="
+                  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+                  color: #ffffff;
+                  padding: 36px 40px;
+                  text-align: center;
+                "
+              >
+                <p style="font-size: 13px; line-height: 1.6; margin: 6px 0">
+                  <strong style="color: #ffffff">Ordemly</strong> - Sistema de
+                  Gestão de Ordens de Serviços
                 </p>
-                <p class="footer-text">Sistemas e Serviços de Tecnologia</p>
-                <p class="footer-text">
-                  📧 contato@mmti.io | 📱 +55 41 99606-2151
-                </p>
-                <p class="footer-text" style="margin-top: 15px">
-                  <a
-                    href="https://mmtec.site/"
-                    style="color: #3b82f6; text-decoration: none"
-                    >Visite nosso site</a
+                <p style="font-size: 13px; line-height: 1.6; margin: 6px 0">
+                  Desenvolvido por
+                  <strong style="color: #ffffff"
+                    >MM Tecnologia de Informação</strong
                   >
+                </p>
+
+                <div
+                  style="height: 1px; background-color: #0b0b6e; margin: 20px 0"
+                ></div>
+
+                <p style="font-size: 13px; line-height: 1.6; margin: 6px 0">
+                  contato@ordemly.com | +55 (41) 99606-2151
+                </p>
+                <p style="font-size: 13px; line-height: 1.6; margin: 6px 0">
+                  <a
+                    href="https://ordemly.com"
+                    style="color: #ffffff; text-decoration: none"
+                    ><strong>ordemly.com</strong></a
+                  >
+                </p>
+
+                <p
+                  style="
+                    font-size: 12px;
+                    line-height: 1.6;
+                    margin: 20px 0 0 0;
+                    opacity: 0.8;
+                    color: white;
+                  "
+                >
+                  Você está recebendo este email porque solicitou uma
+                  demonstração através do nosso website.<br />
+                  © [current-year] Ordemly. Todos os direitos reservados.
                 </p>
               </td>
             </tr>

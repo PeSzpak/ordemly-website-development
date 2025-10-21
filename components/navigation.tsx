@@ -1,22 +1,28 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import { useState } from "react"
-import { LanguageSelector } from "@/components/language-selector"
-import { useLanguage } from "@/lib/i18n/language-context"
-import Image from "next/image"
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { LanguageSelector } from "@/components/language-selector";
+import { useLanguage } from "@/lib/i18n/language-context";
+import Image from "next/image";
 
 export function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { t } = useLanguage()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.jpeg" alt="Ordemly Logo" width={32} height={32} className="rounded-lg" />
+            <Image
+              src="/logo.jpeg"
+              alt="Ordemly Logo"
+              width={32}
+              height={32}
+              className="rounded-lg"
+            />
             <span className="font-bold text-xl text-foreground">Ordemly</span>
           </Link>
 
@@ -59,7 +65,11 @@ export function Navigation() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -112,5 +122,5 @@ export function Navigation() {
         )}
       </div>
     </nav>
-  )
+  );
 }

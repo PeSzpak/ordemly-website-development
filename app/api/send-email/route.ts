@@ -12,7 +12,6 @@ const ses = new SESClient({
 
 let cachedContactTemplate: string | null = null;
 let cachedDemoTemplate: string | null = null;
-let cachedContractTemplate: string | null = null;
 
 async function loadTemplates() {
   if (cachedContactTemplate && cachedDemoTemplate) return;
@@ -41,45 +40,36 @@ export async function POST(req: Request) {
 
   let { name, email, subject, message, company, phone, type } = body;
 
-  let to = email;
+  // Validação de campos por tipo
   if (type === "contact") {
     if (!name || !email || !subject || !message) {
       return new Response(
         JSON.stringify({
-          error:
-            "Missing required fields for contact: name, email, subject, message",
+          error: "Missing required fields for contact: name, email, subject, message",
         }),
         { status: 400 }
       );
     }
-
   } else if (type === "demo") {
     if (!name || !email || !company || !phone) {
       return new Response(
         JSON.stringify({
-          error:
-          "Missing required fields for demo: name, email, company, phone",
+          error: "Missing required fields for demo: name, email, company, phone",
         }),
         { status: 400 }
       );
     }
-    subject = "New Demo Request";
-    to = email;
+    subject = "Solicitação de Demonstração - Ordemly";
   } else {
     return new Response(
       JSON.stringify({
-        error: 'Invalid type. Must be "contact", "demo" or "contract"',
+        error: 'Invalid type. Must be "contact" or "demo"',
       }),
       { status: 400 }
     );
   }
-  
-  if (!to || !subject || !name) {
-    return new Response(
-      JSON.stringify({ error: "Missing required fields: to, subject, name" }),
-      { status: 400 }
-    );
-  }
+
+  // Formatação de data e hora
   const now = new Date();
   const dateFormatted = now.toLocaleDateString('pt-BR', {
     day: '2-digit',
@@ -90,29 +80,38 @@ export async function POST(req: Request) {
     hour: '2-digit',
     minute: '2-digit'
   });
+  const currentYear = now.getFullYear().toString();
 
-    let emailHtmlContact = cachedContactTemplate;
-    if (emailHtmlContact) {
-      emailHtmlContact = emailHtmlContact.replace("[contact-nome]", name);
-      emailHtmlContact = emailHtmlContact.replace("[contact-email]", email);
-      emailHtmlContact = emailHtmlContact.replace("[contact-subject]", subject);
-      emailHtmlContact = emailHtmlContact.replace("[contact-message]", message);
-      emailHtmlContact = emailHtmlContact.replace("[contact-date]", dateFormatted);
-      emailHtmlContact = emailHtmlContact.replace("[contact-time]", timeFormatted);
-      emailHtmlContact = emailHtmlContact.replace("[current-year]", now.getFullYear().toString());
-    } else {
-      throw new Error("Contact template is not loaded.");
-    }
+  // Preparação do HTML do email
+  let emailHtml: string;
 
+  if (type === "contact") {
+    emailHtml = cachedContactTemplate!;
+    emailHtml = emailHtml.replace(/\[contact-nome\]/g, name || "");
+    emailHtml = emailHtml.replace(/\[contact-email\]/g, email || "");
+    emailHtml = emailHtml.replace(/\[contact-subject\]/g, subject || "");
+    emailHtml = emailHtml.replace(/\[contact-message\]/g, message || "");
+    emailHtml = emailHtml.replace(/\[contact-date\]/g, dateFormatted);
+    emailHtml = emailHtml.replace(/\[contact-time\]/g, timeFormatted);
+    emailHtml = emailHtml.replace(/\[current-year\]/g, currentYear);
+  } else {
+    emailHtml = cachedDemoTemplate!;
+    emailHtml = emailHtml.replace(/\[demo-nome\]/g, name || "");
+    emailHtml = emailHtml.replace(/\[demo-email\]/g, email || "");
+    emailHtml = emailHtml.replace(/\[demo-phone\]/g, phone || "");
+    emailHtml = emailHtml.replace(/\[demo-company\]/g, company || "");
+    emailHtml = emailHtml.replace(/\[demo-date\]/g, dateFormatted);
+    emailHtml = emailHtml.replace(/\[demo-time\]/g, timeFormatted);
+    emailHtml = emailHtml.replace(/\[current-year\]/g, currentYear);
+  }
 
-  let emailHtmlDemo = cachedDemoTemplate?.replace("[demo-nome]", name);
-  emailHtmlDemo = emailHtmlDemo?.replace("[demo-tel]", phone);
-  emailHtmlDemo = emailHtmlDemo?.replace("[demo-company]", company);
-
+  // Configuração do email
   const params = {
     Destination: {
-      ToAddresses: [to],
-      CcAddresses: [process.env.EMAIL_SOURCE, 'pedrohszpaka@gmail.com'],
+      ToAddresses: [email],
+      CcAddresses: [process.env.EMAIL_SOURCE, 'pedrohszpaka@gmail.com'].filter(
+        (e): e is string => e !== undefined
+      ),
     },
     Message: {
       Subject: {
@@ -122,13 +121,14 @@ export async function POST(req: Request) {
       Body: {
         Html: {
           Charset: "UTF-8",
-          Data: type === "contact" ? emailHtmlContact : emailHtmlDemo,
+          Data: emailHtml,
         },
       },
     },
     Source: process.env.EMAIL_SOURCE!,
   };
 
+  // Envio do email
   try {
     const command = new SendEmailCommand(params);
     const response = await ses.send(command);

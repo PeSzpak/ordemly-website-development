@@ -4,406 +4,624 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solicitação Recebida - Ordemly</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-        background-color: #f4f4f5;
-        -webkit-font-smoothing: antialiased;
-      }
-      .email-wrapper {
-        width: 100%;
-        background-color: #f4f4f5;
-        padding: 40px 20px;
-      }
-      .email-container {
-        max-width: 600px;
-        margin: 0 auto;
-        background-color: #ffffff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-      .header {
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
-        padding: 48px 40px;
-        text-align: center;
-        position: relative;
-      }
-      .header::after {
-        content: "";
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #3b82f6, #2563eb, #1d4ed8);
-      }
-      .header h1 {
-        color: #ffffff;
-        font-size: 28px;
-        font-weight: 700;
-        margin: 0;
-        letter-spacing: -0.5px;
-      }
-      .header p {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 15px;
-        margin: 10px 0 0 0;
-      }
-      .content {
-        padding: 40px 40px 50px;
-      }
-      .status-line {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 16px 20px;
-        background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-        border-left: 4px solid #16a34a;
-        border-radius: 8px;
-        margin-bottom: 32px;
-      }
-      .status-line span {
-        color: #166534;
-        font-weight: 600;
-        font-size: 14px;
-      }
-      .greeting {
-        font-size: 20px;
-        color: #18181b;
-        margin-bottom: 24px;
-        font-weight: 600;
-      }
-      .message {
-        font-size: 15px;
-        color: #52525b;
-        line-height: 1.7;
-        margin-bottom: 28px;
-      }
-      .info-card {
-        background: #fafafa;
-        border: 1px solid #e4e4e7;
-        border-radius: 10px;
-        padding: 28px;
-        margin: 32px 0;
-      }
-      .info-card-title {
-        font-size: 16px;
-        font-weight: 700;
-        color: #18181b;
-        margin-bottom: 20px;
-        padding-bottom: 12px;
-        border-bottom: 2px solid #e4e4e7;
-        text-align: center;
-      }
-      .info-row {
-        display: flex;
-        padding: 14px 0;
-        border-bottom: 1px solid #f4f4f5;
-      }
-      .info-row:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-      .info-label {
-        flex: 0 0 130px;
-        font-weight: 600;
-        color: #3f3f46;
-        font-size: 14px;
-      }
-      .info-value {
-        flex: 1;
-        color: #18181b;
-        font-size: 14px;
-        word-break: break-word;
-      }
-      .message-display {
-        background-color: #ffffff;
-        border: 1px solid #e4e4e7;
-        padding: 16px;
-        border-radius: 6px;
-        margin-top: 8px;
-        line-height: 1.6;
-        color: #18181b;
-      }
-      .divider {
-        height: 1px;
-        background: linear-gradient(to right, transparent, #1e1e38, transparent);
-        margin: 32px 0;
-      }
-      .next-steps {
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
-        border: 1px solid #141a22;
-        border-radius: 10px;
-        padding: 28px;
-        margin: 32px 0;
-      }
-      .next-steps h3 {
-        color: #ffffff;
-        font-size: 16px;
-        font-weight: 700;
-        margin: 0 0 16px 0;
-      }
-      .next-steps ol {
-        margin: 0;
-        padding-left: 22px;
-        color: #ffffff;
-      }
-      .next-steps li {
-        margin: 10px 0;
-        line-height: 1.6;
-        font-size: 14px;
-      }
-      .contact-section {
-        margin: 32px 0;
-      }
-      .section-title {
-        font-size: 16px;
-        font-weight: 700;
-        color: #18181b;
-        margin-bottom: 20px;
-      }
-      .contact-grid {
-        display: grid;
-        gap: 12px;
-      }
-      .contact-item {
-        background-color: #fafafa;
-        padding: 20px;
-        border-radius: 8px;
-        border: 1px solid #e4e4e7;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        transition: all 0.2s ease;
-      }
-      .contact-item:hover {
-        border-color: #2563eb;
-        background-color: #ffffff;
-      }
-      .contact-label {
-        font-weight: 600;
-        color: #18181b;
-        font-size: 14px;
-        min-width: 90px;
-      }
-      .contact-value {
-        flex: 1;
-      }
-      .contact-value a {
-        color: #2563eb;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 14px;
-      }
-      .contact-value p {
-        margin: 4px 0 0 0;
-        color: #71717a;
-        font-size: 13px;
-      }
-      .cta-button {
-        display: inline-block;
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-        color: #ffffff;
-        text-decoration: none;
-        padding: 14px 32px;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 15px;
-        margin: 24px 0;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-        transition: all 0.3s ease;
-      }
-      .footer-note {
-        text-align: center;
-        color: #71717a;
-        font-size: 14px;
-        line-height: 1.6;
-        margin-top: 32px;
-        padding-top: 24px;
-        border-top: 1px solid #f4f4f5;
-      }
-      .footer {
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-        color: #e7e7f0;
-        padding: 36px 40px;
-        text-align: center;
-      }
-      .footer-text {
-        font-size: 13px;
-        line-height: 1.6;
-        margin: 6px 0;
-      }
-      .footer-text strong {
-        color: #ffffff;
-      }
-      .footer-brand {
-        color: #3b82f6;
-      }
-      .footer-divider {
-        height: 1px;
-        background-color: #0b0b6e;
-        margin: 20px 0;
-      }
-      @media only screen and (max-width: 600px) {
-        .email-wrapper {
-          padding: 20px 10px;
-        }
-        .content {
-          padding: 30px 24px;
-        }
-        .header {
-          padding: 36px 24px;
-        }
-        .header h1 {
-          font-size: 24px;
-        }
-        .info-row {
-          flex-direction: column;
-          gap: 6px;
-          padding: 12px 0;
-        }
-        .info-label {
-          flex: 1;
-        }
-        .contact-item {
-          flex-direction: column;
-          text-align: center;
-          gap: 12px;
-        }
-        .contact-label {
-          min-width: auto;
-        }
-      }
-    </style>
   </head>
-  <body>
-    <div class="email-wrapper">
-      <div class="email-container">
-        <div class="header">
-          <h1>Solicitação Recebida</h1>
-          <p>Confirmação de Contato</p>
-        </div>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, sans-serif;
+      background-color: #f4f4f5;
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      style="background-color: #f4f4f5; padding: 40px 20px"
+    >
+      <tr>
+        <td align="center">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              max-width: 600px;
+              background-color: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <!-- Header -->
+            <tr>
+              <td
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    #2563eb 0%,
+                    #1d4ed8 50%,
+                    #1e40af 100%
+                  );
+                  padding: 48px 40px;
+                  text-align: center;
+                "
+              >
+                <h1
+                  style="
+                    color: #ffffff;
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin: 0;
+                    letter-spacing: -0.5px;
+                  "
+                >
+                  Solicitação Recebida
+                </h1>
+                <p
+                  style="
+                    color: rgba(255, 255, 255, 0.9);
+                    font-size: 15px;
+                    margin: 10px 0 0 0;
+                  "
+                >
+                  Confirmação de Contato
+                </p>
+              </td>
+            </tr>
 
-        <div class="content">
-          <div class="status-line">
-            <span>• Recebido com sucesso em [contact-date] às [contact-time]</span>
-          </div>
+            <!-- Status Line -->
+            <tr>
+              <td style="padding: 40px 40px 0 40px">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #dcdbfe 0%,
+                      #bfdbfe 100%
+                    );
+                    border-left: 4px solid #003ec4;
+                    border-radius: 8px;
+                    padding: 16px 20px;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <span
+                        style="
+                          color: #0028aa;
+                          font-weight: 600;
+                          font-size: 14px;
+                        "
+                        >• Recebido com sucesso em [contact-date] às
+                        [contact-time]</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
 
-          <p class="greeting">Olá, [contact-nome]</p>
+            <!-- Content -->
+            <tr>
+              <td style="padding: 32px 40px 0 40px">
+                <p
+                  style="
+                    font-size: 20px;
+                    color: #18181b;
+                    margin: 0 0 24px 0;
+                    font-weight: 600;
+                  "
+                >
+                  Olá, [contact-nome]
+                </p>
 
-          <p class="message">
-            Confirmamos o recebimento da sua solicitação. Nossa equipe foi notificada 
-            e entrará em contato em até <strong>48 horas úteis</strong> com uma 
-            resposta personalizada.
-          </p>
+                <p
+                  style="
+                    font-size: 15px;
+                    color: #52525b;
+                    line-height: 1.7;
+                    margin: 0 0 28px 0;
+                  "
+                >
+                  Confirmamos o recebimento da sua solicitação. Nossa equipe foi
+                  notificada e entrará em contato em até
+                  <strong>48 horas úteis</strong> com uma resposta
+                  personalizada.
+                </p>
+              </td>
+            </tr>
 
-            <div class="info-card">
-            <div class="info-card-title">Informações da Solicitação</div>
-            
-            <div class="info-row">
-              <div class="info-label">Assunto: </div>
-              <div class="info-value"><strong>[contact-subject]</strong></div>
-            </div>
-            
-            <div class="info-row">
-              <div class="info-label">Email: </div>
-              <div class="info-value">[contact-email]</div>
-            </div>
-            
-            <div class="info-row">
-              <div class="info-label">Data/Hora: </div>
-              <div class="info-value"> [contact-date] - [contact-time]</div>
-            </div>
-            
-            <div class="info-row">
-              <div class="info-label">Mensagem</div>
-              <div class="info-value">
-                <div class="message-display">[contact-message]</div>
-              </div>
-            </div>
-          </div>
+            <!-- Info Card -->
+            <tr>
+              <td style="padding: 0 40px">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    background: #fafafa;
+                    border: 1px solid #e4e4e7;
+                    border-radius: 10px;
+                    margin: 32px 0;
+                  "
+                >
+                  <tr>
+                    <td style="padding: 28px">
+                      <h3
+                        style="
+                          font-size: 16px;
+                          font-weight: 700;
+                          color: #18181b;
+                          margin: 0 0 20px 0;
+                          padding-bottom: 12px;
+                          border-bottom: 2px solid #e4e4e7;
+                          text-align: center;
+                        "
+                      >
+                        Informações da Solicitação
+                      </h3>
 
-          <div class="divider"></div>
+                      <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr style="border-bottom: 1px solid #f4f4f5">
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #3f3f46;
+                              font-size: 14px;
+                              padding: 14px 0;
+                              width: 130px;
+                            "
+                          >
+                            Assunto:
+                          </td>
+                          <td
+                            style="
+                              color: #18181b;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            <strong>[contact-subject]</strong>
+                          </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f4f4f5">
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #3f3f46;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            Email:
+                          </td>
+                          <td
+                            style="
+                              color: #18181b;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            [contact-email]
+                          </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f4f4f5">
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #3f3f46;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            Data/Hora:
+                          </td>
+                          <td
+                            style="
+                              color: #18181b;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            [contact-date] - [contact-time]
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #3f3f46;
+                              font-size: 14px;
+                              padding: 14px 0;
+                              vertical-align: top;
+                            "
+                          >
+                            Mensagem
+                          </td>
+                          <td
+                            style="
+                              color: #18181b;
+                              font-size: 14px;
+                              padding: 14px 0;
+                            "
+                          >
+                            <div
+                              style="
+                                background-color: #ffffff;
+                                border: 1px solid #e4e4e7;
+                                padding: 16px;
+                                border-radius: 6px;
+                                margin-top: 8px;
+                                line-height: 1.6;
+                              "
+                            >
+                              [contact-message]
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
 
-          <div class="next-steps">
-            <h3>Próximos Passos</h3>
-            <ol>
-              <li>Análise detalhada da sua solicitação</li>
-              <li>Resposta personalizada em até 48h úteis</li>
-              <li>Preparação da melhor solução para suas necessidades</li>
-            </ol>
-          </div>
+            <!-- Divider -->
+            <tr>
+              <td style="padding: 0 40px">
+                <div
+                  style="
+                    height: 1px;
+                    background: linear-gradient(
+                      to right,
+                      transparent,
+                      #1e1e38,
+                      transparent
+                    );
+                    margin: 32px 0;
+                  "
+                ></div>
+              </td>
+            </tr>
 
-          <div class="contact-section">
-            <div class="section-title">Precisa de atendimento imediato?</div>
-            
-            <div class="contact-grid">
-              <div class="contact-item">
-                <div class="contact-label">Telefone</div>
-                <div class="contact-value">
-                  <a href="tel:+5541996062151">+55 (41) 99606-2151</a>
-                  <p>Segunda a Sexta, 8h às 18h</p>
-                </div>
-              </div>
+            <!-- Next Steps -->
+            <tr>
+              <td style="padding: 0 40px">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #2563eb 0%,
+                      #1d4ed8 50%,
+                      #1e40af 100%
+                    );
+                    border: 1px solid #141a22;
+                    border-radius: 10px;
+                    margin: 32px 0;
+                  "
+                >
+                  <tr>
+                    <td style="padding: 28px">
+                      <h3
+                        style="
+                          color: #ffffff;
+                          font-size: 16px;
+                          font-weight: 700;
+                          margin: 0 0 16px 0;
+                        "
+                      >
+                        Próximos Passos
+                      </h3>
+                      <ol style="margin: 0; padding-left: 22px; color: #ffffff">
+                        <li
+                          style="
+                            margin: 10px 0;
+                            line-height: 1.6;
+                            font-size: 14px;
+                          "
+                        >
+                          Análise detalhada da sua solicitação
+                        </li>
+                        <li
+                          style="
+                            margin: 10px 0;
+                            line-height: 1.6;
+                            font-size: 14px;
+                          "
+                        >
+                          Resposta personalizada em até 48h úteis
+                        </li>
+                        <li
+                          style="
+                            margin: 10px 0;
+                            line-height: 1.6;
+                            font-size: 14px;
+                          "
+                        >
+                          Preparação da melhor solução para suas necessidades
+                        </li>
+                      </ol>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
 
-              <div class="contact-item">
-                <div class="contact-label">WhatsApp</div>
-                <div class="contact-value">
-                  <a href="https://wa.me/5541996062151">Iniciar Conversa</a>
-                  <p>Atendimento rápido e direto</p>
-                </div>
-              </div>
+            <!-- Contact Section -->
+            <tr>
+              <td style="padding: 0 40px">
+                <h3
+                  style="
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #18181b;
+                    margin: 32px 0 20px 0;
+                  "
+                >
+                  Precisa de atendimento imediato?
+                </h3>
 
-              <div class="contact-item">
-                <div class="contact-label">Email</div>
-                <div class="contact-value">
-                  <a href="mailto:contato@ordemly.com">contato@ordemly.com</a>
-                  <p>Resposta em até 48h</p>
-                </div>
-              </div>
-            </div>
-          </div>
+                <!-- Contact Items -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="margin-bottom: 12px"
+                >
+                  <tr>
+                    <td
+                      style="
+                        background-color: #fafafa;
+                        padding: 20px;
+                        border-radius: 8px;
+                        border: 1px solid #e4e4e7;
+                      "
+                    >
+                      <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #18181b;
+                              font-size: 14px;
+                              width: 90px;
+                            "
+                          >
+                            Telefone
+                          </td>
+                          <td>
+                            <a
+                              href="tel:+5541996062151"
+                              style="
+                                color: #2563eb;
+                                text-decoration: none;
+                                font-weight: 600;
+                                font-size: 14px;
+                                display: block;
+                                margin-bottom: 4px;
+                              "
+                              >+55 (41) 99606-2151</a
+                            >
+                            <p
+                              style="margin: 0; color: #71717a; font-size: 13px"
+                            >
+                              Segunda a Sexta, 8h às 18h
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
 
-          <center>
-            <a href="https://ordemly.com" class="cta-button">Acessar o Site</a>
-          </center>
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="margin-bottom: 12px"
+                >
+                  <tr>
+                    <td
+                      style="
+                        background-color: #fafafa;
+                        padding: 20px;
+                        border-radius: 8px;
+                        border: 1px solid #e4e4e7;
+                      "
+                    >
+                      <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #18181b;
+                              font-size: 14px;
+                              width: 90px;
+                            "
+                          >
+                            WhatsApp
+                          </td>
+                          <td>
+                            <a
+                              href="https://wa.me/5541996062151"
+                              style="
+                                color: #2563eb;
+                                text-decoration: none;
+                                font-weight: 600;
+                                font-size: 14px;
+                                display: block;
+                                margin-bottom: 4px;
+                              "
+                              >Iniciar Conversa</a
+                            >
+                            <p
+                              style="margin: 0; color: #71717a; font-size: 13px"
+                            >
+                              Atendimento rápido e direto
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
 
-          <div class="footer-note">
-            Obrigado por escolher a <strong class="footer-brand">Ordemly</strong>.<br>
-            Estamos comprometidos em transformar a gestão do seu negócio.
-          </div>
-        </div>
+                <table width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td
+                      style="
+                        background-color: #fafafa;
+                        padding: 20px;
+                        border-radius: 8px;
+                        border: 1px solid #e4e4e7;
+                      "
+                    >
+                      <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td
+                            style="
+                              font-weight: 600;
+                              color: #18181b;
+                              font-size: 14px;
+                              width: 90px;
+                            "
+                          >
+                            Email
+                          </td>
+                          <td>
+                            <a
+                              href="mailto:contato@ordemly.com"
+                              style="
+                                color: #2563eb;
+                                text-decoration: none;
+                                font-weight: 600;
+                                font-size: 14px;
+                                display: block;
+                                margin-bottom: 4px;
+                              "
+                              >contato@ordemly.com</a
+                            >
+                            <p
+                              style="margin: 0; color: #71717a; font-size: 13px"
+                            >
+                              Resposta em até 48h
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
 
-        <!-- Footer -->
-        <div class="footer">
-          <p class="footer-text">
-            <strong class="footer-brand">Ordemly</strong> - Sistema de Gestão de Ordens de Serviços
-          </p>
-          <p class="footer-text">Desenvolvido por <strong>MM Tecnologia de Informação</strong></p>
-          
-          <div class="footer-divider"></div>
-          
-          <p class="footer-text">contato@ordemly.com | +55 (41) 99606-2151</p>
-          <p class="footer-text">
-            <a href="https://ordemly.com" style="color: #ffffff; text-decoration: none;"><strong>ordemly.com</strong>
-          </p>
-          
-          <p class="footer-text" style="margin-top: 20px; font-size: 12px; opacity: 0.7;">
-            Você está recebendo este email porque solicitou contato através do nosso website.<br>
-            © [current-year] Ordemly. Todos os direitos reservados.
-          </p>
-        </div>
-      </div>
-    </div>
+            <!-- CTA Button -->
+            <tr>
+              <td align="center" style="padding: 24px 40px">
+                <a
+                  href="https://ordemly.com"
+                  style="
+                    display: inline-block;
+                    background: linear-gradient(
+                      135deg,
+                      #2563eb 0%,
+                      #1d4ed8 100%
+                    );
+                    color: #ffffff;
+                    text-decoration: none;
+                    padding: 14px 32px;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    font-size: 15px;
+                  "
+                  >Acessar o Site</a
+                >
+              </td>
+            </tr>
+
+            <!-- Footer Note -->
+            <tr>
+              <td style="padding: 0 40px">
+                <p
+                  style="
+                    text-align: center;
+                    color: #71717a;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin: 32px 0 0 0;
+                    padding-top: 24px;
+                    border-top: 1px solid #f4f4f5;
+                  "
+                >
+                  Obrigado por escolher a
+                  <strong style="color: #3b82f6">Ordemly</strong>.<br />
+                  Estamos comprometidos em transformar a gestão do seu negócio.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                style="
+                  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+                  color: #e7e7f0;
+                  padding: 36px 40px;
+                  text-align: center;
+                "
+              >
+                <p style="font-size: 13px; line-height: 1.6; margin: 6px 0">
+                  <strong style="color: #ffffff">Ordemly</strong> - Sistema de
+                  Gestão de Ordens de Serviços
+                </p>
+                <p style="font-size: 13px; line-height: 1.6; margin: 6px 0; color:white ;">
+                  Desenvolvido por
+                  <strong style="color: #ffffff"
+                    >MM Tecnologia de Informação</strong
+                  >
+                </p>
+
+                <div
+                  style="height: 1px; background-color: #0b0b6e; margin: 20px 0"
+                ></div>
+
+                <p style="font-size: 13px; line-height: 1.6; margin: 6px 0; color: white;">
+                  contato@ordemly.com | +55 (41) 99606-2151
+                </p>
+                <p style="font-size: 13px; line-height: 1.6; margin: 6px 0">
+                  <a
+                    href="https://ordemly.com"
+                    style="color: #ffffff; text-decoration: none"
+                    ><strong>ordemly.com</strong></a
+                  >
+                </p>
+
+                <p
+                  style="
+                    font-size: 12px;
+                    line-height: 1.6;
+                    margin: 20px 0 0 0;
+                    opacity: 0.8;
+                    color: white;
+                  "
+                >
+                  Você está recebendo este email porque solicitou contato
+                  através do nosso website.<br />
+                  © [current-year] Ordemly. Todos os direitos reservados.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
