@@ -85,13 +85,11 @@ export async function POST(req: Request) {
     );
   }
 
-  // Corrigido: substituir em cadeia e usar a variável atualizada
   let emailHtmlContact = cachedContactTemplate?.replace("[contact-nome]", name);
   emailHtmlContact = emailHtmlContact?.replace("[contact-email]", email);
   emailHtmlContact = emailHtmlContact?.replace("[contact-menssage]", message);
   emailHtmlContact = emailHtmlContact?.replace("[contact-subject]", subject);
 
-  // Corrigido: substituir em cadeia a partir de cachedDemoTemplate
   let emailHtmlDemo = cachedDemoTemplate?.replace("[demo-nome]", name);
   emailHtmlDemo = emailHtmlDemo?.replace("[demo-tel]", phone);
   emailHtmlDemo = emailHtmlDemo?.replace("[demo-company]", company);
@@ -99,7 +97,7 @@ export async function POST(req: Request) {
   const params = {
     Destination: {
       ToAddresses: [to],
-      c
+      CcAddresses: [process.env.EMAIL_SOURCE, 'pedrohszpaka@gmail.com'],
     },
     Message: {
       Subject: {
