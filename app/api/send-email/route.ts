@@ -1,6 +1,5 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import fs from "fs/promises";
-import { MenuSquare } from "lucide-react";
 import path from "path";
 
 const ses = new SESClient({
@@ -24,10 +23,6 @@ async function loadTemplates() {
   );
   cachedDemoTemplate = await fs.readFile(
     path.join(base, "app", "template-demo.html"),
-    "utf8"
-  );
-  cachedContractTemplate = await fs.readFile(
-    path.join(base, "app", "template-contract.html"),
     "utf8"
   );
 }
@@ -57,12 +52,13 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
   } else if (type === "demo") {
     if (!name || !email || !company || !phone) {
       return new Response(
         JSON.stringify({
           error:
-            "Missing required fields for demo: name, email, company, phone",
+          "Missing required fields for demo: name, email, company, phone",
         }),
         { status: 400 }
       );
@@ -77,18 +73,37 @@ export async function POST(req: Request) {
       { status: 400 }
     );
   }
-
+  
   if (!to || !subject || !name) {
     return new Response(
       JSON.stringify({ error: "Missing required fields: to, subject, name" }),
       { status: 400 }
     );
   }
+  const now = new Date();
+  const dateFormatted = now.toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+  });
+  const timeFormatted = now.toLocaleTimeString('pt-BR', {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
 
-  let emailHtmlContact = cachedContactTemplate?.replace("[contact-nome]", name);
-  emailHtmlContact = emailHtmlContact?.replace("[contact-email]", email);
-  emailHtmlContact = emailHtmlContact?.replace("[contact-menssage]", message);
-  emailHtmlContact = emailHtmlContact?.replace("[contact-subject]", subject);
+    let emailHtmlContact = cachedContactTemplate;
+    if (emailHtmlContact) {
+      emailHtmlContact = emailHtmlContact.replace("[contact-nome]", name);
+      emailHtmlContact = emailHtmlContact.replace("[contact-email]", email);
+      emailHtmlContact = emailHtmlContact.replace("[contact-subject]", subject);
+      emailHtmlContact = emailHtmlContact.replace("[contact-message]", message);
+      emailHtmlContact = emailHtmlContact.replace("[contact-date]", dateFormatted);
+      emailHtmlContact = emailHtmlContact.replace("[contact-time]", timeFormatted);
+      emailHtmlContact = emailHtmlContact.replace("[current-year]", now.getFullYear().toString());
+    } else {
+      throw new Error("Contact template is not loaded.");
+    }
+
 
   let emailHtmlDemo = cachedDemoTemplate?.replace("[demo-nome]", name);
   emailHtmlDemo = emailHtmlDemo?.replace("[demo-tel]", phone);
