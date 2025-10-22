@@ -1,7 +1,7 @@
 # Ordemly - Sistema de Gestão de Ordens de Serviço
 
 <div align="center">
-  <img src="public/ordemly-logoVM.png" alt="Ordemly Logo" width="200"/>
+  <img src="public/ordemly-logoVM.png" alt="Ordemly Logo" width="500"/>
   
   [![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
   [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
