@@ -1,21 +1,26 @@
-"use client"
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Printer, X } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
-import Image from "next/image"
+"use client";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Printer, X } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
+import Image from "next/image";
 
 interface PrintOrderModalProps {
-  open: boolean
-  onOpenChange: (open: boolean) => void
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
 export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
-  const { t, language } = useLanguage()
+  const { t, language } = useLanguage();
 
   const handlePrint = () => {
-    window.print()
-  }
+    window.print();
+  };
 
   const orderData = {
     pt: {
@@ -35,7 +40,8 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
         brand: "Samsung",
         model: "Notebook 9",
         serial: "DGXR91SF4EEG",
-        observation: "Aenean ligula eget conubia. Sugerio enim officia. Albus capillus ruteo tempuum sollus.",
+        observation:
+          "Aenean ligula eget conubia. Sugerio enim officia. Albus capillus ruteo tempuum sollus.",
       },
       serviceConditions: {
         title: "CONDIÇÕES DE SERVIÇO",
@@ -73,7 +79,8 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
         brand: "Samsung",
         model: "Notebook 9",
         serial: "DGXR91SF4EEG",
-        observation: "Aenean ligula eget conubia. Sugerio enim officia. Albus capillus ruteo tempuum sollus.",
+        observation:
+          "Aenean ligula eget conubia. Sugerio enim officia. Albus capillus ruteo tempuum sollus.",
       },
       serviceConditions: {
         title: "SERVICE CONDITIONS",
@@ -111,7 +118,8 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
         brand: "Samsung",
         model: "Notebook 9",
         serial: "DGXR91SF4EEG",
-        observation: "Aenean ligula eget conubia. Sugerio enim officia. Albus capillus ruteo tempuum sollus.",
+        observation:
+          "Aenean ligula eget conubia. Sugerio enim officia. Albus capillus ruteo tempuum sollus.",
       },
       serviceConditions: {
         title: "CONDICIONES DE SERVICIO",
@@ -132,9 +140,9 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
         name: "Augustus Kutch",
       },
     },
-  }
+  };
 
-  const data = orderData[language as keyof typeof orderData]
+  const data = orderData[language as keyof typeof orderData];
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -145,9 +153,17 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
             <div className="flex items-center gap-2">
               <Button size="sm" onClick={handlePrint}>
                 <Printer className="w-4 h-4 mr-2" />
-                {language === "pt" ? "Imprimir" : language === "en" ? "Print" : "Imprimir"}
+                {language === "pt"
+                  ? "Imprimir"
+                  : language === "en"
+                  ? "Print"
+                  : "Imprimir"}
               </Button>
-              <Button size="sm" variant="ghost" onClick={() => onOpenChange(false)}>
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={() => onOpenChange(false)}
+              >
                 <X className="w-4 h-4" />
               </Button>
             </div>
@@ -160,9 +176,17 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
           <div className="border-2 border-black p-4 mb-6">
             <div className="flex items-start justify-between mb-2">
               <div className="flex items-center gap-3">
-                <Image src="/logo.jpeg" alt="Ordemly Logo" width={48} height={48} className="rounded" />
+                <Image
+                  src="/logo.jpeg"
+                  alt="Ordemly Logo"
+                  width={48}
+                  height={48}
+                  className="rounded"
+                />
                 <div>
-                  <h1 className="font-bold text-sm leading-tight">{data.title}</h1>
+                  <h1 className="font-bold text-sm leading-tight">
+                    {data.title}
+                  </h1>
                   <p className="font-bold text-sm">{data.subtitle}</p>
                   <p className="text-xs mt-1">ordemly.com</p>
                 </div>
@@ -188,7 +212,9 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
           <div className="grid grid-cols-2 gap-4 mb-4">
             {/* Client Info */}
             <div className="border-2 border-black p-3">
-              <h2 className="font-bold text-xs mb-2">{data.clientInfo.title}</h2>
+              <h2 className="font-bold text-xs mb-2">
+                {data.clientInfo.title}
+              </h2>
               <div className="text-xs space-y-1">
                 <p>
                   <strong>Nome:</strong> {data.clientInfo.name}
@@ -207,7 +233,9 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
 
             {/* Service Conditions */}
             <div className="border-2 border-black p-3 row-span-2">
-              <h2 className="font-bold text-xs mb-2">{data.serviceConditions.title}</h2>
+              <h2 className="font-bold text-xs mb-2">
+                {data.serviceConditions.title}
+              </h2>
               <ol className="text-xs space-y-1 list-decimal list-inside">
                 {data.serviceConditions.items.map((item, index) => (
                   <li key={index} className="leading-tight">
@@ -219,7 +247,9 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
 
             {/* Equipment Info */}
             <div className="border-2 border-black p-3">
-              <h2 className="font-bold text-xs mb-2">{data.equipmentInfo.title}</h2>
+              <h2 className="font-bold text-xs mb-2">
+                {data.equipmentInfo.title}
+              </h2>
               <div className="text-xs space-y-1">
                 <p>
                   <strong>Marca:</strong> {data.equipmentInfo.brand}
@@ -260,8 +290,12 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
 
           {/* Problem Reported */}
           <div className="border-2 border-black p-3 mb-4">
-            <h2 className="font-bold text-xs mb-2">{data.problemReported.title}</h2>
-            <p className="text-xs leading-relaxed">{data.problemReported.description}</p>
+            <h2 className="font-bold text-xs mb-2">
+              {data.problemReported.title}
+            </h2>
+            <p className="text-xs leading-relaxed">
+              {data.problemReported.description}
+            </p>
           </div>
 
           {/* Signature */}
@@ -274,5 +308,5 @@ export function PrintOrderModal({ open, onOpenChange }: PrintOrderModalProps) {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

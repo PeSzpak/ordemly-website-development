@@ -1,16 +1,17 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
-import Link from "next/link"
-import { useLanguage } from "@/lib/i18n/language-context"
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Play } from "lucide-react";
+import Link from "next/link";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function HeroSection() {
-  const { t, language } = useLanguage()
+  const { t, language } = useLanguage();
   const getDashboardAdminImage = () => {
-    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
-    return `/images/dashboard-admin-${langSuffix}.png`
-  }
+    const langSuffix =
+      language === "pt" ? "PT" : language === "en" ? "EN" : "ES";
+    return `/images/dashboard-admin-${langSuffix}.png`;
+  };
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
@@ -31,7 +32,9 @@ export function HeroSection() {
               {t.hero.title}
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">{t.hero.subtitle}</p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">
+              {t.hero.subtitle}
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
@@ -60,7 +63,9 @@ export function HeroSection() {
             </div>
 
             <div className="flex items-center gap-8 pt-4">
-              <div className="text-sm text-muted-foreground">{t.hero.trustedBy}</div>
+              <div className="text-sm text-muted-foreground">
+                {t.hero.trustedBy}
+              </div>
             </div>
           </div>
 
@@ -68,10 +73,10 @@ export function HeroSection() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 dark:border-blue-500/20 bg-card">
               <div className="bg-background">
-                <img 
-                  src={getDashboardAdminImage()} 
-                  alt="Ordemly Dashboard Interface" 
-                  className="w-full h-auto" 
+                <img
+                  src={getDashboardAdminImage()}
+                  alt="Ordemly Dashboard Interface"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
@@ -82,5 +87,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

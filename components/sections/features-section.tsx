@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import type React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   LayoutDashboard,
   Kanban,
@@ -14,32 +14,36 @@ import {
   AlertCircle,
   TrendingUp,
   Printer,
-} from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
+} from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function FeaturesSection() {
-  const { t, language } = useLanguage()
+  const { t, language } = useLanguage();
 
   // Funções helper para obter imagens baseadas no idioma
   const getDashboardAdminImage = () => {
-    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
-    return `/images/dashboard-admin-${langSuffix}.png`
-  }
+    const langSuffix =
+      language === "pt" ? "PT" : language === "en" ? "EN" : "ES";
+    return `/images/dashboard-admin-${langSuffix}.png`;
+  };
 
   const getKanbanImage = () => {
-    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
-    return `/images/order${langSuffix}.png`
-  }
+    const langSuffix =
+      language === "pt" ? "PT" : language === "en" ? "EN" : "ES";
+    return `/images/order${langSuffix}.png`;
+  };
 
   const getEquipmentImage = () => {
-    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
-    return `/images/equip${langSuffix}.png`
-  }
+    const langSuffix =
+      language === "pt" ? "PT" : language === "en" ? "EN" : "ES";
+    return `/images/equip${langSuffix}.png`;
+  };
 
   const getOrdersImage = () => {
-    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
-    return `/images/ordem${langSuffix}.png`
-  }
+    const langSuffix =
+      language === "pt" ? "PT" : language === "en" ? "EN" : "ES";
+    return `/images/ordem${langSuffix}.png`;
+  };
 
   return (
     <section id="funcionalidades" className="py-20 md:py-32">
@@ -65,28 +69,36 @@ export function FeaturesSection() {
               className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-blue-500/30"
             >
               <LayoutDashboard className="w-5 h-5" />
-              <span className="text-sm font-medium">{t.featuresSection.dashboard.tab}</span>
+              <span className="text-sm font-medium">
+                {t.featuresSection.dashboard.tab}
+              </span>
             </TabsTrigger>
             <TabsTrigger
               value="kanban"
               className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-blue-500/30"
             >
               <Kanban className="w-5 h-5" />
-              <span className="text-sm font-medium">{t.featuresSection.kanban.tab}</span>
+              <span className="text-sm font-medium">
+                {t.featuresSection.kanban.tab}
+              </span>
             </TabsTrigger>
             <TabsTrigger
               value="equipment"
               className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-blue-500/30"
             >
               <Package className="w-5 h-5" />
-              <span className="text-sm font-medium">{t.featuresSection.equipment.tab}</span>
+              <span className="text-sm font-medium">
+                {t.featuresSection.equipment.tab}
+              </span>
             </TabsTrigger>
             <TabsTrigger
               value="orders"
               className="flex flex-col items-center gap-2 p-4 data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-blue-500/30"
             >
               <FileText className="w-5 h-5" />
-              <span className="text-sm font-medium">{t.featuresSection.orders.tab}</span>
+              <span className="text-sm font-medium">
+                {t.featuresSection.orders.tab}
+              </span>
             </TabsTrigger>
           </TabsList>
 
@@ -94,7 +106,9 @@ export function FeaturesSection() {
           <TabsContent value="dashboard" className="mt-0">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground">{t.featuresSection.dashboard.title}</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                  {t.featuresSection.dashboard.title}
+                </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {t.featuresSection.dashboard.description}
                 </p>
@@ -119,10 +133,10 @@ export function FeaturesSection() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                   <div className="bg-background">
-                    <img 
-                      src={getDashboardAdminImage()} 
-                      alt="Dashboard" 
-                      className="w-full h-auto" 
+                    <img
+                      src={getDashboardAdminImage()}
+                      alt="Dashboard"
+                      className="w-full h-auto"
                     />
                   </div>
                 </div>
@@ -137,18 +151,22 @@ export function FeaturesSection() {
                 <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                     <div className="bg-background">
-                      <img 
-                        src={getKanbanImage()} 
-                        alt="Kanban Board" 
-                        className="w-full h-auto" 
+                      <img
+                        src={getKanbanImage()}
+                        alt="Kanban Board"
+                        className="w-full h-auto"
                       />
                     </div>
                   </div>
                 </div>
               </div>
               <div className="space-y-6 order-1 lg:order-2">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground">{t.featuresSection.kanban.title}</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">{t.featuresSection.kanban.description}</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                  {t.featuresSection.kanban.title}
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t.featuresSection.kanban.description}
+                </p>
                 <div className="space-y-4">
                   <FeatureItem
                     icon={Users}
@@ -174,7 +192,9 @@ export function FeaturesSection() {
           <TabsContent value="equipment" className="mt-0">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground">{t.featuresSection.equipment.title}</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                  {t.featuresSection.equipment.title}
+                </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {t.featuresSection.equipment.description}
                 </p>
@@ -199,10 +219,10 @@ export function FeaturesSection() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                   <div className="bg-background">
-                    <img 
-                      src={getEquipmentImage()} 
-                      alt="Equipment List" 
-                      className="w-full h-auto" 
+                    <img
+                      src={getEquipmentImage()}
+                      alt="Equipment List"
+                      className="w-full h-auto"
                     />
                   </div>
                 </div>
@@ -217,18 +237,22 @@ export function FeaturesSection() {
                 <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-600/20 bg-card">
                     <div className="bg-background">
-                      <img 
-                        src={getOrdersImage()} 
-                        alt="Order Details" 
-                        className="w-full h-auto" 
+                      <img
+                        src={getOrdersImage()}
+                        alt="Order Details"
+                        className="w-full h-auto"
                       />
                     </div>
                   </div>
                 </div>
               </div>
               <div className="space-y-6 order-1 lg:order-2">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground">{t.featuresSection.orders.title}</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">{t.featuresSection.orders.description}</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                  {t.featuresSection.orders.title}
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t.featuresSection.orders.description}
+                </p>
                 <div className="space-y-4">
                   <FeatureItem
                     icon={FileText}
@@ -257,7 +281,7 @@ export function FeaturesSection() {
         </Tabs>
       </div>
     </section>
-  )
+  );
 }
 
 function FeatureItem({
@@ -265,9 +289,9 @@ function FeatureItem({
   title,
   description,
 }: {
-  icon: React.ElementType
-  title: string
-  description: string
+  icon: React.ElementType;
+  title: string;
+  description: string;
 }) {
   return (
     <div className="flex items-start gap-4">
@@ -276,8 +300,10 @@ function FeatureItem({
       </div>
       <div>
         <h4 className="font-semibold text-foreground mb-1">{title}</h4>
-        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {description}
+        </p>
       </div>
     </div>
-  )
+  );
 }

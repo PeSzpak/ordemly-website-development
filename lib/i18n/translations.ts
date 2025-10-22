@@ -25,13 +25,17 @@ export const translations = {
       title: "Por que escolher o Ordemly?",
       subtitle: "Transforme a gestão do seu negócio com tecnologia de ponta",
       card1Title: "Gestão Centralizada",
-      card1Desc: "Todas as ordens de serviço, equipamentos e equipes em um só lugar. Acesso rápido e organizado.",
+      card1Desc:
+        "Todas as ordens de serviço, equipamentos e equipes em um só lugar. Acesso rápido e organizado.",
       card2Title: "Aumento de Produtividade",
-      card2Desc: "Automatize processos e reduza tempo gasto em tarefas administrativas.",
+      card2Desc:
+        "Automatize processos e reduza tempo gasto em tarefas administrativas.",
       card3Title: "Controle Total",
-      card3Desc: "Acompanhe status, prioridades e histórico completo de cada ordem de serviço.",
+      card3Desc:
+        "Acompanhe status, prioridades e histórico completo de cada ordem de serviço.",
       card4Title: "Personalização Completa",
-      card4Desc: "Adapte o sistema à identidade da sua empresa com temas e domínio próprio.",
+      card4Desc:
+        "Adapte o sistema à identidade da sua empresa com temas e domínio próprio.",
     },
     // Profile Views Section
     // Profile Views Section - Detailed
@@ -59,7 +63,8 @@ export const translations = {
         id: "professional",
         title: "Profissional",
         subtitle: "Execução de Serviços",
-        description: "Interface otimizada para técnicos e profissionais que executam os serviços em campo.",
+        description:
+          "Interface otimizada para técnicos e profissionais que executam os serviços em campo.",
         feature1: "Visualização de ordens atribuídas",
         feature2: "Atualização de status em tempo real",
         feature3: "Registro de serviços executados",
@@ -71,7 +76,8 @@ export const translations = {
         id: "enduser",
         title: "Usuário Final",
         subtitle: "Solicitação e Acompanhamento",
-        description: "Experiência simplificada para clientes solicitarem e acompanharem seus serviços.",
+        description:
+          "Experiência simplificada para clientes solicitarem e acompanharem seus serviços.",
         feature1: "Abertura de ordens de serviço",
         feature2: "Acompanhamento em tempo real",
         feature3: "Notificações de status",
@@ -93,11 +99,14 @@ export const translations = {
         description:
           "Visualize todas as informações importantes em um único lugar com métricas em tempo real e acesso rápido às funcionalidades mais utilizadas.",
         feature1Title: "Métricas em Tempo Real",
-        feature1Desc: "Acompanhe KPIs e indicadores de desempenho atualizados automaticamente",
+        feature1Desc:
+          "Acompanhe KPIs e indicadores de desempenho atualizados automaticamente",
         feature2Title: "Acesso Rápido",
-        feature2Desc: "Atalhos para as funcionalidades mais utilizadas no seu dia a dia",
+        feature2Desc:
+          "Atalhos para as funcionalidades mais utilizadas no seu dia a dia",
         feature3Title: "Análises Avançadas",
-        feature3Desc: "Gráficos e relatórios para tomada de decisões estratégicas",
+        feature3Desc:
+          "Gráficos e relatórios para tomada de decisões estratégicas",
         mockActive: "Ativas",
         mockCompleted: "Concluídas",
         mockPending: "Pendentes",
@@ -109,11 +118,14 @@ export const translations = {
         description:
           "Organize e visualize ordens de serviço por departamentos com quadros Kanban intuitivos e arrastar e soltar.",
         feature1Title: "Por Departamento",
-        feature1Desc: "Visualize ordens organizadas por departamento, status ou prioridade",
+        feature1Desc:
+          "Visualize ordens organizadas por departamento, status ou prioridade",
         feature2Title: "Arrastar e Soltar",
-        feature2Desc: "Mova ordens entre colunas facilmente para atualizar status",
+        feature2Desc:
+          "Mova ordens entre colunas facilmente para atualizar status",
         feature3Title: "Priorização Visual",
-        feature3Desc: "Identifique rapidamente ordens urgentes com cores e etiquetas",
+        feature3Desc:
+          "Identifique rapidamente ordens urgentes com cores e etiquetas",
         mockPending: "Pendente",
         mockInProgress: "Em Progresso",
         mockCompleted: "Concluído",
@@ -122,13 +134,17 @@ export const translations = {
       equipment: {
         tab: "Equipamentos",
         title: "Gestão de Equipamentos",
-        description: "Rastreie equipamentos, histórico de manutenções e vincule automaticamente às ordens de serviço.",
+        description:
+          "Rastreie equipamentos, histórico de manutenções e vincule automaticamente às ordens de serviço.",
         feature1Title: "Cadastro Completo",
-        feature1Desc: "Registre todos os dados dos equipamentos com fotos e documentação",
+        feature1Desc:
+          "Registre todos os dados dos equipamentos com fotos e documentação",
         feature2Title: "Histórico Detalhado",
-        feature2Desc: "Acompanhe todo o histórico de manutenções e serviços realizados",
+        feature2Desc:
+          "Acompanhe todo o histórico de manutenções e serviços realizados",
         feature3Title: "Vinculação Automática",
-        feature3Desc: "Associe equipamentos às ordens de serviço automaticamente",
+        feature3Desc:
+          "Associe equipamentos às ordens de serviço automaticamente",
         mockTitle: "Equipamentos",
       },
       orders: {
@@ -137,13 +153,15 @@ export const translations = {
         description:
           "Gerencie cada ordem com informações completas organizadas em abas: detalhes, defeito, serviço executado e anexos.",
         feature1Title: "Informações Completas",
-        feature1Desc: "Registre todos os detalhes da ordem com campos personalizáveis",
+        feature1Desc:
+          "Registre todos os detalhes da ordem com campos personalizáveis",
         feature2Title: "Checklist de Ações",
         feature2Desc: "Crie e acompanhe listas de tarefas para cada ordem",
         feature3Title: "Anexos e Fotos",
         feature3Desc: "Adicione documentos, fotos e arquivos relevantes",
         feature4Title: "Impressão Facilitada",
-        feature4Desc: "Imprima ordens de serviço completas com um clique para documentação física",
+        feature4Desc:
+          "Imprima ordens de serviço completas com um clique para documentação física",
         mockOrderNumber: "Ordem de Serviço #1234",
         mockTabDetails: "Detalhes",
         mockTabDefect: "Defeito",
@@ -159,19 +177,22 @@ export const translations = {
       sectionSubtitle:
         "Adapte o Ordemly à identidade da sua empresa com temas personalizados, logo próprio e domínio customizado.",
       themesTitle: "Temas Personalizados",
-      themesDesc: "Escolha entre temas claro, escuro ou automático. Personalize cores para combinar com sua marca.",
+      themesDesc:
+        "Escolha entre temas claro, escuro ou automático. Personalize cores para combinar com sua marca.",
       themesFeature1: "Tema claro",
       themesFeature2: "Tema escuro",
       themesFeature3: "Modo automático",
       themesFeature4: "Cores customizadas",
       domainTitle: "Domínio Próprio",
-      domainDesc: "Use seu próprio domínio para acessar o sistema e reforçar sua identidade corporativa.",
+      domainDesc:
+        "Use seu próprio domínio para acessar o sistema e reforçar sua identidade corporativa.",
       domainFeature1: "Domínio customizado",
       domainFeature2: "SSL incluído",
       domainFeature3: "Configuração simples",
       domainFeature4: "Suporte técnico",
       brandingTitle: "Logo e Branding",
-      brandingDesc: "Adicione o logo da sua empresa e personalize a identidade visual do sistema.",
+      brandingDesc:
+        "Adicione o logo da sua empresa e personalize a identidade visual do sistema.",
       brandingFeature1: "Logo personalizado",
       brandingFeature2: "Cores da marca",
       brandingFeature3: "Favicon customizado",
@@ -193,9 +214,11 @@ export const translations = {
       subtitle:
         "Agende uma demonstração personalizada e descubra como o Ordemly pode transformar a gestão de ordens de serviço da sua empresa.",
       feature1Title: "Demonstração Personalizada",
-      feature1Desc: "Apresentação focada nas necessidades específicas da sua empresa",
+      feature1Desc:
+        "Apresentação focada nas necessidades específicas da sua empresa",
       feature2Title: "30 Minutos",
-      feature2Desc: "Tempo suficiente para conhecer todas as funcionalidades principais",
+      feature2Desc:
+        "Tempo suficiente para conhecer todas as funcionalidades principais",
       feature3Title: "Sem Compromisso",
       feature3Desc: "Conheça o sistema sem nenhuma obrigação de contratação",
       proposalTitle: "Proposta Personalizada",
@@ -211,16 +234,19 @@ export const translations = {
       phoneLabel: "Telefone *",
       phonePlaceholder: "+55 (41) 9 9999-9999",
       submitButton: "Agendar Demonstração",
-      privacyText: "Ao enviar, você concorda em receber comunicações da MM Tecnologia",
+      privacyText:
+        "Ao enviar, você concorda em receber comunicações da MM Tecnologia",
       successTitle: "Solicitação Enviada!",
-      successMessage: "Entraremos em contato em breve para agendar sua demonstração.",
+      successMessage:
+        "Entraremos em contato em breve para agendar sua demonstração.",
     },
     // Contact Section
     // Contact Section - Detailed
     contactSection: {
       sectionTitle: "Entre em",
       sectionTitleHighlight: "Contato",
-      sectionSubtitle: "Tem dúvidas ou quer saber mais sobre o Ordemly? Nossa equipe está pronta para ajudar.",
+      sectionSubtitle:
+        "Tem dúvidas ou quer saber mais sobre o Ordemly? Nossa equipe está pronta para ajudar.",
       leftTitle: "Fale Conosco",
       leftSubtitle:
         "Estamos aqui para responder suas perguntas e ajudar sua empresa a otimizar a gestão de ordens de serviço.",
@@ -238,7 +264,8 @@ export const translations = {
       hoursSun: "Domingo",
       hoursSunValue: "Fechado",
       supportTitle: "Suporte Técnico",
-      supportDesc: "Clientes ativos têm acesso a suporte técnico prioritário via chat, email e telefone.",
+      supportDesc:
+        "Clientes ativos têm acesso a suporte técnico prioritário via chat, email e telefone.",
       supportButton: "Acessar Central de Ajuda",
       formTitle: "Envie uma Mensagem",
       nameLabel: "Nome *",
@@ -256,7 +283,8 @@ export const translations = {
     // Footer
     // Footer - Detailed
     footerSection: {
-      tagline: "Sistema inteligente de gestão de ordens de serviço desenvolvido pela MM Tecnologia de Informação Ltda.",
+      tagline:
+        "Sistema inteligente de gestão de ordens de serviço desenvolvido pela MM Tecnologia de Informação Ltda.",
       productTitle: "Produto",
       productProfiles: "Perfis de Usuário",
       productFeatures: "Funcionalidades",
@@ -266,10 +294,12 @@ export const translations = {
       companyName: "MM Tecnologia de Informação Ltda",
       companyLocation: "São José dos Pinhais, PR",
       contactTitle: "Contato",
-      copyright: "© 2025 MM Tecnologia de Informação Ltda. Todos os direitos reservados.",
+      copyright:
+        "© 2025 MM Tecnologia de Informação Ltda. Todos os direitos reservados.",
       privacy: "Privacidade",
       terms: "Termos",
-      developedBy: "Um produto desenvolvido por MM Tecnologia de Informação Ltda",
+      developedBy:
+        "Um produto desenvolvido por MM Tecnologia de Informação Ltda",
     },
     // Order Status
     status: {
@@ -338,7 +368,8 @@ export const translations = {
       companyLabel: "Empresa",
       companyPlaceholder: "Nome da sua empresa (opcional)",
       messageLabel: "Mensagem",
-      messagePlaceholder: "Conte-nos sobre suas necessidades e requisitos específicos...",
+      messagePlaceholder:
+        "Conte-nos sobre suas necessidades e requisitos específicos...",
       infoNote: "Ao clicar em enviar, seu cliente de email será aberto.",
       cancelButton: "Cancelar",
       submitButton: "Enviar Solicitação",
@@ -372,15 +403,20 @@ export const translations = {
     // Benefits Section
     benefits: {
       title: "Why choose Ordemly?",
-      subtitle: "Transform your business management with cutting-edge technology",
+      subtitle:
+        "Transform your business management with cutting-edge technology",
       card1Title: "Centralized Management",
-      card1Desc: "All service orders, equipment, and teams in one place. Quick and organized access.",
+      card1Desc:
+        "All service orders, equipment, and teams in one place. Quick and organized access.",
       card2Title: "Increased Productivity",
-      card2Desc: "Automate processes and reduce time spent on administrative tasks.",
+      card2Desc:
+        "Automate processes and reduce time spent on administrative tasks.",
       card3Title: "Total Control",
-      card3Desc: "Track status, priorities, and complete history of each service order.",
+      card3Desc:
+        "Track status, priorities, and complete history of each service order.",
       card4Title: "Complete Customization",
-      card4Desc: "Adapt the system to your company's identity with custom themes and domain.",
+      card4Desc:
+        "Adapt the system to your company's identity with custom themes and domain.",
     },
     // Profile Views Section
     // Profile Views Section - Detailed
@@ -395,7 +431,8 @@ export const translations = {
         id: "administrator",
         title: "Administrator",
         subtitle: "Total System Control",
-        description: "Complete view with access to all functionalities, advanced metrics, and system configurations.",
+        description:
+          "Complete view with access to all functionalities, advanced metrics, and system configurations.",
         feature1: "Dashboard with complete metrics and KPIs",
         feature2: "User management and permissions",
         feature3: "Department and workflow configuration",
@@ -407,7 +444,8 @@ export const translations = {
         id: "professional",
         title: "Professional",
         subtitle: "Service Execution",
-        description: "Optimized interface for technicians and professionals executing field services.",
+        description:
+          "Optimized interface for technicians and professionals executing field services.",
         feature1: "View assigned orders",
         feature2: "Real-time status updates",
         feature3: "Service execution records",
@@ -419,7 +457,8 @@ export const translations = {
         id: "enduser",
         title: "End User",
         subtitle: "Request and Tracking",
-        description: "Simplified experience for customers requesting and tracking their services.",
+        description:
+          "Simplified experience for customers requesting and tracking their services.",
         feature1: "Open service orders",
         feature2: "Real-time tracking",
         feature3: "Status notifications",
@@ -433,16 +472,19 @@ export const translations = {
     featuresSection: {
       sectionTitle: "Features",
       sectionTitleHighlight: "Complete",
-      sectionSubtitle: "Everything you need to manage service orders, equipment, and teams in one single place.",
+      sectionSubtitle:
+        "Everything you need to manage service orders, equipment, and teams in one single place.",
       dashboard: {
         tab: "Dashboard",
         title: "Smart Dashboard",
         description:
           "View all important information in one place with real-time metrics and quick access to the most used functionalities.",
         feature1Title: "Real-time Metrics",
-        feature1Desc: "Track KPIs and performance indicators updated automatically",
+        feature1Desc:
+          "Track KPIs and performance indicators updated automatically",
         feature2Title: "Quick Access",
-        feature2Desc: "Shortcuts to the most used functionalities in your daily routine",
+        feature2Desc:
+          "Shortcuts to the most used functionalities in your daily routine",
         feature3Title: "Advanced Analyses",
         feature3Desc: "Graphs and reports for strategic decision-making",
         mockActive: "Active",
@@ -456,7 +498,8 @@ export const translations = {
         description:
           "Organize and visualize service orders by departments with intuitive and drag-and-drop Kanban boards.",
         feature1Title: "By Department",
-        feature1Desc: "View orders organized by department, status, or priority",
+        feature1Desc:
+          "View orders organized by department, status, or priority",
         feature2Title: "Drag-and-Drop",
         feature2Desc: "Easily move orders between columns to update status",
         feature3Title: "Visual Prioritization",
@@ -469,9 +512,11 @@ export const translations = {
       equipment: {
         tab: "Equipment",
         title: "Equipment Management",
-        description: "Track equipment, maintenance history, and automatically link to service orders.",
+        description:
+          "Track equipment, maintenance history, and automatically link to service orders.",
         feature1Title: "Complete Registration",
-        feature1Desc: "Register all equipment data with photos and documentation",
+        feature1Desc:
+          "Register all equipment data with photos and documentation",
         feature2Title: "Detailed History",
         feature2Desc: "Track all maintenance and services history",
         feature3Title: "Automatic Linking",
@@ -490,7 +535,8 @@ export const translations = {
         feature3Title: "Attachments and Photos",
         feature3Desc: "Add relevant documents, photos, and files",
         feature4Title: "Facilitated Printing",
-        feature4Desc: "Print complete service orders with a single click for physical documentation",
+        feature4Desc:
+          "Print complete service orders with a single click for physical documentation",
         mockOrderNumber: "Service Order #1234",
         mockTabDetails: "Details",
         mockTabDefect: "Defect",
@@ -506,19 +552,22 @@ export const translations = {
       sectionSubtitle:
         "Adapt Ordemly to your company's identity with custom themes, your own logo, and a custom domain.",
       themesTitle: "Custom Themes",
-      themesDesc: "Choose between light, dark, or automatic themes. Customize colors to match your brand.",
+      themesDesc:
+        "Choose between light, dark, or automatic themes. Customize colors to match your brand.",
       themesFeature1: "Light theme",
       themesFeature2: "Dark theme",
       themesFeature3: "Automatic mode",
       themesFeature4: "Custom colors",
       domainTitle: "Custom Domain",
-      domainDesc: "Use your own domain to access the system and reinforce your corporate identity.",
+      domainDesc:
+        "Use your own domain to access the system and reinforce your corporate identity.",
       domainFeature1: "Custom domain",
       domainFeature2: "SSL included",
       domainFeature3: "Simple configuration",
       domainFeature4: "Technical support",
       brandingTitle: "Logo and Branding",
-      brandingDesc: "Add your company's logo and customize the system's visual identity.",
+      brandingDesc:
+        "Add your company's logo and customize the system's visual identity.",
       brandingFeature1: "Custom logo",
       brandingFeature2: "Brand colors",
       brandingFeature3: "Custom favicon",
@@ -558,18 +607,22 @@ export const translations = {
       phoneLabel: "Phone *",
       phonePlaceholder: "+1 (555) 123-4567",
       submitButton: "Schedule Demonstration",
-      privacyText: "By sending, you agree to receive communications from MM Tecnologia",
+      privacyText:
+        "By sending, you agree to receive communications from MM Tecnologia",
       successTitle: "Request Sent!",
-      successMessage: "We will contact you soon to schedule your demonstration.",
+      successMessage:
+        "We will contact you soon to schedule your demonstration.",
     },
     // Contact Section
     // Contact Section - Detailed
     contactSection: {
       sectionTitle: "Get in",
       sectionTitleHighlight: "Touch",
-      sectionSubtitle: "Have questions or want to know more about Ordemly? Our team is ready to help.",
+      sectionSubtitle:
+        "Have questions or want to know more about Ordemly? Our team is ready to help.",
       leftTitle: "Contact Us",
-      leftSubtitle: "We are here to answer your questions and help your company optimize service order management.",
+      leftSubtitle:
+        "We are here to answer your questions and help your company optimize service order management.",
       phoneTitle: "Phone",
       phoneValue: "+55 41 9 9606-2151",
       emailTitle: "Email",
@@ -584,7 +637,8 @@ export const translations = {
       hoursSun: "Sunday",
       hoursSunValue: "Closed",
       supportTitle: "Technical Support",
-      supportDesc: "Active customers have priority access to technical support via chat, email, and phone.",
+      supportDesc:
+        "Active customers have priority access to technical support via chat, email, and phone.",
       supportButton: "Access Help Center",
       formTitle: "Send a Message",
       nameLabel: "Name *",
@@ -602,7 +656,8 @@ export const translations = {
     // Footer
     // Footer - Detailed
     footerSection: {
-      tagline: "Smart service order management system developed by MM Tecnologia de Informação Ltda.",
+      tagline:
+        "Smart service order management system developed by MM Tecnologia de Informação Ltda.",
       productTitle: "Product",
       productProfiles: "User Profiles",
       productFeatures: "Features",
@@ -612,7 +667,8 @@ export const translations = {
       companyName: "MM Tecnologia de Informação Ltda",
       companyLocation: "São José dos Pinhais, PR",
       contactTitle: "Contact",
-      copyright: "© 2025 MM Tecnologia de Informação Ltda. All rights reserved.",
+      copyright:
+        "© 2025 MM Tecnologia de Informação Ltda. All rights reserved.",
       privacy: "Privacy",
       terms: "Terms",
       developedBy: "A product developed by MM Tecnologia de Informação Ltda",
@@ -636,7 +692,8 @@ export const translations = {
       badge: "Flexible Plans",
       title: "Choose the",
       titleHighlight: "Ideal",
-      subtitle: "Tailored solutions for companies of all sizes. Contact us to discuss your needs.",
+      subtitle:
+        "Tailored solutions for companies of all sizes. Contact us to discuss your needs.",
       starterTitle: "Starter Plan",
       starterSubtitle: "For small businesses",
       starterPriceNote: "Starting at",
@@ -661,7 +718,8 @@ export const translations = {
       customFeature5: "Custom integrations",
       customFeature6: "Priority 24/7 support",
       customFeature7: "Dedicated team training",
-      bottomNote: "All plans include free updates and technical support. Contact us for a custom proposal.",
+      bottomNote:
+        "All plans include free updates and technical support. Contact us for a custom proposal.",
       emailSubject: "Ordemly Pricing Request",
       emailBody: "Hello, I would like to request pricing for Ordemly.",
       planLabel: "Plan of Interest",
@@ -682,7 +740,8 @@ export const translations = {
       companyLabel: "Company",
       companyPlaceholder: "Your company name (optional)",
       messageLabel: "Message",
-      messagePlaceholder: "Tell us about your needs and specific requirements...",
+      messagePlaceholder:
+        "Tell us about your needs and specific requirements...",
       infoNote: "When you click submit, your email client will open.",
       cancelButton: "Cancel",
       submitButton: "Send Request",
@@ -706,7 +765,8 @@ export const translations = {
     // Hero Section
     hero: {
       tag: "Sistema de gestión inteligente",
-      title: "Administre Órdenes de Servicio con Eficiencia y Total Organización",
+      title:
+        "Administre Órdenes de Servicio con Eficiencia y Total Organización",
       subtitle:
         "Sistema completo para la gestión de órdenes de servicio, equipos y equipos. Control total de su negocio en una sola plataforma.",
       ctaDemo: "Agende una Demo",
@@ -716,15 +776,20 @@ export const translations = {
     // Benefits Section
     benefits: {
       title: "¿Por qué elegir Ordemly?",
-      subtitle: "Transforme la gestión de su negocio con tecnología de vanguardia",
+      subtitle:
+        "Transforme la gestión de su negocio con tecnología de vanguardia",
       card1Title: "Gestión Centralizada",
-      card1Desc: "Todas las órdenes de servicio, equipos y equipos en un solo lugar. Acceso rápido y organizado.",
+      card1Desc:
+        "Todas las órdenes de servicio, equipos y equipos en un solo lugar. Acceso rápido y organizado.",
       card2Title: "Aumento de Productividad",
-      card2Desc: "Automatice los procesos y reduzca el tiempo gastado en tareas administrativas.",
+      card2Desc:
+        "Automatice los procesos y reduzca el tiempo gastado en tareas administrativas.",
       card3Title: "Control Total",
-      card3Desc: "Siga el estado, prioridades y historial completo de cada orden de servicio.",
+      card3Desc:
+        "Siga el estado, prioridades y historial completo de cada orden de servicio.",
       card4Title: "Personalización Completa",
-      card4Desc: "Adapte el sistema a la identidad de su empresa con temas y dominio propio.",
+      card4Desc:
+        "Adapte el sistema a la identidad de su empresa con temas y dominio propio.",
     },
     // Profile Views Section
     // Profile Views Section - Detailed
@@ -752,7 +817,8 @@ export const translations = {
         id: "professional",
         title: "Profesional",
         subtitle: "Ejecución de Servicios",
-        description: "Interfaz optimizada para técnicos y profesionales que ejecutan los servicios en campo.",
+        description:
+          "Interfaz optimizada para técnicos y profesionales que ejecutan los servicios en campo.",
         feature1: "Visualización de órdenes asignadas",
         feature2: "Actualización de estado en tiempo real",
         feature3: "Registro de servicios ejecutados",
@@ -764,7 +830,8 @@ export const translations = {
         id: "enduser",
         title: "Usuario Final",
         subtitle: "Solicitud y Seguimiento",
-        description: "Experiencia simplificada para clientes que solicitan y siguen sus servicios.",
+        description:
+          "Experiencia simplificada para clientes que solicitan y siguen sus servicios.",
         feature1: "Apertura de órdenes de servicio",
         feature2: "Seguimiento en tiempo real",
         feature3: "Notificaciones de estado",
@@ -778,18 +845,22 @@ export const translations = {
     featuresSection: {
       sectionTitle: "Funcionalidades",
       sectionTitleHighlight: "Completas",
-      sectionSubtitle: "Todo lo que necesita para gestionar órdenes de servicio, equipos y equipos en un solo lugar.",
+      sectionSubtitle:
+        "Todo lo que necesita para gestionar órdenes de servicio, equipos y equipos en un solo lugar.",
       dashboard: {
         tab: "Tablero",
         title: "Tablero Inteligente",
         description:
           "Visualice toda la información importante en un solo lugar con métricas en tiempo real y acceso rápido a las funcionalidades más utilizadas.",
         feature1Title: "Métricas en Tiempo Real",
-        feature1Desc: "Siga KPIs e indicadores de desempeño actualizados automáticamente",
+        feature1Desc:
+          "Siga KPIs e indicadores de desempeño actualizados automáticamente",
         feature2Title: "Acceso Rápido",
-        feature2Desc: "Atajos para las funcionalidades más utilizadas en su día a día",
+        feature2Desc:
+          "Atajos para las funcionalidades más utilizadas en su día a día",
         feature3Title: "Análisis Avanzados",
-        feature3Desc: "Gráficos e informes para la toma de decisiones estratégicas",
+        feature3Desc:
+          "Gráficos e informes para la toma de decisiones estratégicas",
         mockActive: "Activas",
         mockCompleted: "Completadas",
         mockPending: "Pendientes",
@@ -801,11 +872,14 @@ export const translations = {
         description:
           "Organice y visualice órdenes de servicio por departamentos con tableros Kanban intuitivos y arrastrar y soltar.",
         feature1Title: "Por Departamento",
-        feature1Desc: "Visualice órdenes organizadas por departamento, estado o prioridad",
+        feature1Desc:
+          "Visualice órdenes organizadas por departamento, estado o prioridad",
         feature2Title: "Arrastrar y Soltar",
-        feature2Desc: "Mueva órdenes entre columnas fácilmente para actualizar estado",
+        feature2Desc:
+          "Mueva órdenes entre columnas fácilmente para actualizar estado",
         feature3Title: "Priorización Visual",
-        feature3Desc: "Identifique rápidamente órdenes urgentes con colores y etiquetas",
+        feature3Desc:
+          "Identifique rápidamente órdenes urgentes con colores y etiquetas",
         mockPending: "Pendiente",
         mockInProgress: "En Progreso",
         mockCompleted: "Completado",
@@ -814,11 +888,14 @@ export const translations = {
       equipment: {
         tab: "Equipos",
         title: "Gestión de Equipos",
-        description: "Rastree equipos, historial de mantenimientos y vincule automáticamente a órdenes de servicio.",
+        description:
+          "Rastree equipos, historial de mantenimientos y vincule automáticamente a órdenes de servicio.",
         feature1Title: "Registro Completo",
-        feature1Desc: "Registre todos los datos de los equipos con fotos y documentación",
+        feature1Desc:
+          "Registre todos los datos de los equipos con fotos y documentación",
         feature2Title: "Historial Detallado",
-        feature2Desc: "Siga todo el historial de mantenimientos y servicios realizados",
+        feature2Desc:
+          "Siga todo el historial de mantenimientos y servicios realizados",
         feature3Title: "Vinculación Automática",
         feature3Desc: "Asocie equipos a órdenes de servicio automáticamente",
         mockTitle: "Equipos",
@@ -829,13 +906,15 @@ export const translations = {
         description:
           "Administre cada orden con información completa organizada en pestañas: detalles, defecto, servicio ejecutado y anexos.",
         feature1Title: "Información Completa",
-        feature1Desc: "Registre todos los detalles de la orden con campos personalizables",
+        feature1Desc:
+          "Registre todos los detalles de la orden con campos personalizables",
         feature2Title: "Lista de Verificación de Acciones",
         feature2Desc: "Cree y siga listas de tareas para cada orden",
         feature3Title: "Anexos y Fotos",
         feature3Desc: "Añada documentos, fotos y archivos relevantes",
         feature4Title: "Impresión Facilitada",
-        feature4Desc: "Imprima órdenes de servicio completas con un clic para documentación física",
+        feature4Desc:
+          "Imprima órdenes de servicio completas con un clic para documentación física",
         mockOrderNumber: "Orden de Servicio #1234",
         mockTabDetails: "Detalles",
         mockTabDefect: "Defecto",
@@ -851,19 +930,22 @@ export const translations = {
       sectionSubtitle:
         "Adapte Ordemly a la identidad de su empresa con temas personalizados, logo propio y dominio personalizado.",
       themesTitle: "Temas Personalizados",
-      themesDesc: "Elige entre temas claro, oscuro o automático. Personaliza colores para combinar con su marca.",
+      themesDesc:
+        "Elige entre temas claro, oscuro o automático. Personaliza colores para combinar con su marca.",
       themesFeature1: "Tema claro",
       themesFeature2: "Tema oscuro",
       themesFeature3: "Modo automático",
       themesFeature4: "Colores personalizados",
       domainTitle: "Dominio Propio",
-      domainDesc: "Use su propio dominio para acceder al sistema y reforzar su identidad corporativa.",
+      domainDesc:
+        "Use su propio dominio para acceder al sistema y reforzar su identidad corporativa.",
       domainFeature1: "Dominio personalizado",
       domainFeature2: "SSL incluido",
       domainFeature3: "Configuración simple",
       domainFeature4: "Soporte técnico",
       brandingTitle: "Logo y Branding",
-      brandingDesc: "Añada el logo de su empresa y personalice la identidad visual del sistema.",
+      brandingDesc:
+        "Añada el logo de su empresa y personalice la identidad visual del sistema.",
       brandingFeature1: "Logo personalizado",
       brandingFeature2: "Colores de la marca",
       brandingFeature3: "Favicon personalizado",
@@ -885,9 +967,11 @@ export const translations = {
       subtitle:
         "Agende una demostración personalizada y descubra cómo Ordemly puede transformar la gestión de órdenes de servicio de su empresa.",
       feature1Title: "Demostración Personalizada",
-      feature1Desc: "Presentación enfocada en las necesidades específicas de su empresa",
+      feature1Desc:
+        "Presentación enfocada en las necesidades específicas de su empresa",
       feature2Title: "30 Minutos",
-      feature2Desc: "Tiempo suficiente para conocer todas las principales funcionalidades",
+      feature2Desc:
+        "Tiempo suficiente para conocer todas las principales funcionalidades",
       feature3Title: "Sin Compromiso",
       feature3Desc: "Conozca el sistema sin ninguna obligación de contratación",
       proposalTitle: "Proposta Personalizada",
@@ -903,16 +987,19 @@ export const translations = {
       phoneLabel: "Teléfono *",
       phonePlaceholder: "+55 (41) 9 9999-9999",
       submitButton: "Agendar Demostración",
-      privacyText: "Al enviar, usted acepta recibir comunicaciones de MM Tecnologia",
+      privacyText:
+        "Al enviar, usted acepta recibir comunicaciones de MM Tecnologia",
       successTitle: "Solicitud Enviada!",
-      successMessage: "Entraremos en contacto pronto para agendar su demostración.",
+      successMessage:
+        "Entraremos en contacto pronto para agendar su demostración.",
     },
     // Contact Section
     // Contact Section - Detailed
     contactSection: {
       sectionTitle: "Entre en",
       sectionTitleHighlight: "Contacto",
-      sectionSubtitle: "¿Tiene dudas o quiere saber más sobre Ordemly? Nuestro equipo está listo para ayudar.",
+      sectionSubtitle:
+        "¿Tiene dudas o quiere saber más sobre Ordemly? Nuestro equipo está listo para ayudar.",
       leftTitle: "Hable con Nosotros",
       leftSubtitle:
         "Estamos aquí para responder sus preguntas y ayudar a su empresa a optimizar la gestión de órdenes de servicio.",
@@ -960,10 +1047,12 @@ export const translations = {
       companyName: "MM Tecnologia de Informação Ltda",
       companyLocation: "São José dos Pinhais, PR",
       contactTitle: "Contacto",
-      copyright: "© 2025 MM Tecnologia de Informação Ltda. Todos los derechos reservados.",
+      copyright:
+        "© 2025 MM Tecnologia de Informação Ltda. Todos los derechos reservados.",
       privacy: "Privacidad",
       terms: "Términos",
-      developedBy: "Un producto desarrollado por MM Tecnologia de Informação Ltda",
+      developedBy:
+        "Un producto desarrollado por MM Tecnologia de Informação Ltda",
     },
     // Order Status
     status: {
@@ -1032,7 +1121,8 @@ export const translations = {
       companyLabel: "Empresa",
       companyPlaceholder: "Nombre de su empresa (opcional)",
       messageLabel: "Mensaje",
-      messagePlaceholder: "Cuéntenos sobre sus necesidades y requisitos específicos...",
+      messagePlaceholder:
+        "Cuéntenos sobre sus necesidades y requisitos específicos...",
       infoNote: "Al hacer clic en enviar, su cliente de correo se abrirá.",
       cancelButton: "Cancelar",
       submitButton: "Enviar Solicitud",
@@ -1042,7 +1132,7 @@ export const translations = {
       emailSubject: "Solicitud de Presupuesto Ordemly",
     },
   },
-} as const
+} as const;
 
-export type Language = keyof typeof translations
-export type TranslationKey = typeof translations.pt
+export type Language = keyof typeof translations;
+export type TranslationKey = typeof translations.pt;

@@ -1,37 +1,60 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { useLanguage } from "@/lib/i18n/language-context"
-import { Mail, User, Building2, Phone, MessageSquare, Sparkles } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "@/components/ui/drawer"
-import { useMobile } from "@/hooks/use-mobile"
+import { useState } from "react";
+import { useLanguage } from "@/lib/i18n/language-context";
+import {
+  Mail,
+  User,
+  Building2,
+  Phone,
+  MessageSquare,
+  Sparkles,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer";
+import { useMobile } from "@/hooks/use-mobile";
 
 interface QuoteRequestModalProps {
-  isOpen: boolean
-  onClose: () => void
-  planType: string
+  isOpen: boolean;
+  onClose: () => void;
+  planType: string;
 }
 
-export function QuoteRequestModal({ isOpen, onClose, planType }: QuoteRequestModalProps) {
-  const { t } = useLanguage()
-  const isMobile = useMobile()
+export function QuoteRequestModal({
+  isOpen,
+  onClose,
+  planType,
+}: QuoteRequestModalProps) {
+  const { t } = useLanguage();
+  const isMobile = useMobile();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     company: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     // Create email body with form data
     const emailBody = `
@@ -47,18 +70,20 @@ ${t.quoteModal.companyLabel}: ${formData.company}
 
 ${t.quoteModal.messageLabel}:
 ${formData.message}
-    `.trim()
+    `.trim();
 
-    const subject = encodeURIComponent(`${t.quoteModal.emailSubject} - ${planType}`)
-    const body = encodeURIComponent(emailBody)
-    const mailtoLink = `mailto:contato@mmti.io?subject=${subject}&body=${body}`
+    const subject = encodeURIComponent(
+      `${t.quoteModal.emailSubject} - ${planType}`
+    );
+    const body = encodeURIComponent(emailBody);
+    const mailtoLink = `mailto:contato@mmti.io?subject=${subject}&body=${body}`;
 
     // Open email client
-    window.location.href = mailtoLink
+    window.location.href = mailtoLink;
 
     // Close modal after a short delay
     setTimeout(() => {
-      onClose()
+      onClose();
       // Reset form
       setFormData({
         name: "",
@@ -66,15 +91,17 @@ ${formData.message}
         phone: "",
         company: "",
         message: "",
-      })
-    }, 500)
-  }
+      });
+    }, 500);
+  };
 
   const FormContent = () => (
     <form onSubmit={handleSubmit} className="space-y-6 pt-4 px-4 pb-4">
       {/* Plan Type Display */}
       <div className="rounded-lg border border-blue-600/20 bg-blue-600/5 p-4 text-center">
-        <p className="text-sm font-medium text-muted-foreground">{t.quoteModal.selectedPlan}</p>
+        <p className="text-sm font-medium text-muted-foreground">
+          {t.quoteModal.selectedPlan}
+        </p>
         <p className="mt-1 text-lg font-semibold text-foreground">{planType}</p>
       </div>
 
@@ -107,7 +134,9 @@ ${formData.message}
             type="email"
             required
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             placeholder={t.quoteModal.emailPlaceholder}
             className="border-blue-600/20 focus:border-blue-600"
           />
@@ -124,7 +153,9 @@ ${formData.message}
             type="tel"
             required
             value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
             placeholder={t.quoteModal.phonePlaceholder}
             className="border-blue-600/20 focus:border-blue-600"
           />
@@ -139,7 +170,9 @@ ${formData.message}
           <Input
             id="company"
             value={formData.company}
-            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, company: e.target.value })
+            }
             placeholder={t.quoteModal.companyPlaceholder}
             className="border-blue-600/20 focus:border-blue-600"
           />
@@ -157,7 +190,9 @@ ${formData.message}
           required
           rows={4}
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, message: e.target.value })
+          }
           placeholder={t.quoteModal.messagePlaceholder}
           className="resize-none border-blue-600/20 focus:border-blue-600"
         />
@@ -187,7 +222,7 @@ ${formData.message}
         </Button>
       </div>
     </form>
-  )
+  );
 
   if (isMobile) {
     return (
@@ -199,15 +234,19 @@ ${formData.message}
                 <Sparkles className="h-6 w-6 text-white" />
               </div>
               <div className="space-y-1">
-                <DrawerTitle className="text-2xl font-bold">{t.quoteModal.title}</DrawerTitle>
-                <DrawerDescription className="text-base">{t.quoteModal.subtitle}</DrawerDescription>
+                <DrawerTitle className="text-2xl font-bold">
+                  {t.quoteModal.title}
+                </DrawerTitle>
+                <DrawerDescription className="text-base">
+                  {t.quoteModal.subtitle}
+                </DrawerDescription>
               </div>
             </div>
           </DrawerHeader>
           <FormContent />
         </DrawerContent>
       </Drawer>
-    )
+    );
   }
 
   return (
@@ -219,13 +258,17 @@ ${formData.message}
               <Sparkles className="h-6 w-6 text-white" />
             </div>
             <div className="space-y-1">
-              <DialogTitle className="text-2xl font-bold">{t.quoteModal.title}</DialogTitle>
-              <DialogDescription className="text-base">{t.quoteModal.subtitle}</DialogDescription>
+              <DialogTitle className="text-2xl font-bold">
+                {t.quoteModal.title}
+              </DialogTitle>
+              <DialogDescription className="text-base">
+                {t.quoteModal.subtitle}
+              </DialogDescription>
             </div>
           </div>
         </DialogHeader>
         <FormContent />
       </DialogContent>
     </Dialog>
-  )
+  );
 }

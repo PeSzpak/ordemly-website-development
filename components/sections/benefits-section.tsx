@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { CheckCircle2, Zap, Shield, Sparkles } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
+import { CheckCircle2, Zap, Shield, Sparkles } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function BenefitsSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   const benefits = [
     {
@@ -27,7 +27,7 @@ export function BenefitsSection() {
       title: t.benefits.card4Title,
       description: t.benefits.card4Desc,
     },
-  ]
+  ];
 
   return (
     <section className="py-20 md:py-32">
@@ -38,12 +38,14 @@ export function BenefitsSection() {
               {t.benefits.title}
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed text-pretty">{t.benefits.subtitle}</p>
+          <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
+            {t.benefits.subtitle}
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {benefits.map((benefit, index) => {
-            const Icon = benefit.icon
+            const Icon = benefit.icon;
             return (
               <div
                 key={index}
@@ -54,15 +56,19 @@ export function BenefitsSection() {
                     <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-foreground">{benefit.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                    <h3 className="text-xl font-semibold text-foreground">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {benefit.description}
+                    </p>
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,16 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Shield, Wrench, User, ChevronRight } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useLanguage } from "@/lib/i18n/language-context"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Shield, Wrench, User, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/i18n/language-context";
 
-type ProfileType = "administrator" | "professional" | "enduser"
+type ProfileType = "administrator" | "professional" | "enduser";
 
 export function ProfileViewsSection() {
-  const { t, language } = useLanguage() // Added language to get current language
-  const [activeProfile, setActiveProfile] = useState<ProfileType>("administrator")
+  const { t, language } = useLanguage(); // Added language to get current language
+  const [activeProfile, setActiveProfile] =
+    useState<ProfileType>("administrator");
 
   const profiles = [
     {
@@ -61,22 +62,24 @@ export function ProfileViewsSection() {
       ],
       color: "chart-3",
     },
-  ]
+  ];
 
-  const currentProfile = profiles.find((p) => p.id === activeProfile) || profiles[0]
-  const Icon = currentProfile.icon
+  const currentProfile =
+    profiles.find((p) => p.id === activeProfile) || profiles[0];
+  const Icon = currentProfile.icon;
 
   const getImagePath = (profile: ProfileType) => {
-    const langSuffix = language === "pt" ? "PT" : language === "en" ? "EN" : "ES"
+    const langSuffix =
+      language === "pt" ? "PT" : language === "en" ? "EN" : "ES";
 
     if (profile === "administrator") {
-      return `/images/dashboard-admin-${langSuffix}.png`
+      return `/images/dashboard-admin-${langSuffix}.png`;
     } else if (profile === "professional") {
-      return `images/dashprofe${langSuffix}.png`
+      return `images/dashprofe${langSuffix}.png`;
     } else {
-      return `/images/sup${langSuffix}.png`
+      return `/images/sup${langSuffix}.png`;
     }
-  }
+  };
 
   return (
     <section id="perfis" className="py-20 md:py-32 bg-secondary/30">
@@ -89,13 +92,15 @@ export function ProfileViewsSection() {
               {t.profileViews.sectionTitleHighlight}
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed text-pretty">{t.profileViews.sectionSubtitle}</p>
+          <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
+            {t.profileViews.sectionSubtitle}
+          </p>
         </div>
 
         {/* Profile Tabs */}
         <div className="flex flex-col md:flex-row gap-4 mb-12 max-w-4xl mx-auto">
           {profiles.map((profile) => {
-            const ProfileIcon = profile.icon
+            const ProfileIcon = profile.icon;
             return (
               <button
                 key={profile.id}
@@ -105,7 +110,7 @@ export function ProfileViewsSection() {
                   activeProfile === profile.id
                     ? // Added blue gradient border and blue-tinted background for active state
                       "border-blue-600 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/30 dark:to-blue-900/20 shadow-lg shadow-blue-500/10"
-                    : "border-border bg-card hover:border-blue-400/30 hover:bg-card/80",
+                    : "border-border bg-card hover:border-blue-400/30 hover:bg-card/80"
                 )}
               >
                 <div className="flex items-center gap-3 mb-2">
@@ -115,7 +120,7 @@ export function ProfileViewsSection() {
                       activeProfile === profile.id
                         ? // Blue gradient background for active icon
                           "bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-500/30"
-                        : "bg-muted text-muted-foreground",
+                        : "bg-muted text-muted-foreground"
                     )}
                   >
                     <ProfileIcon className="w-5 h-5" />
@@ -124,7 +129,9 @@ export function ProfileViewsSection() {
                     <div
                       className={cn(
                         "font-semibold",
-                        activeProfile === profile.id ? "text-foreground" : "text-muted-foreground",
+                        activeProfile === profile.id
+                          ? "text-foreground"
+                          : "text-muted-foreground"
                       )}
                     >
                       {profile.title}
@@ -132,12 +139,17 @@ export function ProfileViewsSection() {
                   </div>
                 </div>
                 <p
-                  className={cn("text-sm", activeProfile === profile.id ? "text-foreground" : "text-muted-foreground")}
+                  className={cn(
+                    "text-sm",
+                    activeProfile === profile.id
+                      ? "text-foreground"
+                      : "text-muted-foreground"
+                  )}
                 >
                   {profile.subtitle}
                 </p>
               </button>
-            )
+            );
           })}
         </div>
 
@@ -151,9 +163,13 @@ export function ProfileViewsSection() {
                 {currentProfile.title}
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground">{currentProfile.subtitle}</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                {currentProfile.subtitle}
+              </h3>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">{currentProfile.description}</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {currentProfile.description}
+              </p>
             </div>
 
             <div className="space-y-3">
@@ -193,5 +209,5 @@ export function ProfileViewsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

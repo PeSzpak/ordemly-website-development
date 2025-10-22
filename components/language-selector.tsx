@@ -1,20 +1,25 @@
-"use client"
+"use client";
 
-import { useLanguage } from "@/lib/i18n/language-context"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Globe } from "lucide-react"
+import { useLanguage } from "@/lib/i18n/language-context";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Globe } from "lucide-react";
 
 export function LanguageSelector() {
-  const { language, setLanguage } = useLanguage()
+  const { language, setLanguage } = useLanguage();
 
   const languages = [
     { code: "pt" as const, label: "🇧🇷 Português", name: "PT" },
     { code: "en" as const, label: "🇺🇸 English", name: "EN" },
     { code: "es" as const, label: "🇪🇸 Español", name: "ES" },
-  ]
+  ];
 
-  const currentLang = languages.find((l) => l.code === language)
+  const currentLang = languages.find((l) => l.code === language);
 
   return (
     <DropdownMenu>
@@ -36,5 +41,5 @@ export function LanguageSelector() {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

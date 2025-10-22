@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { Palette, Globe, Smartphone, Moon, Sun, Monitor } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
+import type React from "react";
+import { Palette, Globe, Smartphone, Moon, Sun, Monitor } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function CustomizationSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <section id="personalizacao" className="py-20 md:py-32 bg-secondary/30">
@@ -91,7 +91,7 @@ export function CustomizationSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function CustomizationCard({
@@ -100,10 +100,10 @@ function CustomizationCard({
   description,
   features,
 }: {
-  icon: React.ElementType
-  title: string
-  description: string
-  features: string[]
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  features: string[];
 }) {
   return (
     <div className="bg-card border border-border rounded-2xl p-6 hover:border-blue-600/50 hover:bg-gradient-to-br hover:from-blue-50/50 hover:to-transparent dark:hover:from-blue-950/20 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
@@ -111,17 +111,22 @@ function CustomizationCard({
         <Icon className="w-6 h-6" />
       </div>
       <h3 className="text-xl font-semibold text-foreground mb-3">{title}</h3>
-      <p className="text-muted-foreground mb-4 leading-relaxed">{description}</p>
+      <p className="text-muted-foreground mb-4 leading-relaxed">
+        {description}
+      </p>
       <ul className="space-y-2">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+          <li
+            key={index}
+            className="flex items-center gap-2 text-sm text-muted-foreground"
+          >
             <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-700" />
             {feature}
           </li>
         ))}
       </ul>
     </div>
-  )
+  );
 }
 
 function ThemePreview({
@@ -131,21 +136,31 @@ function ThemePreview({
   gradient,
   dark = false,
 }: {
-  icon: React.ElementType
-  title: string
-  description: string
-  gradient: string
-  dark?: boolean
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  gradient: string;
+  dark?: boolean;
 }) {
   return (
     <div className="space-y-3">
       <div
         className={`aspect-[4/3] rounded-xl bg-gradient-to-br ${gradient} border border-border p-4 relative overflow-hidden`}
       >
-        <div className={`absolute inset-0 ${dark ? "bg-black/20" : "bg-white/20"}`} />
+        <div
+          className={`absolute inset-0 ${dark ? "bg-black/20" : "bg-white/20"}`}
+        />
         <div className="relative space-y-2">
-          <div className={`h-2 w-3/4 rounded ${dark ? "bg-white/30" : "bg-black/20"}`} />
-          <div className={`h-2 w-1/2 rounded ${dark ? "bg-white/20" : "bg-black/10"}`} />
+          <div
+            className={`h-2 w-3/4 rounded ${
+              dark ? "bg-white/30" : "bg-black/20"
+            }`}
+          />
+          <div
+            className={`h-2 w-1/2 rounded ${
+              dark ? "bg-white/20" : "bg-black/10"
+            }`}
+          />
         </div>
       </div>
       <div className="text-center">
@@ -156,5 +171,5 @@ function ThemePreview({
         <div className="text-xs text-muted-foreground">{description}</div>
       </div>
     </div>
-  )
+  );
 }

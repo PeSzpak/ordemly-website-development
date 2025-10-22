@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useLanguage } from "@/lib/i18n/language-context"
-import { Check, Mail, Sparkles } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { QuoteRequestModal } from "@/components/quote-request-modal"
+import { useState } from "react";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { Check, Mail, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { QuoteRequestModal } from "@/components/quote-request-modal";
 
 export function PricingSection() {
-  const { t } = useLanguage()
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedPlan, setSelectedPlan] = useState("")
+  const { t } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState("");
 
   const handleRequestQuote = (planType: string) => {
-    setSelectedPlan(planType)
-    setIsModalOpen(true)
-  }
+    setSelectedPlan(planType);
+    setIsModalOpen(true);
+  };
 
   return (
     <>
@@ -40,7 +40,9 @@ export function PricingSection() {
                 {t.pricingSection.titleHighlight}
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground">{t.pricingSection.subtitle}</p>
+            <p className="text-lg text-muted-foreground">
+              {t.pricingSection.subtitle}
+            </p>
           </div>
 
           {/* Pricing cards */}
@@ -51,8 +53,12 @@ export function PricingSection() {
 
               <div className="relative">
                 <div className="mb-6">
-                  <h3 className="mb-2 text-2xl font-bold">{t.pricingSection.starterTitle}</h3>
-                  <p className="text-sm text-muted-foreground">{t.pricingSection.starterSubtitle}</p>
+                  <h3 className="mb-2 text-2xl font-bold">
+                    {t.pricingSection.starterTitle}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {t.pricingSection.starterSubtitle}
+                  </p>
                 </div>
 
                 <div className="mb-8">
@@ -60,13 +66,19 @@ export function PricingSection() {
                     <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-5xl font-bold text-transparent dark:from-blue-400 dark:via-blue-500 dark:to-blue-600">
                       R$20
                     </span>
-                    <span className="text-muted-foreground">{t.pricingSection.perMonth}</span>
+                    <span className="text-muted-foreground">
+                      {t.pricingSection.perMonth}
+                    </span>
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground">{t.pricingSection.starterPriceNote}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {t.pricingSection.starterPriceNote}
+                  </p>
                 </div>
 
                 <Button
-                  onClick={() => handleRequestQuote(t.pricingSection.starterTitle)}
+                  onClick={() =>
+                    handleRequestQuote(t.pricingSection.starterTitle)
+                  }
                   className="mb-8 w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white hover:opacity-90 dark:from-blue-500 dark:via-blue-600 dark:to-blue-700"
                 >
                   <Mail className="mr-2 h-4 w-4" />
@@ -74,7 +86,9 @@ export function PricingSection() {
                 </Button>
 
                 <div className="space-y-4">
-                  <p className="text-sm font-semibold text-foreground">{t.pricingSection.featuresIncluded}</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    {t.pricingSection.featuresIncluded}
+                  </p>
                   <ul className="space-y-3">
                     {[
                       t.pricingSection.starterFeature1,
@@ -88,7 +102,9 @@ export function PricingSection() {
                         <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-blue-600/20 bg-blue-600/10">
                           <Check className="h-3 w-3 text-blue-600 dark:text-blue-400" />
                         </div>
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -105,8 +121,12 @@ export function PricingSection() {
 
               <div className="relative">
                 <div className="mb-6">
-                  <h3 className="mb-2 text-2xl font-bold">{t.pricingSection.customTitle}</h3>
-                  <p className="text-sm text-muted-foreground">{t.pricingSection.customSubtitle}</p>
+                  <h3 className="mb-2 text-2xl font-bold">
+                    {t.pricingSection.customTitle}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {t.pricingSection.customSubtitle}
+                  </p>
                 </div>
 
                 <div className="mb-8">
@@ -115,11 +135,15 @@ export function PricingSection() {
                       {t.pricingSection.customPrice}
                     </span>
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground">{t.pricingSection.customPriceNote}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {t.pricingSection.customPriceNote}
+                  </p>
                 </div>
 
                 <Button
-                  onClick={() => handleRequestQuote(t.pricingSection.customTitle)}
+                  onClick={() =>
+                    handleRequestQuote(t.pricingSection.customTitle)
+                  }
                   className="mb-8 w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white hover:opacity-90 dark:from-blue-500 dark:via-blue-600 dark:to-blue-700"
                 >
                   <Mail className="mr-2 h-4 w-4" />
@@ -127,7 +151,9 @@ export function PricingSection() {
                 </Button>
 
                 <div className="space-y-4">
-                  <p className="text-sm font-semibold text-foreground">{t.pricingSection.featuresIncluded}</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    {t.pricingSection.featuresIncluded}
+                  </p>
                   <ul className="space-y-3">
                     {[
                       t.pricingSection.customFeature1,
@@ -142,7 +168,9 @@ export function PricingSection() {
                         <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-blue-600/30 bg-blue-600/20">
                           <Check className="h-3 w-3 text-blue-600 dark:text-blue-400" />
                         </div>
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -153,12 +181,18 @@ export function PricingSection() {
 
           {/* Bottom note */}
           <div className="mx-auto mt-12 max-w-2xl text-center">
-            <p className="text-sm text-muted-foreground">{t.pricingSection.bottomNote}</p>
+            <p className="text-sm text-muted-foreground">
+              {t.pricingSection.bottomNote}
+            </p>
           </div>
         </div>
       </section>
 
-      <QuoteRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} planType={selectedPlan} />
+      <QuoteRequestModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        planType={selectedPlan}
+      />
     </>
-  )
+  );
 }

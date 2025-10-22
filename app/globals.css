@@ -6,7 +6,9 @@
 :root {
   /* MM Tecnologia color scheme - Bright blue primary */
   --background: oklch(0.99 0 0);
-  --foreground: oklch(0.11 0.04 270); /* Updated color scheme to use #0F1127 as base dark color */
+  --foreground: oklch(
+    0.11 0.04 270
+  ); /* Updated color scheme to use #0F1127 as base dark color */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.11 0.04 270);
   --popover: oklch(1 0 0);
