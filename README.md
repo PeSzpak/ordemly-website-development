@@ -280,6 +280,6 @@ This project is owned by MM Tecnologia de Informação Ltda. All rights reserved
 ---
 
 <div align="center">
-  <p>Developed with dedication by <strong>MM Tecnologia</strong></p>
+  <p>Developed with dedication by <strong>MM Tecnologia de Informação</strong></p>
   <p>Intelligent service order management system</p>
 </div>
