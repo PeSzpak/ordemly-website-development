@@ -33,54 +33,101 @@
 
 ### Styling & UI
 - **Tailwind CSS 4.1.9** - Utility-first CSS framework
-- **Radix UI** - Accessible and primitive components
-- **Lucide React** - Modern SVG icons
-- **class-variance-authority** - Typed class variants
+- **Radix UI** - Comprehensive set of accessible and primitive components
+- **Lucide React 0.454.0** - Modern SVG icons
+- **class-variance-authority 0.7.1** - Typed class variants
+- **clsx 2.1.1** - Utility for constructing className strings
+- **tailwind-merge 2.5.5** - Merge Tailwind CSS classes
 
 ### Forms & Validation
-- **React Hook Form** - Performance-oriented forms library
-- **Zod** - TypeScript-first schema validation
-- **@hookform/resolvers** - Resolvers for validation
+- **React Hook Form 7.60.0** - Performance-oriented forms library
+- **Zod 3.25.76** - TypeScript-first schema validation
+- **@hookform/resolvers 3.10.0** - Resolvers for validation
 
 ### Email & Communication
-- **AWS SDK (SES)** - Amazon's email service
-- **Sonner** - Elegant toast notifications
+- **AWS SDK (SES) 3.913.0** - Amazon's email service
+- **Sonner 1.7.4** - Elegant toast notifications
+
+### Additional Libraries
+- **next-themes 0.4.6** - Theme management for Next.js
+- **date-fns 4.1.0** - Date utility library
+- **vaul** - Drawer component
+- **recharts 2.15.4** - Chart library
+- **embla-carousel-react 8.5.1** - Carousel component
 
 ### Development
 - **ESLint** - Code linting
-- **PostCSS** - CSS transformation
+- **PostCSS 8.5** - CSS transformation
 - **pnpm** - Efficient package manager
 
 ## Project Structure
 
 ```
-ordemly-website/
-├── app/                          # Next.js App Router
-│   ├── api/                      # API routes
-│   │   └── send-email/           # Email sending endpoint
-│   ├── globals.css               # Global styles
-│   ├── layout.tsx                # Main layout
-│   └── page.tsx                  # Home page
-├── components/                   # Reusable components
-│   ├── sections/                 # Home page sections
-│   │   ├── hero-section.tsx      # Hero section
-│   │   ├── benefits-section.tsx  # Benefits section
-│   │   ├── features-section.tsx  # Features section
-│   │   ├── demo-section.tsx      # Demo section
-│   │   └── ...                   # Other sections
-│   ├── ui/                       # Interface components
-│   ├── navigation.tsx            # Main navigation
-│   └── footer.tsx                # Footer
-├── lib/                          # Utilities and configurations
-│   ├── i18n/                     # Internationalization system
-│   │   ├── language-context.tsx  # Language context
-│   │   └── translations.ts       # Translations
-│   └── utils.ts                  # Utility functions
-├── public/                       # Static files
-│   ├── images/                   # Product screenshots and images
-│   └── *.png                     # Logos and icons
-└── hooks/                        # Custom hooks
-    └── use-mobile.ts             # Mobile detection hook
+ordemly-website-development/
+├── app/                              # Next.js App Router
+│   ├── api/                          # API routes
+│   │   └── send-email/               # Email sending endpoint
+│   │       └── route.ts              # POST handler for email sending
+│   ├── globals.css                   # Global styles and CSS variables
+│   ├── layout.tsx                    # Root layout with providers
+│   └── page.tsx                      # Homepage with all sections
+├── components/                       # Reusable React components
+│   ├── sections/                     # Homepage section components
+│   │   ├── hero-section.tsx          # Main hero section
+│   │   ├── benefits-section.tsx      # Benefits showcase
+│   │   ├── features-section.tsx      # Feature highlights with tabs
+│   │   ├── demo-section.tsx          # Demo request section
+│   │   ├── contact-section.tsx       # Contact form section
+│   │   ├── customization-section.tsx # Customization options
+│   │   ├── pricing-section.tsx       # Pricing plans
+│   │   ├── profile-views-section.tsx # User profile demonstrations
+│   │   └── stats-section.tsx         # Statistics and metrics
+│   ├── ui/                           # Base UI components (shadcn/ui)
+│   │   ├── badge.tsx                 # Badge component
+│   │   ├── button.tsx                # Button variations
+│   │   ├── card.tsx                  # Card layouts
+│   │   ├── dialog.tsx                # Modal dialogs
+│   │   ├── drawer.tsx                # Mobile drawer
+│   │   ├── dropdown-menu.tsx         # Dropdown menus
+│   │   ├── input.tsx                 # Form inputs
+│   │   ├── label.tsx                 # Form labels
+│   │   ├── tabs.tsx                  # Tab navigation
+│   │   └── textarea.tsx              # Text areas
+│   ├── navigation.tsx                # Header navigation with language selector
+│   ├── footer.tsx                    # Footer with company info
+│   ├── language-selector.tsx         # Language switching component
+│   ├── theme-provider.tsx            # Theme context provider
+│   ├── quote-request-modal.tsx       # Quote request modal
+│   └── print-order-modal.tsx         # Print order modal
+├── lib/                              # Utilities and configurations
+│   ├── i18n/                         # Internationalization system
+│   │   ├── language-context.tsx      # Language context and provider
+│   │   └── translations.ts           # Translation strings (PT/EN/ES)
+│   ├── email-templates/              # HTML email templates
+│   │   ├── template-contato.html     # Contact form email template
+│   │   └── template-demo.html        # Demo request email template
+│   └── utils.ts                      # Utility functions (cn, etc.)
+├── hooks/                            # Custom React hooks
+│   └── use-mobile.ts                 # Mobile device detection hook
+├── public/                           # Static assets
+│   ├── images/                       # Product screenshots
+│   │   ├── dashboard-admin-*.png     # Admin dashboard screenshots
+│   │   ├── dashboard-professional.png # Professional dashboard
+│   │   ├── equipment-list.png        # Equipment management
+│   │   ├── orders-kanban.png         # Kanban board view
+│   │   ├── support-page.png          # Support interface
+│   │   └── *EN.png, *ES.png, *PT.png # Localized screenshots
+│   ├── logo_ordemly.png              # Main logo
+│   ├── ordemly-logoVM.png            # Vertical logo variant
+│   └── mm_logo_black.svg             # MM Tecnologia logo
+├── styles/                           # Additional styles
+│   └── globals.css                   # Global CSS imports
+├── components.json                   # shadcn/ui configuration
+├── next.config.mjs                   # Next.js configuration
+├── postcss.config.mjs                # PostCSS configuration
+├── tailwind.config.js                # Tailwind CSS configuration
+├── tsconfig.json                     # TypeScript configuration
+└── package.json                      # Dependencies and scripts
 ```
 
 ## Website Features
@@ -89,25 +136,29 @@ ordemly-website/
 - Complete support for 3 languages (PT, EN, ES)
 - React context for dynamic language switching
 - Comprehensive translations for all sections
+- Localized screenshots and images
 
 ### Main Sections
 
-1. **Hero Section** - Main product presentation
-2. **Benefits Section** - Ordemly benefits and advantages
-3. **Profile Views** - Different user profiles (Admin, Professional, Customer)
-4. **Features Section** - Detailed features with interactive tabs
-5. **Customization Section** - Customization options
-6. **Demo Section** - Demo scheduling form
-7. **Pricing Section** - Plans and pricing
-8. **Contact Section** - Contact information and form
+1. **Hero Section** - Main product presentation with animated elements
+2. **Stats Section** - Key metrics and achievements
+3. **Benefits Section** - Ordemly benefits and advantages
+4. **Profile Views Section** - Different user profiles (Admin, Professional, Customer)
+5. **Features Section** - Detailed features with interactive tabs
+6. **Customization Section** - Customization options and branding
+7. **Demo Section** - Demo scheduling form with validation
+8. **Pricing Section** - Plans and pricing comparison
+9. **Contact Section** - Contact information and form
 
 ### Technical Features
 
-- **Smart Forms**: Real-time validation with visual feedback
-- **Dynamic Modals**: Overlay components for specific actions
-- **Responsive Navigation**: Automatic adaptation for mobile devices
-- **Image Optimization**: Optimized asset loading
-- **API Routes**: Endpoints for form processing
+- **Smart Forms**: Real-time validation with React Hook Form and Zod
+- **Dynamic Modals**: Overlay components for quotes and orders
+- **Responsive Navigation**: Mobile-first design with drawer navigation
+- **Image Optimization**: Next.js Image component for optimized loading
+- **Theme System**: Light/dark/auto themes with next-themes
+- **API Routes**: RESTful endpoints for form processing
+- **Email Templates**: HTML templates with dynamic content replacement
 
 ## How to Run
 
@@ -129,15 +180,12 @@ pnpm install
 ```
 
 3. **Configure environment variables**
-```bash
-cp .env.example .env.local
-```
-
-Add your AWS SES credentials to the `.env.local` file:
+Create a `.env.local` file in the root directory:
 ```env
 AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
 AWS_REGION=us-east-1
+EMAIL_SOURCE=your-verified-email@domain.com
 ```
 
 4. **Run the development server**
@@ -153,39 +201,58 @@ http://localhost:3000
 ### Available Scripts
 
 ```bash
-pnpm dev      # Development server
+pnpm dev      # Development server (localhost:3000)
 pnpm build    # Production build
 pnpm start    # Production server
-pnpm lint     # Code verification
+pnpm lint     # ESLint code verification
 ```
-
-## Customization
-
-### Themes
-The project supports light, dark and automatic themes through `next-themes`. To customize colors:
-
-1. Edit the `tailwind.config.js` file
-2. Modify CSS variables in `app/globals.css`
-3. Use the theme context in components
-
-### Translations
-To add new languages or modify translations:
-
-1. Edit `lib/i18n/translations.ts`
-2. Add new translation keys
-3. Import in the language context
-
-### UI Components
-Base components are in `components/ui/` and follow the Radix UI pattern with Tailwind CSS.
 
 ## Email System
 
-The project includes AWS SES integration for email sending through the `/api/send-email` route. 
+The project includes AWS SES integration for email sending through the `/api/send-email` route with support for two types of emails:
+
+### Email Types
+- **Contact Form** (`type: "contact"`) - General inquiries
+- **Demo Request** (`type: "demo"`) - Demo scheduling requests
+
+### Email Templates
+- `template-contato.html` - Contact form email template
+- `template-demo.html` - Demo request email template
+
+Both templates support dynamic content replacement with placeholders like `[contact-nome]`, `[demo-email]`, `[current-year]`, etc.
 
 ### Configuration
 1. Configure AWS credentials in environment variables
 2. Verify domain/email in AWS SES console
-3. Test sending through website forms
+3. Templates are cached for performance
+4. Automatic CC to company email
+
+## UI Components
+
+The project uses a combination of:
+- **shadcn/ui** components in `components/ui/`
+- **Radix UI** primitives for accessibility
+- **Custom components** for specific functionality
+- **Responsive design** with Tailwind CSS
+
+### Theme Customization
+- CSS variables in `app/globals.css`
+- Tailwind configuration in `tailwind.config.js`
+- Theme switching with `next-themes`
+
+## Development Notes
+
+### Code Organization
+- **Modular architecture** with clear separation of concerns
+- **TypeScript throughout** for type safety
+- **Custom hooks** for reusable logic
+- **Context providers** for global state management
+
+### Performance Optimizations
+- **Template caching** for email templates
+- **Image optimization** with Next.js Image
+- **Code splitting** with Next.js App Router
+- **Efficient bundling** with modern tooling
 
 ## About the Ordemly Product
 

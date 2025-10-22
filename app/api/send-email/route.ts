@@ -109,7 +109,7 @@ export async function POST(req: Request) {
   const params = {
     Destination: {
       ToAddresses: [email],
-      CcAddresses: [process.env.EMAIL_SOURCE, 'pedrohszpaka@gmail.com'].filter(
+      CcAddresses: [process.env.EMAIL_SOURCE].filter(
         (e): e is string => e !== undefined
       ),
     },
