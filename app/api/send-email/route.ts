@@ -17,11 +17,11 @@ async function loadTemplates() {
   if (cachedContactTemplate && cachedDemoTemplate) return;
   const base = process.cwd();
   cachedContactTemplate = await fs.readFile(
-    path.join(base, "app", "template-contato.html"),
+    path.join(base, "app", "app/templates/template-contato.html"),
     "utf8"
   );
   cachedDemoTemplate = await fs.readFile(
-    path.join(base, "app", "template-demo.html"),
+    path.join(base, "app", "app/templates/template-demo.html"),
     "utf8"
   );
 }
