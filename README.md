@@ -170,7 +170,7 @@ ordemly-website-development/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/PeSzpak/ordemly-website-development
+git clone <repository-url>
 cd ordemly-website-development
 ```
 
